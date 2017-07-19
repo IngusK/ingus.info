@@ -1,0 +1,11 @@
+@import "../../../app/style/_theme.scss";
+
+.main_content {
+  display: grid;
+  font-size: 1.8rem;
+  color: $gray;
+  grid-area: content;
+  font-weight: 300;
+  justify-content: center;
+  align-items: center;
+}
