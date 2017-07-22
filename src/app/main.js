@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import '../../src/app/style/_normalize.scss';
-import '../../src/app/style/global.scss';
+import '../../src/app/styles/_normalize.scss';
+import '../../src/app/styles/global.scss';
 
 import Routes from './createRoutes';
 

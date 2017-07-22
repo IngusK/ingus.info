@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import style from './style.scss';
+import style from './styles.scss';
 
 const Home = () => (
-  <div className="main_content">
+  <div className="main-content">
     Content
   </div>
 );
