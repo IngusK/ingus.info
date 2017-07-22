@@ -1,0 +1,15 @@
+@import "../../../app/styles/_theme.scss";
+
+.main-logo {
+
+}
+
+.main-content {
+  display: grid;
+  font-size: 1.8rem;
+  color: $gray;
+  grid-area: content;
+  font-weight: 300;
+  justify-content: center;
+  align-items: center;
+}

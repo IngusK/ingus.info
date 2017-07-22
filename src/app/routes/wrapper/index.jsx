@@ -1,11 +1,19 @@
 import React from 'react';
-import style from './style.scss';
+import Logo from './logo.jsx';
+import Navigation from './navigation.jsx';
+import FooterContent from './footer-content.jsx';
+import styles from './styles/styles.scss';
 
 const Wrapper = ({ children }) => (
   <div className="grid-wrapper">
-    <header>Header</header>
+    <header>
+      <Logo />
+      <Navigation />
+    </header>
     {children}
-    <footer>Footer</footer>
+    <footer>
+      <FooterContent />
+    </footer>
   </div>
 );
 
