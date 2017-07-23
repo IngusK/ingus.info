@@ -1,1 +1,54 @@
 @import "../../../../app/styles/_theme.scss";
+
+header {
+  display: flex;
+  grid-area: header;
+  padding: 2rem 0 0;
+  font-size: 1.8rem;
+  border-bottom: 0.1rem solid $ligthGray;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.logo {
+  color: $black;
+  h1 {
+    font-size: 4rem;
+    span {
+      font-size: 2rem;
+    }
+  }
+  h2 {
+    font-size: 1.4rem;
+    padding: 0.9rem 0 0 0;
+  }
+}
+
+nav {
+  text-align: right;
+  font-family: $lato;
+  padding: 2rem 0 0 0;
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 300;
+    li:hover a {
+      color: $pink;
+    }
+    &.nav-large {
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+      li {
+        margin-left: 2rem;
+      }
+    }
+    &.nav-small {
+      font-size: 1.6rem;
+      li {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+}
