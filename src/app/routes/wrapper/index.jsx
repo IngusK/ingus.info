@@ -1,20 +1,14 @@
 import React from 'react';
-import Logo from './logo.jsx';
-import Navigation from './navigation.jsx';
-import FooterContent from './footer-content.jsx';
+import Header from './header.jsx';
+import Footer from './footer.jsx';
 import styles from './styles/styles.scss';
 
-const Wrapper = ({ children }) => (
+const BaiscWrapper = ({ children }) => (
   <div className="grid-wrapper">
-    <header>
-      <Logo />
-      <Navigation />
-    </header>
+    <Header />
     {children}
-    <footer>
-      <FooterContent />
-    </footer>
+    <Footer />
   </div>
 );
 
-export default Wrapper;
+export default BaiscWrapper;

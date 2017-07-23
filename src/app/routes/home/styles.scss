@@ -1,15 +1,69 @@
 @import "../../../app/styles/_theme.scss";
 
-.main-logo {
-
-}
-
 .main-content {
   display: grid;
-  font-size: 1.8rem;
-  color: $gray;
   grid-area: content;
-  font-weight: 300;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+  grid-template-rows: auto 2fr;
+  grid-template-areas:
+                      "slider slider slider"
+                      "content content content";
+  .top-slider {
+    display: flex;
+    grid-area: slider;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+    @media #{$tablet} {
+      flex-direction: row;
+    }
+    .slider-description {
+      color: $black;
+      text-align: center;
+      @media #{$tablet} {
+        h2, h3, h5 {
+          text-align: left;
+        }
+      }
+      h3 {
+        font: 300 1.8rem $lato;
+      }
+      h2 {
+        font: 300 3.8rem $lato;
+        line-height: 4rem;
+        margin: 1rem 0;
+        &:after {
+          content: "";
+          background: $pink;
+          width: 7rem;
+          height: 4px;
+          display: block;
+          margin: 1.5rem auto 2.5rem;
+          @media #{$tablet} {
+            margin: 1.5rem 0 2.5rem -2rem;
+          }
+        }
+        &:hover {
+          color: $pink;
+        }
+      }
+      h5 {
+        font: 300 1.5rem $lato;
+        margin-bottom: 2rem;
+      }
+    }
+    .slider-photo {
+      img {
+        object-fit: cover;
+        width: 100%;
+        max-width: 100%;
+        @media #{$tablet} {
+          max-width: 70rem;
+        }
+      }
+    }
+  }
 }
