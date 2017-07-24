@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom';
 
 import styles from './styles/styles-header.scss';
 
-const Header = () => (
+export default () => (
   <header>
     <div className="logo">
       <Link to='/'><h1>Ingus<span>.info</span></h1></Link>
-      <h2>Travel. Photography. Lifestyle</h2>
+      <h2>Travel. Photography. Coding</h2>
     </div>
     <nav>
       <ul className="nav-large">
@@ -24,5 +24,3 @@ const Header = () => (
     </nav>
   </header>
 );
-
-export default Header;

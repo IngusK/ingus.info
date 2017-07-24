@@ -3,7 +3,7 @@ import Header from './header.jsx';
 import Footer from './footer.jsx';
 import styles from './styles/styles.scss';
 
-const BaiscWrapper = ({ children }) => (
+const Wrapper = ({ children }) => (
   <div className="grid-wrapper">
     <Header />
     {children}
@@ -11,4 +11,4 @@ const BaiscWrapper = ({ children }) => (
   </div>
 );
 
-export default BaiscWrapper;
+export default Wrapper;
