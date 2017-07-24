@@ -1,35 +1,69 @@
 @import "../../../../app/styles/_theme.scss";
 
 header {
-  display: flex;
+  display: block;
   grid-area: header;
   padding: 2rem 0 0;
   font-size: 1.8rem;
-  border-bottom: 0.1rem solid $ligthGray;
-  justify-content: space-between;
   margin: 0 auto;
   width: 100%;
-  max-width: 1280px;
+  max-width: 100%;
+  text-align: center;
+  @media #{$tablet} {
+    display: flex;
+    border-bottom: 0.1rem solid $ligthGray;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1280px;
+    text-align: left;
+  }
 }
 
 .logo {
   color: $black;
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     span {
-      font-size: 2rem;
+      font-size: 1.5rem;
+    }
+    @media #{$mobile} {
+      font-size: 4rem;
+      span {
+        font-size: 2rem;
+      }
     }
   }
   h2 {
-    font-size: 1.4rem;
-    padding: 0.9rem 0 0 0;
+    font-size: 1.3rem;
+    padding: 0.6rem 0 0 0;
+    @media #{$mobile} {
+      font-size: 1.4rem;
+      padding: 0.9rem 0 0 0;
+    }
   }
 }
 
 nav {
-  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
   font-family: $lato;
-  padding: 2rem 0 0 0;
+  padding: 1rem 0;
+  border-bottom: 0.1rem solid $ligthGray;
+  border-top: 0.1rem solid $ligthGray;
+  margin-top: 1.5rem;
+  @media #{$mobileLarge} {
+    flex-direction: row;
+  }
+  @media #{$tablet} {
+    display: block;
+    text-align: right;
+    padding: 1.6rem 0 0 0;
+    border: none;
+    margin: 0;
+  }
   ul {
     display: flex;
     justify-content: flex-end;
@@ -38,16 +72,31 @@ nav {
       color: $pink;
     }
     &.nav-large {
-      font-size: 2.4rem;
-      margin-bottom: 1.5rem;
+      margin: 0;
       li {
         margin-left: 2rem;
       }
+      @media #{$mobile} {
+        font-size: 1.8rem;
+      }
+      @media #{$tablet} {
+        font-size: 2.1rem;
+        margin-bottom: 1rem;
+      }
     }
     &.nav-small {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
+      margin-top: 1rem;
       li {
-        margin-left: 1.5rem;
+        margin: 0 0 0 1.5rem;
+      }
+      @media #{$mobileLarge} {
+        font-size: 1.8rem;
+        margin-top: 0;
+      }
+      @media #{$tablet} {
+        margin: 0.4rem 0 0 1.5rem;
+        font-size: 1.5rem;
       }
     }
   }

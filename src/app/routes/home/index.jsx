@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import style from './styles.scss';
 
-const Home = () => (
+export default () => (
   <div className="main-content">
     <div className="top-slider">
       <div className="slider-description">
@@ -17,5 +17,3 @@ const Home = () => (
     </div>
   </div>
 );
-
-export default Home;
