@@ -4,7 +4,7 @@
   display: grid;
   height: 100vh;
   background: $white;
-  grid-template-columns: 1fr repeat(3, 2fr) 1fr;
+  grid-template-columns: 1fr repeat(3, 6fr) 1fr;
   grid-template-rows: 12rem 1fr 18rem ;
   grid-template-areas:
                       ". header header header ."
