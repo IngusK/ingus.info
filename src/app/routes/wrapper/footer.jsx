@@ -3,10 +3,8 @@ import {Link} from 'react-router-dom';
 
 import styles from './styles/styles-footer.scss';
 
-const Footer = () => (
+export default () => (
   <footer>
     Footer Content
   </footer>
 );
-
-export default Footer;

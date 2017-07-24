@@ -29,7 +29,15 @@
         }
       }
       h3 {
-        font: 300 1.8rem $lato;
+        font: 300 1.5rem $lato;
+        margin-top: 3rem;
+        @media #{$mobile} {
+          margin-top: 4rem;
+        }
+        @media #{$tablet} {
+          font: 300 1.7rem $lato;
+          margin-top: 0;
+        }
       }
       h2 {
         font: 300 3.8rem $lato;
@@ -61,7 +69,7 @@
         width: 100%;
         max-width: 100%;
         @media #{$tablet} {
-          max-width: 70rem;
+          max-width: 60rem;
         }
       }
     }
