@@ -8,7 +8,8 @@
     "start": "yarn build:dev",
     "start:prod": "yarn build:prod && webpack-dev-server",
     "build:dev": "NODE_ENV=development webpack && webpack-dev-server",
-    "build:prod": "NODE_ENV=production webpack --progress --profile --colors"
+    "build:prod": "NODE_ENV=production webpack --progress --profile --colors",
+    "deploy": "yarn build:prod && surge"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/iamshaunjp/react-playlist#readme",
   "dependencies": {
     "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-inline-react-svg": "^0.4.0",
     "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
@@ -30,6 +32,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.23.0",
     "css-loader": "^0.28.4",
+    "firebase": "^4.1.5",
     "html-webpack-plugin": "^2.29.0",
     "node-sass": "^4.5.3",
     "react": "^15.5.4",
