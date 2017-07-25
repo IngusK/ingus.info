@@ -6,6 +6,7 @@
   margin: 0 auto;
   max-width: 1280px;
   width: 100%;
+  position: relative;
   grid-template-rows: auto auto 2fr;
   grid-template-areas:
                        "slider slider slider"
@@ -29,6 +30,17 @@
     }
     span {
       font-size: 3.5rem;
+    }
+  }
+  .arrow {
+    width: 10rem;
+    position: absolute;
+    left: 30%;
+    top: 3rem;
+    transform: rotate(220deg);
+    display: none;
+    @media #{$tablet} {
+      display: block;
     }
   }
   .top-slider {
