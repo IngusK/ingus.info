@@ -23,8 +23,8 @@ export default class Posts extends React.PureComponent {
   render() {
     return (
       <div className="main-content">
-        <Arrow />
-        <h1><span>Hey there!</span><br/>Since you are here, you might want to know that I design and code great websites and stuff.</h1>
+        <Arrow className="arrow"/>
+        <h1><span>Hey there!</span><br/>Welcome to my personal web page where I share my <b>travel</b>, <b>coding</b> and <b>photography</b> experience! <br/> <i>Why don't you start with my latest post?</i></h1>
         <div className="top-slider">
           <div className="slider-description">
             <h3>{this.state.posts[0] && this.state.posts[0].TravelDate}</h3>
