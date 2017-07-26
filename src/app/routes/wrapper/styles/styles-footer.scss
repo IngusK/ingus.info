@@ -2,10 +2,33 @@
 
 footer {
   display: grid;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   grid-area: footer;
-  background: $ligthGray;
-  color: $black;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  margin-top: 5rem;
+  color: $gray;
+  border-top: 0.1rem solid $ligthGray;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+                       ". . social"
+                       ". text .";
+  ul {
+    grid-area: social;
+    display: flex;
+    justify-content: flex-end;
+    li {
+      a {
+        display: block;
+        margin: 0 0 0 0.7rem;
+        svg {
+          width: 3.4rem;
+        }
+      }
+    }
+  }
+  p {
+    grid-area: text;
+    padding-bottom: 1rem;
+  }
 }

@@ -26,10 +26,7 @@ export default class About extends React.PureComponent {
     return this.state.aboutPageContent[0] && this.state.aboutPageContent[0][val];
   }
 
-  // https://ingus-info.firebaseio.com/posts.json
-
   render() {
-    console.log(this.getValue('Title'));
     return (
       <div className="wrapper">
         <h1>{this.getValue('Title')}</h1>
