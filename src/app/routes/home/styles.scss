@@ -7,13 +7,14 @@
   max-width: 128rem;
   width: 100%;
   position: relative;
-  grid-template-rows: auto auto 2fr;
+  grid-template-rows: auto auto auto 2fr;
   grid-template-areas:
                        "slider slider slider"
                        "content content content";
   @media #{$tablet} {
     grid-template-areas: "title title title"
                          "slider slider slider"
+                         "subtitle subtitle subtitle"
                          "content content content";
   }
   h1 {
@@ -31,6 +32,11 @@
     span {
       font-size: 3.5rem;
     }
+  }
+  h2 {
+    grid-area: subtitle;
+    font-size: 2.6rem;
+    margin: 5rem 0 2rem;
   }
   .arrow {
     width: 10rem;
@@ -57,7 +63,7 @@
       }
     }
     .slider-description {
-      text-align: center;
+      text-align: left;
       @media #{$tablet} {
         width: 50%;
         padding-right: 2rem;
@@ -80,6 +86,7 @@
         font: 300 2.8rem $lato;
         line-height: 3rem;
         margin: 1rem 0;
+        display: inline-block;
         @media #{$mobile} {
           font: 300 3.8rem $lato;
           line-height: 4rem;
@@ -162,7 +169,7 @@
       font: 300 2rem $lato;
       line-height: 3rem;
     }
-    h2 {
+    h4 {
       font-size: 2.6rem;
       display: inline-block;
       &:hover {
