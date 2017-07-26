@@ -1,0 +1,35 @@
+@import "../../../app/styles/_theme.scss";
+
+.wrapper {
+  display: block;
+  grid-area: content;
+  margin: 0 auto;
+  max-width: 128rem;
+  width: 100%;
+  position: relative;
+  grid-template-rows: auto auto 2fr;
+  grid-template-areas:
+                       "slider slider slider"
+                       "content content content";
+  @media #{$tablet} {
+    grid-template-areas: "title title title"
+                         "slider slider slider"
+                         "content content content";
+  }
+  h1 {
+    grid-area: title;
+    margin: 3rem auto 1rem;
+    text-align: center;
+    font-family: $lato;
+    font-size: 2rem;
+    line-height: 3.5rem;
+    width: 100%;
+    display: none;
+    @media #{$tablet} {
+      display: block;
+    }
+    span {
+      font-size: 3.5rem;
+    }
+  }
+}
