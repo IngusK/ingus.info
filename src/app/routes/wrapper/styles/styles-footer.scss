@@ -9,26 +9,45 @@ footer {
   margin-top: 5rem;
   color: $gray;
   border-top: 0.1rem solid $ligthGray;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-                       ". . social"
-                       ". text .";
+                       "social"
+                       "text";
+ @media #{$tablet} {
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-areas:
+                          ". . social"
+                          ". text .";
+    }
   ul {
     grid-area: social;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    @media #{$tablet} {
+      justify-content: flex-end;
+    }
     li {
       a {
         display: block;
-        margin: 0 0 0 0.7rem;
+        margin: 0 0 0 1rem;
+        @include transition;
         svg {
           width: 3.4rem;
+          opacity: 0.8;
+          fill: #414752;
+        }
+        &:hover {
+          svg {
+            opacity: 1;
+          }
         }
       }
     }
   }
   p {
     grid-area: text;
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
+    text-align: center;
+    font-weight: 300;
   }
 }
