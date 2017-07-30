@@ -27,15 +27,17 @@
     grid-area: title;
     position: relative;
     height: 100%;
+    display: none;
+    @media #{$tablet} {
+      display: block;
+    }
     h2 {
-      display: none;
       transform: none;
       font-size: 10vw;
       font-family: $logo;
       white-space: nowrap;
       position: relative;
       @media #{$tablet} {
-        display: block;
         font-size: 16vh;
         transform: rotate(-90deg);
         position: absolute;
@@ -56,13 +58,22 @@
     z-index: 1;
     h2 {
       font-size: 3rem;
-      margin: 1rem 0 1.2rem;
+      margin: 3.5rem 0 1.2rem;
+      &:first-child {
+        margin-top: 1.5rem;
+      }
     }
-    p {
+    p, ul {
       font-size: 1.8rem;
       font-weight: 300;
       line-height: 2.8rem;
       margin: 0;
+    }
+    ul {
+      li {
+        list-style-type: disc;
+        margin-left: 2.2rem;
+      }
     }
   }
 }
