@@ -56,8 +56,10 @@
   .description {
     position: relative;
     z-index: 1;
+    font-family: $medium;
     h2 {
       font-size: 3rem;
+      font-weight: 400;
       margin: 3.5rem 0 1.2rem;
       &:first-child {
         margin-top: 1.5rem;
@@ -65,9 +67,9 @@
     }
     p, ul {
       font-size: 1.8rem;
-      font-weight: 300;
-      line-height: 2.8rem;
+      line-height: 3.3rem;
       margin: 0;
+      color: $grey;
     }
     ul {
       li {
