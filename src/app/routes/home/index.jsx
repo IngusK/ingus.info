@@ -23,8 +23,9 @@ export default class Posts extends React.PureComponent {
     });
   };
 
-  getValue(val) {
-    return this.state.posts[0] && this.state.posts[0][val];
+  getValue(val, nr) {
+    if (!nr) return "UNDEFINED";
+    return this.state.posts[nr] && this.state.posts[nr][val];
   }
 
   // https://ingus-info.firebaseio.com/posts.json
@@ -33,7 +34,7 @@ export default class Posts extends React.PureComponent {
     return (
       <div className="main-content">
         <Arrow className="arrow"/>
-        <h1><span>Hey there!</span><br/>Welcome to my personal web page where I share my <b>travel</b>, <b>coding</b> and <b>photography</b> experience! <br/> <i>Why don't you start with my latest post?</i></h1>
+        <h1><span>{this.getValue('Greeting', 1)}</span><br/>Welcome to my personal web page where I share my <b>travel</b>, <b>coding</b> and <b>photography</b> experience! <br/> <i>Why don't you start with my latest post?</i></h1>
         <div className="top-slider">
           <div className="slider-description">
             <h3>{this.getValue('TravelDate')}</h3>

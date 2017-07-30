@@ -1,0 +1,84 @@
+@import "../../../app/styles/_theme.scss";
+
+.cto-content {
+  display: grid;
+  grid-area: content;
+  margin: 5rem auto 0;
+  max-width: 128rem;
+  width: 100%;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  text-align: center;
+  grid-template-areas:
+                       "title"
+                       "content";
+  p {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+  }
+  .title {
+    grid-area: title;
+    h2 {
+      font-size: 8vw;
+      font-family: $logo;
+      white-space: nowrap;
+      margin-top: 2rem;
+      @media #{$tablet} {
+        margin: 0;
+      }
+    }
+    p {
+      margin: 2.5rem auto 5rem;
+      max-width: 98rem;
+      @media #{$tablet} {
+        margin: 2.5rem auto 10rem;
+      }
+    }
+    a {
+      border-bottom: .2rem solid $pink;
+      &:hover {
+        color: $pink;
+      }
+    }
+  }
+  .description {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    @media #{$tablet} {
+      flex-direction: row;
+    }
+    &>div {
+      flex: 1;
+      padding: 0 2rem;
+      margin-bottom: 5rem;
+      @media #{$tablet} {
+        margin: 0;
+      }
+    }
+    p > a {
+      border-bottom: .2rem solid $pink;
+      &:hover {
+        color: $pink;
+      }
+    }
+    a {
+      display: inline-block;
+      opacity: 0.9;
+      @include transition;
+      img {
+        width: 100%;
+        max-width: 8rem;
+        margin-bottom: 1rem;
+        @media #{$tablet} {
+          max-width: 16rem;
+        }
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
