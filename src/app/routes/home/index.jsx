@@ -24,7 +24,6 @@ export default class Posts extends React.PureComponent {
   };
 
   getValue(val, nr) {
-    if (!nr) return "UNDEFINED";
     return this.state.posts[nr] && this.state.posts[nr][val];
   }
 
@@ -37,7 +36,7 @@ export default class Posts extends React.PureComponent {
         <h1><span>{this.getValue('Greeting', 1)}</span><br/>Welcome to my personal web page where I share my <b>travel</b>, <b>coding</b> and <b>photography</b> experience! <br/> <i>Why don't you start with my latest post?</i></h1>
         <div className="top-slider">
           <div className="slider-description">
-            <h3>{this.getValue('TravelDate')}</h3>
+            <h3>{this.getValue('TravelDate', 0)}</h3>
             <Link to=''><h2>India with<br/>Beautiful Destinations</h2></Link>
             <h5>Travel adventures</h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
