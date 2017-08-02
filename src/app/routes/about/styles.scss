@@ -18,8 +18,8 @@
   @media #{$mobileLarge} {
     margin: 4rem auto 0;
   }
-  @media #{$tablet} {
-    grid-template-columns: 1fr 3fr;
+  @media #{$tabletLarge} {
+    grid-template-columns: 37rem 3fr;
     grid-template-areas: "title content"
                          "title content";
   }
@@ -28,28 +28,22 @@
     position: relative;
     height: 100%;
     display: none;
-    @media #{$tablet} {
+    @media #{$tabletLarge} {
       display: block;
     }
     h2 {
       transform: none;
-      font-size: 10vw;
       font-family: $logo;
       white-space: nowrap;
       position: relative;
       @media #{$tablet} {
-        font-size: 16vh;
+        font-size: 20rem;
         transform: rotate(-90deg);
-        position: absolute;
-        bottom: 0;
-        top: 2rem;
+        top: 60%;
         left: 2rem;
       }
       @media #{$tabletLarge} {
         left: 2rem;
-      }
-      @media #{$desktop} {
-        left: 6rem;
       }
     }
   }
@@ -65,11 +59,31 @@
         margin-top: 1.5rem;
       }
     }
-    p, ul {
+    .email-container {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: .1rem solid $ligthGray;
+      border-bottom: .1rem solid $ligthGray;
+      margin: 3rem 0;
+      h3 {
+        display: inline-block;
+        font-size: 2.8rem;
+      }
+    }
+    p, ul, h3, a {
       font-size: 1.8rem;
       line-height: 3.3rem;
       margin: 0;
       color: $grey;
+    }
+    p {
+      a {
+        border-bottom: .2rem solid $pink;
+        @include transition;
+        &:hover {
+          color: $pink;
+        }
+      }
     }
     ul {
       li {

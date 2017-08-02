@@ -158,8 +158,8 @@
       object-fit: cover;
       object-position: center;
       @include transition;
-      @media #{$tabletLarge} {
-        max-height: 35rem;
+      @media #{$tablet} {
+        height: 35rem;
       }
       &:hover {
         object-position: bottom;
