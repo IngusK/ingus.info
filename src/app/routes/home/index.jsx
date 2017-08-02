@@ -9,93 +9,66 @@ export default class Posts extends React.PureComponent {
 
   constructor(...args) {
     super(...args);
-    this.getValue = this.getValue.bind(this);
+    this.getBlogPosts = this.getBlogPosts.bind(this);
+    this.getMainPost = this.getMainPost.bind(this);
   }
 
   state = {
     posts: [],
+    lastPost: {},
   }
 
   componentDidMount() {
-    var posts = database().ref('posts/');
-    posts.on('value', (data) => {
-      this.setState({ posts: data.val() });
-    });
+    this.getBlogPosts();
+    this.getMainPost();
   };
 
-  getValue(val, nr) {
-    return this.state.posts[nr] && this.state.posts[nr][val];
+  getBlogPosts() {
+    var posts = database().ref('posts/').limitToLast(9);
+    posts.on('value', (data) => {
+      const posts = data.val().reverse().slice(1);
+      this.setState({ posts });
+    });
   }
 
-  // https://ingus-info.firebaseio.com/posts.json
+  getMainPost() {
+    var posts = database().ref('posts/').limitToLast(1);
+    posts.on('value', (data) => {
+      const post = data.val();
+      const elementKey = Object.keys(post)[0];
+      this.setState({ lastPost: post[elementKey] });
+    });
+  }
 
   render() {
+    const { lastPost, posts } = this.state;
     return (
       <div className="main-content">
         <Arrow className="arrow"/>
-        <h1><span>{this.getValue('Greeting', 1)}</span><br/>Welcome to my personal web page where I share my <b>travel</b>, <b>coding</b> and <b>photography</b> experience! <br/> <i>Why don't you start with my latest post?</i></h1>
+        <h1><span>{lastPost.name}</span><br/>Welcome to my personal web page where I share my <b>travel</b>, <b>coding</b> and <b>photography</b> experience! <br/> <i>Why don't you start with my latest post?</i></h1>
         <div className="top-slider">
           <div className="slider-description">
-            <h3>{this.getValue('TravelDate', 0)}</h3>
-            <Link to=''><h2>India with<br/>Beautiful Destinations</h2></Link>
-            <h5>Travel adventures</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h3>{lastPost.date}</h3>
+            <Link to=''><h2>{lastPost.title}</h2></Link>
+            <h5>{lastPost.category}</h5>
+            <p>{lastPost.description}</p>
           </div>
           <div className="slider-photo">
-            <Link to=''><img src="../img/sample.jpg" alt="Travel photo" /></Link>
+            <Link to=''><img src={lastPost.photo} alt={lastPost.title} /></Link>
           </div>
         </div>
+
         <h2>Some of my latest posts</h2>
         <div className="posts">
-          <div className="post-1">
-            <Link to=''><img src="../img/sample2.jpg" alt="Travel photo" /></Link>
-            <h3>January 21, 2017</h3>
-            <Link to=''><h4>Dubai</h4></Link>
-            <h5>Travel adventures</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div className="post-2">
-            <Link to=''><img src="../img/sample2.jpg" alt="Travel photo" /></Link>
-            <h3>January 21, 2017</h3>
-            <Link to=''><h4>Dubai</h4></Link>
-            <h5>Travel adventures</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div className="post-3">
-            <Link to=''><img src="../img/sample2.jpg" alt="Travel photo" /></Link>
-            <h3>January 21, 2017</h3>
-            <Link to=''><h4>Dubai</h4></Link>
-            <h5>Travel adventures</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div className="post-4">
-            <Link to=''><img src="../img/sample2.jpg" alt="Travel photo" /></Link>
-            <h3>January 21, 2017</h3>
-            <Link to=''><h4>Dubai</h4></Link>
-            <h5>Travel adventures</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div className="post-5">
-            <Link to=''><img src="../img/sample2.jpg" alt="Travel photo" /></Link>
-            <h3>January 21, 2017</h3>
-            <Link to=''><h4>Dubai</h4></Link>
-            <h5>Travel adventures</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div className="post-6">
-            <Link to=''><img src="../img/sample2.jpg" alt="Travel photo" /></Link>
-            <h3>January 21, 2017</h3>
-            <Link to=''><h4>Dubai</h4></Link>
-            <h5>Travel adventures</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div className="post-7">
-            <Link to=''><img src="../img/sample2.jpg" alt="Travel photo" /></Link>
-            <h3>January 21, 2017</h3>
-            <Link to=''><h4>Dubai</h4></Link>
-            <h5>Travel adventures</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
+          {posts.map((post, index) => (
+            <div className={`post-${index + 1}`} key={index}>
+              <Link to=''><img src={post.photo} alt={post.title} /></Link>
+              <h3>{post.date}</h3>
+              <Link to=''><h4>{post.title}</h4></Link>
+              <h5>{post.category}</h5>
+              <p>{post.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     );
