@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {database} from "firebase";
 import Arrow from '../../../../img/icons/arrow.svg';
+import {database} from "firebase";
 
 import style from './styles.scss';
 

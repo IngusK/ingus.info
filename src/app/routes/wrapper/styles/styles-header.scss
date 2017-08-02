@@ -9,6 +9,8 @@ header {
   width: 100%;
   max-width: 100%;
   text-align: center;
+  position: relative;
+  z-index: 99;
   @media #{$tablet} {
     display: flex;
     border-bottom: 0.1rem solid $ligthGray;

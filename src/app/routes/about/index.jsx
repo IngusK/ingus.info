@@ -44,6 +44,12 @@ export default class About extends React.PureComponent {
           </ul>
           <h2>Sports</h2>
           <p>I'm a keen snowboarder, wakeboarder and recently have become also a skateborder. Basicaly I like everything that has a word "board" in it. Also I love playing tennis and beach volley. Always open for a tournament.</p>
+          <h2>Contact me</h2>
+          <p>If you wish to contact me regarding cooperation, job opportunities or just to have a chat feel free to drop me an e-mail at..</p>
+          <div className="email-container">
+            <h3>ingus.kruklitis@gmail.com</h3>
+          </div>
+          <p>..or contact me on <a href="https://www.facebook.com/ingus.kruklitis" target="_blank">Facebook</a>, <a href="https://www.linkedin.com/in/ingusk/" target="_blank">Linkedin</a> or <a href="https://www.instagram.com/ingus/" target="_blank">Instagram</a>.</p>
         </div>
 
         {/* <h2>{this.getValue('Title')}</h2> */}
