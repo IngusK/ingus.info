@@ -26,7 +26,9 @@ export default class Posts extends React.PureComponent {
   getBlogPosts() {
     var posts = database().ref('posts/').limitToLast(9);
     posts.on('value', (data) => {
+      // get last 9 posts, reverse the order and remove first element
       const posts = data.val().reverse().slice(1);
+      // save posts into state
       this.setState({ posts });
     });
   }
@@ -34,8 +36,13 @@ export default class Posts extends React.PureComponent {
   getMainPost() {
     var posts = database().ref('posts/').limitToLast(1);
     posts.on('value', (data) => {
+      // get last/latest post
       const post = data.val();
+      // returned post is object with value key
+      // get the right key. We don't know which key gets returned
+      // so we get a massive with all keys in Object and get the first key (which ever it is)
       const elementKey = Object.keys(post)[0];
+      // save post into state with the received key
       this.setState({ lastPost: post[elementKey] });
     });
   }
