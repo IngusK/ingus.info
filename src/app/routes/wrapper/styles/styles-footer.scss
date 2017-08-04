@@ -6,8 +6,10 @@ footer {
   grid-area: footer;
   justify-content: center;
   align-items: flex-end;
-  margin-top: 5rem;
   color: $grey;
+  max-width: 128rem;
+  width: 100%;
+  margin: 4rem auto 0;
   border-top: 0.1rem solid $ligthGray;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -46,7 +48,6 @@ footer {
   }
   p {
     grid-area: text;
-    padding-bottom: .5rem;
     text-align: center;
     font-weight: 300;
   }
