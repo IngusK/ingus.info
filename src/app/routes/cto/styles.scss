@@ -6,13 +6,11 @@
   margin: 5rem auto 0;
   max-width: 128rem;
   width: 100%;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr;
   align-items: flex-start;
   text-align: center;
-  grid-template-areas:
-                       "title"
-                       "content";
+  grid-template:
+               "title" auto
+               "content" auto / 1fr;
   p {
     font-size: 1.8rem;
     font-weight: 300;

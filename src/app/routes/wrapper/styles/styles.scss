@@ -4,12 +4,10 @@
   display: grid;
   height: 100vh;
   background: $white;
-  grid-template-columns: 1fr repeat(3, 6fr) 1fr;
-  grid-template-rows: 12rem 1fr 18rem ;
-  grid-template-areas:
-                      ". header header header ."
-                      ". content content content ."
-                      ". footer footer footer .";
+  grid-template:
+                ". header header header ." 12rem
+                ". content content content ." 1fr
+                ". footer footer footer ." 16rem / 1fr 6fr 6fr 6fr 1fr;
   // @media #{$tablet} {
   //   grid-template-rows: 10rem 1fr 18rem ;
   // }
