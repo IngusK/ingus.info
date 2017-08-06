@@ -4,7 +4,7 @@ import {database} from "firebase";
 
 import styles from './styles/styles-header.scss';
 
-export default class Footer extends React.PureComponent {
+export default class Header extends React.PureComponent {
 
   constructor(...args) {
     super(...args);
