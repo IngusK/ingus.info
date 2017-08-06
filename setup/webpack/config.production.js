@@ -59,7 +59,15 @@ module.exports = {
           {
             test: /\.(css|scss)$/,
             loader: 'style-loader!css-loader!sass-loader'
-          }
+          },
+          {
+              test: /\.(png|jpg|gif)$/,
+              use: [
+                {
+                  loader: 'url-loader'
+                }
+              ]
+            }
         ]
     },
     plugins: [
