@@ -14,4 +14,4 @@
 This will be a mayor upgrade of my existing website ingus.info using latest technologies like React, Webpack, CSS grids, REM units, ES6 etc.
 
 <pre>yarn outdated</pre> Check for outdated packages
-<pre>yarn upgrade <package_name>@latest</pre> Update to latest version
+<pre>yarn upgrade package_name@latest</pre> Update to latest version
