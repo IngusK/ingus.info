@@ -1,0 +1,43 @@
+@import "../../../app/styles/_theme.scss";
+
+.cv-content {
+  display: grid;
+  grid-area: content;
+  margin: 5rem auto 0;
+  max-width: 128rem;
+  width: 100%;
+  align-items: flex-start;
+  grid-column-gap: 4rem;
+  grid-template:
+                 "main_info"
+                 "content";
+  .main-info {
+    grid-area: main_info;
+    text-align: center;
+    img {
+      width: 13rem;
+      height: 13rem;
+      display: inline-block;
+      margin-bottom: 2rem;
+      border-radius: 50%;
+    }
+    .description {
+      h2 {
+        font-size: 3rem;
+        font-weight: 400;
+        margin: 0 0 1.2rem;
+      }
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 300;
+      }
+    }
+  }
+  .cv_info {
+    display: grid;
+    grid-template:
+                   "coding travelling"
+                   "work_experience certificates"
+                   "stocks cto";
+  }
+}
