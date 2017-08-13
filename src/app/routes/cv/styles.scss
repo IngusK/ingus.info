@@ -11,15 +11,31 @@
   grid-template:
                  "main_info"
                  "content";
+   @media #{$mobile} {
+     margin: 3rem auto 0;
+   }
   .main-info {
     grid-area: main_info;
     text-align: center;
+    align-items: center;
+    @media #{$desktop} {
+      display: flex;
+      text-align: left;
+    }
     img {
       width: 13rem;
       height: 13rem;
       display: inline-block;
-      margin-bottom: 2rem;
+      margin: 4rem 0 2rem;
       border-radius: 50%;
+      @media #{$tablet} {
+        margin-top: 0rem;
+      }
+      @media #{$desktop} {
+        width: 18rem;
+        height: 18rem;
+        margin-right: 4rem;
+      }
     }
     .description {
       h2 {
@@ -31,13 +47,56 @@
         font-size: 1.8rem;
         font-weight: 300;
       }
+      p {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        font-weight: 300;
+        max-width: 100%;
+        margin: 2rem auto 4rem;
+        @media #{$tablet} {
+          margin: 2rem auto 4rem;
+          max-width: 88rem;
+        }
+        @media #{$desktop} {
+          margin: 2rem auto 0;
+          max-width: 100%;
+        }
+      }
     }
   }
   .cv_info {
     display: grid;
     grid-template:
-                   "coding travelling"
-                   "work_experience certificates"
-                   "stocks cto";
+                   "coding"
+                   "work_experience"
+                   "stocks";
+    grid-column-gap: 4rem;
+    @media #{$tablet} {
+      grid-template:
+                     "coding travelling"
+                     "work_experience certificates"
+                     "stocks cto" / 1fr 1fr;
+    }
+    div {
+      margin-bottom: 5rem;
+    }
+    h3 {
+      font-size: 2.2rem;
+      font-weight: 400;
+    }
+    p {
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      font-weight: 300;
+    }
+    ul {
+      margin: 2rem 0 0 2rem;
+      li {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2.4rem;
+        list-style-type: disc;
+      }
+    }
   }
 }
