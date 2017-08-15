@@ -1,1 +1,35 @@
 @import "../../../app/styles/_theme.scss";
+
+.travel-content {
+  display: grid;
+  grid-area: content;
+  margin: 5rem auto 0;
+  max-width: 128rem;
+  width: 100%;
+  .photo-grid {
+    display: grid;
+    grid-gap: 2rem;
+    @media #{$mobile} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media #{$tablet} {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    a {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(20%);
+        // @include transition;
+        &:hover {
+          filter: grayscale(0%);
+        }
+        @media #{$tablet} {
+          height: 23rem;
+        }
+      }
+    }
+  }
+}
