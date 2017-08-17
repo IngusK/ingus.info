@@ -69,7 +69,7 @@ module.exports = {
                   loader: 'url-loader'
                 }
               ]
-            }
+            },
         ]
     },
     plugins: [
