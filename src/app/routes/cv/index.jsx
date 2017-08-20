@@ -34,40 +34,60 @@ export default class CV extends React.PureComponent {
           <div className="description">
             <h2>Ingus Kruklitis</h2>
             <h3>CTO / Front-End developer / Web designer / Travel Photographer</h3>
-            <p>I am a designer & front/end developer with experience in high-profile web projects as well as design, typography, SEO, e-commerce and advertising. I am determined and highly organized person, with a strong work ethic and proven ability to manage projects with strict budgets and timescales. My hobbies focus on creativity and inspiration. In my spare time I try to travel a lot and keep myself fit, which is why I spend a lot of my time in a gym, playing tennis, snowboarding during winter season and wake-boarding in the summer.</p>
+            <p>Hi there!<br/>In short I am an experienced <strong>web designer</strong> and <strong>front-end developer</strong> based in Riga, Latvia as well as a professional <strong>travel photographer</strong>. I get joy from crafting great user experiences by creating amazing products using latest technologies. Travelling the world is my second passion, visiting different places and most importantly connecting with people in search of new endless possibilities in life..</p>
           </div>
         </div>
         <div className="cv_info">
-          <div>
+          <div className="coding">
             <h3>Coding</h3>
-            <p>HTML5, CSS3, Java Script, Angular, JQuery, JSON, LESS, Google Analytics, Crossbrowsers, Responsive Web, Bootstrap, Foundation, Episerver, Font Awesome, ModX, SEO, GitHub, Mobile apps.</p>
+            <p>As I've already mentioned above I'm a <strong>Front-End developer</strong> with more than 8 years of experience in web development. I still remember the times when we had to use tiny png/gif images to have rounded-borders and create our layouts using tables with rows and columns. These days luckily we've switched to latest technologies which make everything just so much simpler but at the same time there's so so much more stuff to handle. Below is the list of technologies that I use on my everyday bases:</p>
             <ul>
-              <li>HTML, CSS3</li>
-              <li>Javascript</li>
-              <li>React</li>
+              <li>HTML5, CSS3/CSS4 (including CSS grids and rem units)</li>
+              <li>SCSS, <span>LESS (past)</span>, PostCSS</li>
+              <li>Javascript, ES6, JSON</li>
+              <li>React, Babel, Node, Yarn, Webpack</li>
+              <li>Mobile first approach</li>
+              <li>Crossbrowsers support, SEO, GA, AB testing, Heat maps</li>
+              <li>Git, Stash</li>
             </ul>
+            <p>Ou, and of course Atom and Mac OS</p>
           </div>
-          <div>
-            <h3>Travel</h3>
-            <p>HTML5, CSS3, Java Script, Angular, JQuery, JSON, LESS, Google Analytics, Crossbrowsers, Responsive Web, Bootstrap, Foundation, Episerver, Font Awesome, ModX, SEO, GitHub, Mobile apps.</p>
+          <div className="travel">
+            <h3>Travel Photography</h3>
+            <p>Besides my IT education I've also become a professional travel photographer. I go to different places in search of the ideal shot, unique sunset, the perfect moment. And the best part is that I get to meet so many cool people during my journeys. So far I've been to 42 different countries and hundreds of cities world wide and have no intensions of stopping. The stuff that I'm using:</p>
+            <ul>
+              <li>Canon 5D Mark III (planning to switch to Sony A7RII)</li>
+              <li>DJi Mavic Pro</li>
+              <li>Go Pro 5 Black with Dome port</li>
+              <li>Sirui T-025X Carbon Fiber Tripod</li>
+              <li>Lowepro ViewPoint BP 250 AW backpack</li>
+            </ul>
+            <p>If you're interested in Travel or Aerial photography / footage feel free to contact me.</p>
           </div>
-          <div>
+          <div className="work-exp">
             <h3>Work Experience</h3>
             <p>HTML5, CSS3, Java Script, Angular, JQuery, JSON, LESS, Google Analytics, Crossbrowsers, Responsive Web, Bootstrap, Foundation, Episerver, Font Awesome, ModX, SEO, GitHub, Mobile apps.</p>
           </div>
-          <div>
+          <div className="certificates">
             <h3>Certificates</h3>
             <ul>
-              <li>HTML, CSS3</li>
-              <li>Javascript</li>
-              <li>React</li>
+              <li><a href="#"><img src="../img/certificates/bachelor_large.jpg" alt="bachelor_large" /></a></li>
+              <li><a href="#"><img src="../img/certificates/business_large.jpg" alt="business_large" /></a></li>
+              <li><a href="#"><img src="../img/certificates/data_pro_large.jpg" alt="data_pro_large" /></a></li>
+              <li><a href="#"><img src="../img/certificates/goethe_large.jpg" alt="goethe_large" /></a></li>
+              <li><a href="#"><img src="../img/certificates/international_house_large.jpg" alt="international_house_large" /></a></li>
+              <li><a href="#"><img src="../img/certificates/master_large.jpg" alt="master_large" /></a></li>
+              <li><a href="#"><img src="../img/certificates/photography_large.jpg" alt="photography_large" /></a></li>
+              <li><a href="#"><img src="../img/certificates/progmeistars_large.jpg" alt="progmeistars_large" /></a></li>
+              <li><a href="#"><img src="../img/certificates/tieto_large.jpg" alt="tieto_large" /></a></li>
+              <li><a href="#"><img src="../img/certificates/w3schools_large.jpg" alt="w3schools_large" /></a></li>
             </ul>
           </div>
-          <div>
+          <div className="stocks">
             <h3>Photo stocks</h3>
             <p>HTML5, CSS3, Java Script, Angular, JQuery, JSON, LESS, Google Analytics, Crossbrowsers, Responsive Web, Bootstrap, Foundation, Episerver, Font Awesome, ModX, SEO, GitHub, Mobile apps.</p>
           </div>
-          <div>
+          <div className="cto">
             <h3>CTO</h3>
             <p>HTML5, CSS3, Java Script, Angular, JQuery, JSON, LESS, Google Analytics, Crossbrowsers, Responsive Web, Bootstrap, Foundation, Episerver, Font Awesome, ModX, SEO, GitHub, Mobile apps.</p>
           </div>
