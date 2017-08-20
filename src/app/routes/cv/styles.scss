@@ -48,11 +48,13 @@
         font-weight: 300;
       }
       p {
-        font-size: 1.8rem;
-        line-height: 2.4rem;
+        font-size: 1.6rem;
+        line-height: 3rem;
         font-weight: 300;
         max-width: 100%;
         margin: 2rem auto 4rem;
+        font-family: $medium;
+        color: $darkGrey;
         @media #{$tablet} {
           margin: 2rem auto 4rem;
           max-width: 88rem;
@@ -66,36 +68,86 @@
   }
   .cv_info {
     display: grid;
+    margin-top: 4rem;
     grid-template:
-                   "coding"
-                   "work_experience"
-                   "stocks";
-    grid-column-gap: 4rem;
+                  "coding"
+                  "travel"
+                  "work-exp"
+                  "stocks"
+                  "cto"
+                  "certificates";
+    grid-gap: 3rem 5rem;
     @media #{$tablet} {
       grid-template:
-                     "coding travelling"
-                     "work_experience certificates"
-                     "stocks cto" / 1fr 1fr;
+                    "coding travel"
+                    "work-exp stocks"
+                    "work-exp cto"
+                    "certificates certificates";
+    }
+    .coding {
+      grid-area: coding;
+    }
+    .travel {
+      grid-area: travel;
+    }
+    .work-exp {
+      grid-area: work-exp;
+    }
+    .certificates {
+      grid-area: certificates;
+      ul {
+        margin-left: 0;
+        display: grid;
+        grid-gap: 1rem;
+        @media #{$mobile} {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @media #{$tablet} {
+          grid-template-columns: repeat(5, 1fr);
+        }
+        li {
+          list-style-type: none;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+    }
+    .stocks {
+      grid-area: stocks;
+    }
+    .cto {
+      grid-area: cto;
     }
     div {
       margin-bottom: 5rem;
     }
     h3 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: 400;
     }
     p {
       font-size: 1.6rem;
-      line-height: 2.2rem;
+      line-height: 3rem;
       font-weight: 300;
+      font-family: $medium;
+      color: $darkGrey;
     }
     ul {
       margin: 2rem 0 0 2rem;
+      font-family: $medium;
+      color: $darkGrey;
       li {
         font-size: 1.6rem;
         font-weight: 300;
-        line-height: 2.4rem;
+        line-height: 3rem;
         list-style-type: disc;
+        span {
+          text-decoration: line-through;
+        }
       }
     }
   }

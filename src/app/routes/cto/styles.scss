@@ -12,11 +12,11 @@
                "title" auto
                "content" auto / 1fr;
   p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 300;
-    line-height: 3.3rem;
+    line-height: 3rem;
     font-family: $medium;
-    color: $grey;
+    color: $darkGrey;
   }
   .title {
     grid-area: title;
@@ -37,7 +37,7 @@
       }
     }
     a {
-      color: $grey;
+      color: $darkGrey;
       border-bottom: .2rem solid $pink;
       &:hover {
         color: $pink;
@@ -66,7 +66,7 @@
       }
     }
     a {
-      color: $grey;
+      color: $darkGrey;
       display: inline-block;
       opacity: 0.9;
       @include transition;
