@@ -6,6 +6,39 @@
   margin: 5rem auto 0;
   max-width: 128rem;
   width: 100%;
+  .title {
+    text-align: center;
+    h2 {
+      font-size: 4rem;
+      font-family: $logo;
+      @media #{$tablet} {
+        margin: 0 0 4rem 0;
+      }
+    }
+    p {
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+      font-weight: 300;
+      margin: 2.5rem auto 5rem;
+      max-width: 98rem;
+      @media #{$tablet} {
+        margin: 2.5rem auto 10rem;
+      }
+    }
+    a {
+      color: $grey;
+      border-bottom: .2rem solid $pink;
+      &:hover {
+        color: $pink;
+      }
+    }
+  }
+  .map-wrapper {
+    margin: 0 0 2rem 0;
+    svg {
+      width: 100%;
+    }
+  }
   .photo-grid {
     display: grid;
     grid-gap: 2rem;
@@ -13,7 +46,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
     @media #{$tablet} {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
     }
     a {
       img {
@@ -27,7 +60,7 @@
           filter: grayscale(0%);
         }
         @media #{$tablet} {
-          height: 23rem;
+          height: 22rem;
         }
       }
     }
