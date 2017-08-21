@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {database} from "firebase";
+import {database} from 'firebase';
+import Image from '../../components/image/index.jsx';
 
 import style from './styles.scss';
 
@@ -71,16 +72,46 @@ export default class CV extends React.PureComponent {
           <div className="certificates">
             <h3>Certificates</h3>
             <ul>
-              <li><a href="#"><img src="../img/certificates/bachelor_large.jpg" alt="bachelor_large" /></a></li>
-              <li><a href="#"><img src="../img/certificates/business_large.jpg" alt="business_large" /></a></li>
-              <li><a href="#"><img src="../img/certificates/data_pro_large.jpg" alt="data_pro_large" /></a></li>
-              <li><a href="#"><img src="../img/certificates/goethe_large.jpg" alt="goethe_large" /></a></li>
-              <li><a href="#"><img src="../img/certificates/international_house_large.jpg" alt="international_house_large" /></a></li>
-              <li><a href="#"><img src="../img/certificates/master_large.jpg" alt="master_large" /></a></li>
-              <li><a href="#"><img src="../img/certificates/photography_large.jpg" alt="photography_large" /></a></li>
-              <li><a href="#"><img src="../img/certificates/progmeistars_large.jpg" alt="progmeistars_large" /></a></li>
-              <li><a href="#"><img src="../img/certificates/tieto_large.jpg" alt="tieto_large" /></a></li>
-              <li><a href="#"><img src="../img/certificates/w3schools_large.jpg" alt="w3schools_large" /></a></li>
+              <Image
+                img={"../img/certificates/bachelor_large.jpg"}
+                alt={"Bachelor certificate"}
+              />
+              <Image
+                img={"../img/certificates/business_large.jpg"}
+                alt={"Business certificate"}
+              />
+              <Image
+                img={"../img/certificates/data_pro_large.jpg"}
+                alt={"Data Pro certificate"}
+              />
+              <Image
+                img={"../img/certificates/goethe_large.jpg"}
+                alt={"Goethe certificate"}
+              />
+              <Image
+                img={"../img/certificates/international_house_large.jpg"}
+                alt={"International house certificate"}
+              />
+              <Image
+                img={"../img/certificates/master_large.jpg"}
+                alt={"Master degree certificate"}
+              />
+              <Image
+                img={"../img/certificates/photography_large.jpg"}
+                alt={"Photography certificate"}
+              />
+              <Image
+                img={"../img/certificates/progmeistars_large.jpg"}
+                alt={"Progmeistars certificate"}
+              />
+              <Image
+                img={"../img/certificates/tieto_large.jpg"}
+                alt={"Tieto certificate"}
+              />
+              <Image
+                img={"../img/certificates/w3schools_large.jpg"}
+                alt={"W3chools certificate"}
+              />
             </ul>
           </div>
           <div className="stocks">

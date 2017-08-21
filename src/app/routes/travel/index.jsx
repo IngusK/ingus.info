@@ -9,7 +9,12 @@ const Travel = (props, { instagram }) => {
 
   return (
     <div className="travel-content">
-      <WorldMap />
+      <div className="title">
+        <h2>I've been to..</h2>
+      </div>
+      <div className="map-wrapper">
+        <WorldMap />
+      </div>
       <div className="photo-grid">
         {instagram.map((obj, key) => (
           <a href={obj.link} key={key} target="_blank">

@@ -1,0 +1,17 @@
+@import "../../../app/styles/_theme.scss";
+
+.image {
+  img {
+    object-fit: cover;
+    object-position: center;
+    transition: .3s ease-in-out all;
+  }
+  &.is-zoomed {
+    img {
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
