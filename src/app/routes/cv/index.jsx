@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {database} from 'firebase';
 import Image from '../../components/image/index.jsx';
+import Company from '../../components/company/index.jsx';
 
 import style from './styles.scss';
 
@@ -67,7 +68,48 @@ export default class CV extends React.PureComponent {
           </div>
           <div className="work-exp">
             <h3>Work Experience</h3>
-            <p>HTML5, CSS3, Java Script, Angular, JQuery, JSON, LESS, Google Analytics, Crossbrowsers, Responsive Web, Bootstrap, Foundation, Episerver, Font Awesome, ModX, SEO, GitHub, Mobile apps.</p>
+            <Company
+              date={'2015 - 2016'}
+              company={'Lifland Gaming Group Team'}
+              location={'Riga, Latvia'}
+              position={'UX/UI Designer / Front-End Developer'}
+              description={"Maintaining and redesigning the existing product. Responsible for mobile version design and development. Front-end coding. Working together with other back-end developers."}
+            />
+            <Company
+              date={'2012 - 2015'}
+              company={'AS Geta'}
+              location={'Riga, Latvia / Oslo, Norway'}
+              position={'Front-End Developer'}
+              description={"Main responsibilities include developing and maintaining the company's WEB sites. Main tasks suppose working with HTML and CSS, different browser capability, Flash and ActionScript, Wordpress, etc. In short - representing the company's image live and on the Web."}
+            />
+            <Company
+              date={'2010 - 2012'}
+              company={'SIA Inbox'}
+              location={'Riga, Latvia'}
+              position={'UX/UI Designer / Front-End Developer'}
+              description={"Working on internal / external projects, creating wiframe samples, converting them into unique web based design elements and front - end coding. Helping other back - end develoeprs with their duty."}
+            />
+            <Company
+              date={'2010'}
+              company={'SIA TezGSM'}
+              location={'Riga, Latvia'}
+              position={'Senior WEB Designer'}
+              description={"Redesigning main web site and provide technical support to other internal projects. Creating different banners and posters for marketing needs."}
+            />
+            <Company
+              date={'2009'}
+              company={'SIA Hortus Digital'}
+              location={'Riga, Latvia'}
+              position={'WEB project and content manager'}
+              description={"Main responsibilities were developing and maintaining the company's brand and Web page based on Microsoft SharePoint 2007/2010 system. Also had to deal with different issues considering design work (banners, advertisements, web design and typography) and technical documentation."}
+            />
+            <Company
+              date={'2008'}
+              company={'SIA Tieto'}
+              location={'Riga, Latvia'}
+              position={'Technical support consultant'}
+              description={"Based on my education, job included working with IT technologies like Linux, Oracle, SQL data bases, Tuxedo system and Tomcat servers. Had to deal with a large banking system (e-commerce, u-commerce, visa and master-card business, ATM construction, parsing log files), client support (banks and processing centers), finding solutions considering financial and technical issues throughout Europe, including Russian, Ukraine, Lithuania, Bosnia, Serbia, Romania, etc."}
+            />
           </div>
           <div className="certificates">
             <h3>Certificates</h3>

@@ -52,7 +52,7 @@
         line-height: 3rem;
         font-weight: 300;
         max-width: 100%;
-        margin: 2rem auto 4rem;
+        margin: 2rem auto 0;
         font-family: $medium;
         color: $darkGrey;
         @media #{$tablet} {
@@ -70,19 +70,45 @@
     display: grid;
     margin-top: 4rem;
     grid-template:
+                  "work-exp"
                   "coding"
                   "travel"
-                  "work-exp"
                   "stocks"
                   "cto"
                   "certificates";
     grid-gap: 3rem 5rem;
     @media #{$tablet} {
       grid-template:
-                    "coding travel"
+                    "work-exp coding"
+                    "work-exp travel"
                     "work-exp stocks"
                     "work-exp cto"
                     "certificates certificates";
+    }
+    h3 {
+      font-size: 2.4rem;
+      font-weight: 400;
+    }
+    p {
+      font-size: 1.6rem;
+      line-height: 3rem;
+      font-weight: 300;
+      font-family: $medium;
+      color: $darkGrey;
+    }
+    ul {
+      margin: 2rem 0 0 2rem;
+      font-family: $medium;
+      color: $darkGrey;
+      li {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 3rem;
+        list-style-type: disc;
+        span {
+          text-decoration: line-through;
+        }
+      }
     }
     .coding {
       grid-area: coding;
@@ -92,6 +118,30 @@
     }
     .work-exp {
       grid-area: work-exp;
+      background: $superLigthGray;
+      box-shadow: 2px 1px 2px 0px rgba(194,194,194,.5);
+      padding: 3.5rem;
+      h3 {
+        margin-bottom: 2rem;
+      }
+      h4 {
+        margin: .5rem 0;
+        font-size: 1.8rem;
+        font-weight: 400;
+        span {
+          font-size: 1.4rem;
+          color: $grey;
+          margin-left: .5rem;
+        }
+      }
+      h5 {
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $grey;
+      }
+      p {
+        margin-bottom: 2rem;
+      }
     }
     .certificates {
       grid-area: certificates;
@@ -119,34 +169,6 @@
     }
     .cto {
       grid-area: cto;
-    }
-    div {
-      margin-bottom: 5rem;
-    }
-    h3 {
-      font-size: 2.4rem;
-      font-weight: 400;
-    }
-    p {
-      font-size: 1.6rem;
-      line-height: 3rem;
-      font-weight: 300;
-      font-family: $medium;
-      color: $darkGrey;
-    }
-    ul {
-      margin: 2rem 0 0 2rem;
-      font-family: $medium;
-      color: $darkGrey;
-      li {
-        font-size: 1.6rem;
-        font-weight: 300;
-        line-height: 3rem;
-        list-style-type: disc;
-        span {
-          text-decoration: line-through;
-        }
-      }
     }
   }
 }
