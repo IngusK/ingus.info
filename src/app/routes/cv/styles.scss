@@ -166,9 +166,23 @@
     }
     .stocks {
       grid-area: stocks;
+      p {
+        a {
+          border-bottom: .2rem solid $pink;
+          &:hover {
+            color: $pink;
+          }
+        }
+      }
     }
     .cto {
       grid-area: cto;
+      a {
+        border-bottom: .2rem solid $pink;
+        &:hover {
+          color: $pink;
+        }
+      }
     }
   }
 }

@@ -1,10 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {database} from "firebase";
+import {Link, withRouter} from 'react-router-dom';
+import Menu from '../../components/menu/index.jsx';
 
 import styles from './styles/styles-header.scss';
 
-export default class Header extends React.PureComponent {
+export default class Header extends React.Component {
 
   constructor(...args) {
     super(...args);
@@ -27,6 +28,7 @@ export default class Header extends React.PureComponent {
   }
 
   render() {
+
     return (
       <header>
         <div className="logo">
@@ -35,14 +37,32 @@ export default class Header extends React.PureComponent {
         </div>
         <nav>
           <ul className="nav-large">
-            <li><Link to='/travel'>Travel</Link></li>
-            <li><Link to='/story-blog'>Story Blog</Link></li>
-            <li><Link to='/photography'>Photography</Link></li>
+            <Menu
+              title={'Travel'}
+              url={'/travel'}
+            />
+            <Menu
+              title={'Story Blog'}
+              url={'/story-blog'}
+            />
+            <Menu
+              title={'Photography'}
+              url={'/photography'}
+            />
           </ul>
           <ul className="nav-small">
-            <li><Link to='/about'>About</Link></li>
-            <li><Link to='/cto'>CTO</Link></li>
-            <li><Link to='/cv'>CV</Link></li>
+            <Menu
+              title={'About'}
+              url={'/about'}
+            />
+            <Menu
+              title={'CTO'}
+              url={'/cto'}
+            />
+            <Menu
+              title={'CV'}
+              url={'/cv'}
+            />
           </ul>
         </nav>
       </header>
