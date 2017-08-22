@@ -158,11 +158,16 @@ export default class CV extends React.PureComponent {
           </div>
           <div className="stocks">
             <h3>Photo stocks</h3>
-            <p>HTML5, CSS3, Java Script, Angular, JQuery, JSON, LESS, Google Analytics, Crossbrowsers, Responsive Web, Bootstrap, Foundation, Episerver, Font Awesome, ModX, SEO, GitHub, Mobile apps.</p>
+            <p>Currently I have two accounts on photo stock website: <a href="https://www.shutterstock.com/g/IngusKruklitis" target="_blank">Shutterstock</a> and <a href="https://eu.fotolia.com/p/205896011" target="_blank">Fotolia</a> by Adobe. Combined my portfolio consists of around 7000 photos and 500 videos and my most popular photo has sold more than 800 times. Feel free to contact me in case you are interested in any of my content or collaboration.</p>
           </div>
           <div className="cto">
             <h3>CTO</h3>
-            <p>HTML5, CSS3, Java Script, Angular, JQuery, JSON, LESS, Google Analytics, Crossbrowsers, Responsive Web, Bootstrap, Foundation, Episerver, Font Awesome, ModX, SEO, GitHub, Mobile apps.</p>
+            <p>I'm a co-foudner of several online projects:</p>
+            <ul>
+              <li><a href="http://weddenly.com/" target="_blank">Weddenly.com</a> - Wedding website building platform</li>
+              <li><a href="https://www.triptemptation.com/" target="_blank">TripTemptation.com</a> - Inspirational travel website blog</li>
+            </ul>
+            <p>Currently I'm working on optimisation tasks and looking forward to the new ones. Always ready for cooperation. Both projects are fully designed and developed (front-end part) by me. Back-end was made my companions (other co-founders). </p>
           </div>
         </div>
       </div>

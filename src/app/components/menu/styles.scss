@@ -1,0 +1,7 @@
+@import "../../../app/styles/_theme.scss";
+
+li{
+  &.active {
+    border-bottom: .2rem solid $pink;
+  }
+}

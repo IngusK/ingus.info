@@ -70,8 +70,10 @@ nav {
     display: flex;
     justify-content: flex-end;
     font-weight: 300;
-    li:hover a {
-      color: $pink;
+    li{
+      &:hover a {
+        color: $pink;
+      }
     }
     &.nav-large {
       margin: 0;
