@@ -6,6 +6,22 @@
   margin: 5rem auto 0;
   max-width: 128rem;
   width: 100%;
+  h3 {
+    font-size: 3rem;
+    font-family: $logo;
+    text-align: center;
+    margin: 5rem 0 1.5rem;
+  }
+  h4 {
+    text-align: center;
+    font-size: 1.9rem;
+    a {
+      border-bottom: .2rem solid $pink;
+      &:hover {
+        color: $pink;
+      }
+    }
+  }
   .title {
     text-align: center;
     h2 {
@@ -19,10 +35,10 @@
       font-size: 1.8rem;
       line-height: 2.8rem;
       font-weight: 300;
-      margin: 2.5rem auto 5rem;
+      margin: 2.5rem auto 0;
       max-width: 98rem;
       @media #{$tablet} {
-        margin: 2.5rem auto 10rem;
+        margin: 2.5rem auto 0;
       }
     }
     a {
@@ -34,7 +50,9 @@
     }
   }
   .map-wrapper {
-    margin: 0 0 2rem 0;
+    margin: 4rem auto;
+    width: 100%;
+    max-width: 128rem;
     svg {
       width: 100%;
     }
@@ -42,11 +60,12 @@
   .photo-grid {
     display: grid;
     grid-gap: 2rem;
+    margin-top: 5rem;
     @media #{$mobile} {
       grid-template-columns: repeat(2, 1fr);
     }
     @media #{$tablet} {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
     }
     a {
       img {
@@ -60,7 +79,7 @@
           filter: grayscale(0%);
         }
         @media #{$tablet} {
-          height: 22rem;
+          height: 20rem;
         }
       }
     }

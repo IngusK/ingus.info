@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {database} from "firebase";
-import { geoMercator, geoPath } from "d3-geo"
-import { feature } from "topojson-client"
+import { geoMercator, geoPath } from "d3-geo";
+import { feature } from "topojson-client";
 import json from '../world-110m.json';
+import ReactTooltip from 'react-tooltip';
 
 // import style from './styles.scss';
 
@@ -16,7 +17,7 @@ export default class WorldMap extends React.PureComponent {
       },
       worlddata: [],
       cities: [
-        { name: "Tokyo",          coordinates: [139.6917,35.6895],  population: 37843000 },
+        { name: "Tokyo",          coordinates: [139.6917,35.6895],  population: 37843000, url: "http://ingustravel.com" },
         { name: "Jakarta",        coordinates: [106.8650,-6.1751],  population: 30539000 },
         { name: "Delhi",          coordinates: [77.1025,28.7041],   population: 24998000 },
         { name: "Manila",         coordinates: [120.9842,14.5995],  population: 24123000 },
@@ -24,7 +25,7 @@ export default class WorldMap extends React.PureComponent {
         { name: "Shanghai",       coordinates: [121.4737,31.2304],  population: 23416000 },
         { name: "Karachi",        coordinates: [67.0099,24.8615],   population: 22123000 },
         { name: "Beijing",        coordinates: [116.4074,39.9042],  population: 21009000 },
-        { name: "New York",       coordinates: [-74.0059,40.7128],  population: 21009000 },
+        { name: "New York",       coordinates: [-74.0059,40.7128],  population: 21009000, url: "http://ingus.info" },
         { name: "Guangzhou",      coordinates: [113.2644,23.1291],  population: 20597000 },
         { name: "Sao Paulo",      coordinates: [-46.6333,-23.5505], population: 20365000 },
         { name: "Mexico City",    coordinates: [-99.1332,19.4326],  population: 20063000 },
@@ -62,13 +63,14 @@ export default class WorldMap extends React.PureComponent {
     console.log("Clicked on country: ", this.state.worlddata[countryIndex])
   }
   handleMarkerClick(i) {
-    console.log("Marker: ", this.state.cities[i])
+    console.log("Marker: ", this.state.cities[i].url)
+    window.location = this.state.cities[i].url;
   }
   componentDidMount() {
     this.setState({
       worlddata: feature(json, json.objects.countries).features,
     })
-    
+
     window.addEventListener('resize', this.setResizer);
   }
 
@@ -109,7 +111,7 @@ export default class WorldMap extends React.PureComponent {
                 cx={ this.projection()(city.coordinates)[0] }
                 cy={ this.projection()(city.coordinates)[1] }
                 r={ city.population / 3000000 }
-                fill="red"
+                fill="#ff4084"
                 stroke="#FFFFFF"
                 className="marker"
                 onClick={ () => this.handleMarkerClick(i) }

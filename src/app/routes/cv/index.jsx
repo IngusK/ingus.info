@@ -69,6 +69,13 @@ export default class CV extends React.PureComponent {
           <div className="work-exp">
             <h3>Work Experience</h3>
             <Company
+              date={'2016 - Present'}
+              company={'AS 4Finance Group'}
+              location={'Riga, Latvia'}
+              position={'Front-End Developer'}
+              description={"Creating world wide popular web services using React Framework, Redux and latest technologies."}
+            />
+            <Company
               date={'2015 - 2016'}
               company={'Lifland Gaming Group Team'}
               location={'Riga, Latvia'}
