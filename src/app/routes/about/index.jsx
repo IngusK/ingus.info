@@ -52,7 +52,7 @@ export default class About extends React.PureComponent {
           <p>..or contact me on <a href="https://www.facebook.com/ingus.kruklitis" target="_blank">Facebook</a>, <a href="https://www.linkedin.com/in/ingusk/" target="_blank">Linkedin</a> or <a href="https://www.instagram.com/ingus/" target="_blank">Instagram</a>.</p>
         </div>
 
-        {/* <h2>{this.getValue('Title')}</h2> */}
+        <h2>{this.getValue('Title')}</h2>
       </div>
     );
   }

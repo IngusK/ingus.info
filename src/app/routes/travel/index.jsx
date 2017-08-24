@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import WorldMap from '../../components/WorldMap';
+import WorldMap from '../../components/WorldMap.jsx';
 import style from './styles.scss';
 import ReactTooltip from 'react-tooltip';
 
