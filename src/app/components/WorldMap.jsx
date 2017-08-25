@@ -51,6 +51,7 @@ export default class WorldMap extends React.PureComponent {
 
     this.handleCountryClick = this.handleCountryClick.bind(this)
     this.setResizer = this.setResizer.bind(this)
+    this.shouldColor = this.shouldColor.bind(this)
   }
 
   getValue(val, nr) {
@@ -94,6 +95,19 @@ export default class WorldMap extends React.PureComponent {
       }
     })
   }
+
+  // shouldColor(id) {
+  //   return this.state.cities.some(city => {
+  //     return city.country_id.toString() === id;
+  //   });
+  // }
+
+  shouldColor(id) {
+    return this.state.cities.filter(city => {
+      return city.country_id.toString() === id;
+    }).length;
+  }
+
   render() {
     return (
       <div>
@@ -101,17 +115,21 @@ export default class WorldMap extends React.PureComponent {
         <svg width={ this.state.window.width - 200 } viewBox="0 0 800 450">
           <g className="countries">
             {
-              this.state.worlddata.map((d,i) => (
-                <path
-                  key={ `path-${ i }` }
-                  d={ geoPath().projection(this.projection())(d) }
-                  className="country"
-                  fill={ `rgba(38,50,56,${ 1 / this.state.worlddata.length * i})` }
-                  stroke="#FFFFFF"
-                  strokeWidth={ 0.5 }
-                  onClick={ () => this.handleCountryClick(i) }
-                />
-              ))
+              this.state.worlddata.map((country,i) => {
+                const value = this.shouldColor(country.id);
+                const colorType = value === 1 ? 'rgba(0,0,0,0.5)' : (value > 1 ? 'rgba(0,0,0,1)' : 'rgba(0,0,0,0.2)');
+                return (
+                  <path
+                    key={ `path-${ i }` }
+                    d={ geoPath().projection(this.projection())(country) }
+                    className="country"
+                    fill={colorType}
+                    stroke="#FFFFFF"
+                    strokeWidth={ 0.5 }
+                    onClick={ () => this.handleCountryClick(i) }
+                  />
+                );
+              })
             }
           </g>
           <g className="markers">
