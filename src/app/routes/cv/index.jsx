@@ -3,6 +3,11 @@ import {Link} from 'react-router-dom';
 import {database} from 'firebase';
 import Image from '../../components/image/index.jsx';
 import Company from '../../components/company/index.jsx';
+import Code from '../../../../img/icons/code-icon.svg';
+import Camera from '../../../../img/icons/camera-icon.svg';
+import Shutter from '../../../../img/icons/shutter-icon.svg';
+import Cto from '../../../../img/icons/cto-icon.svg';
+import Certificate from '../../../../img/icons/certificate-icon.svg';
 
 import style from './styles.scss';
 
@@ -41,7 +46,7 @@ export default class CV extends React.PureComponent {
         </div>
         <div className="cv_info">
           <div className="coding">
-            <h3>Coding</h3>
+            <h3><Code />Coding</h3>
             <p>As I've already mentioned above I'm a <strong>Front-End developer</strong> with more than 8 years of experience in web development. I still remember the times when we had to use tiny png/gif images to have rounded-borders and create our layouts using tables with rows and columns. These days luckily we've switched to latest technologies which make everything just so much simpler but at the same time there's so so much more stuff to handle. Below is the list of technologies that I use on my everyday bases:</p>
             <ul>
               <li>HTML5, CSS3/CSS4 (including CSS grids and rem units)</li>
@@ -55,7 +60,7 @@ export default class CV extends React.PureComponent {
             <p>Ou, and of course Atom and Mac OS</p>
           </div>
           <div className="travel">
-            <h3>Travel Photography</h3>
+            <h3><Camera />Travel Photography</h3>
             <p>Besides my IT education I've also become a professional travel photographer. I go to different places in search of the ideal shot, unique sunset, the perfect moment. And the best part is that I get to meet so many cool people during my journeys. So far I've been to 42 different countries and hundreds of cities world wide and have no intensions of stopping. The stuff that I'm using:</p>
             <ul>
               <li>Canon 5D Mark III (planning to switch to Sony A7RII)</li>
@@ -119,7 +124,7 @@ export default class CV extends React.PureComponent {
             />
           </div>
           <div className="certificates">
-            <h3>Certificates</h3>
+            <h3><Certificate />Certificates</h3>
             <ul>
               <Image
                 img={"../img/certificates/bachelor_large.jpg"}
@@ -164,11 +169,11 @@ export default class CV extends React.PureComponent {
             </ul>
           </div>
           <div className="stocks">
-            <h3>Photo stocks</h3>
+            <h3><Shutter />Photo stocks</h3>
             <p>Currently I have two accounts on photo stock website: <a href="https://www.shutterstock.com/g/IngusKruklitis" target="_blank">Shutterstock</a> and <a href="https://eu.fotolia.com/p/205896011" target="_blank">Fotolia</a> by Adobe. Combined my portfolio consists of around 7000 photos and 500 videos and my most popular photo has sold more than 800 times. Feel free to contact me in case you are interested in any of my content or collaboration.</p>
           </div>
           <div className="cto">
-            <h3>CTO</h3>
+            <h3><Cto />CTO</h3>
             <p>I'm a co-foudner of several online projects:</p>
             <ul>
               <li><a href="http://weddenly.com/" target="_blank">Weddenly.com</a> - Wedding website building platform</li>

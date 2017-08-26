@@ -117,7 +117,7 @@ export default class WorldMap extends React.PureComponent {
             {
               this.state.worlddata.map((country,i) => {
                 const value = this.shouldColor(country.id);
-                const colorType = value === 1 ? 'rgba(0,0,0,0.5)' : (value > 1 ? 'rgba(0,0,0,1)' : 'rgba(0,0,0,0.2)');
+                const colorType = value === 1 ? 'rgba(0,0,0,.4)' : (value > 1 ? 'rgba(0,0,0,.6)' : 'rgba(0,0,0,.15)');
                 return (
                   <path
                     key={ `path-${ i }` }
@@ -134,7 +134,7 @@ export default class WorldMap extends React.PureComponent {
           </g>
           <g className="markers">
             {
-              this.state.cities.length > 0 && this.state.cities.map((city, i) => (
+                this.state.cities.length > 0 && this.state.cities.map((city, i) => (
                 <a href={city.url || 'https://triptemptation.com'} key={i} target="_blank">
 
                 <circle
