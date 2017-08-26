@@ -81,13 +81,19 @@
       grid-template:
                     "work-exp coding"
                     "work-exp travel"
-                    "work-exp stocks"
                     "work-exp cto"
+                    "work-exp stocks"
                     "certificates certificates";
     }
     h3 {
       font-size: 2.4rem;
       font-weight: 400;
+      display: flex;
+      align-items: center;
+      svg {
+        width: 4rem;
+        height: 3rem;
+      }
     }
     p {
       font-size: 1.6rem;
@@ -112,9 +118,20 @@
     }
     .coding {
       grid-area: coding;
+      h3 {
+        svg {
+          margin-right: .7rem;
+        }
+      }
     }
     .travel {
       grid-area: travel;
+      h3 {
+        svg {
+          margin-top: -.6rem;
+          margin-right: .7rem;
+        }
+      }
     }
     .work-exp {
       grid-area: work-exp;
@@ -166,6 +183,11 @@
     }
     .stocks {
       grid-area: stocks;
+      h3 {
+        svg {
+          margin-right: .4rem;
+        }
+      }
       p {
         a {
           border-bottom: .2rem solid $pink;
@@ -177,6 +199,11 @@
     }
     .cto {
       grid-area: cto;
+      h3 {
+        svg {
+          margin-right: .3rem;
+        }
+      }
       a {
         border-bottom: .2rem solid $pink;
         &:hover {
