@@ -12,7 +12,7 @@ const Travel = (props, { instagram }) => {
     <div className="travel-content">
       <ReactTooltip />
       <div className="title">
-        <h2>I've <span data-tip="hello world">been</span> to..</h2>
+        <h2>I've been to..</h2>
         <p>This is a map of the countires I've visited so far.<br/>It total <strong>42</strong> countries and more than <strong>100</strong> different cities around the world.</p>
       </div>
       <div className="map-wrapper">
