@@ -5,9 +5,12 @@ import Header from './header.jsx';
 import Footer from './footer.jsx';
 import styles from './styles/styles.scss';
 
-const ACCESS_TOKEN = '2175385.71d5d16.041d6a6a1a754b7b9de7af00d9dcf564',
+const ACCESS_TOKEN = '2175385.71d5d16.7ffda74151244b799ed4a6fad89cefd5',
       TAG = 'ingusphoto',
       URL = `https://api.instagram.com/v1/tags/${TAG}/media/recent?access_token=${ACCESS_TOKEN}`;
+
+      //https://www.instagram.com/developer/clients/manage/
+      //https://www.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=http://ingus.info&response_type=token
 
 export default class Wrapper extends React.Component {
 
