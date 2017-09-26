@@ -5,8 +5,8 @@ import style from './styles.scss';
 import ReactTooltip from 'react-tooltip';
 
 const Travel = (props, { instagram }) => {
-  if (instagram.length < 1) return null;
-  console.log('Instagram API data', instagram);
+  // if (instagram.length < 1) return null;
+  // console.log('Instagram API data', instagram);
 
   return (
     <div className="travel-content">
@@ -18,7 +18,7 @@ const Travel = (props, { instagram }) => {
       <div className="map-wrapper">
         <WorldMap />
       </div>
-      <h3>Some of my recent travel adventures..</h3>
+      {/* <h3>Some of my recent travel adventures..</h3>
       <h4>Feel free to follow me on <a href="https://www.instagram.com/ingus/" target="_blank">Instagram</a></h4>
       <div className="photo-grid">
         {instagram.map((obj, key) => (
@@ -26,13 +26,13 @@ const Travel = (props, { instagram }) => {
             <img src={obj.images.low_resolution.url} alt={obj.caption.text.substring(0, 50)} />
           </a>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
 
-Travel.contextTypes = {
-  instagram: propTypes.array.isRequired,
-};
+// Travel.contextTypes = {
+//   instagram: propTypes.array.isRequired,
+// };
 
 export default Travel;
