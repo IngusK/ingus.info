@@ -46,17 +46,18 @@ export default class Wrapper extends React.Component {
   }
 
   render() {
+    const pathname = window.location.pathname;
     const {
       children,
     } = this.props;
     return (
       <div>
         <div className="message">Please update or use a browser that supports modern technologies like CSS Grids.</div>
-        <div className="grid-wrapper">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+          <div className="grid-wrapper">
+            <Header />
+            {children}
+            <Footer />
+          </div> 
       </div>
     );
   }
