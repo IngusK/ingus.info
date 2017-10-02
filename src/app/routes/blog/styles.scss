@@ -1,0 +1,26 @@
+@import "../../../app/styles/_theme.scss";
+
+.blog-content {
+  display: grid;
+  grid-area: content;
+  margin: 5rem auto 0;
+  max-width: 128rem;
+  width: 100%;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-template-areas:
+                       "title"
+                       "content";
+  @media #{$mobile} {
+    margin: 7rem auto 0;
+  }
+  @media #{$mobileLarge} {
+    margin: 4rem auto 0;
+  }
+  @media #{$tabletLarge} {
+    grid-template-columns: 37rem 3fr;
+    grid-template-areas: "title content"
+                         "title content";
+  }
+}

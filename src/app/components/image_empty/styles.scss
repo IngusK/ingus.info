@@ -1,0 +1,25 @@
+@import "../../../app/styles/_theme.scss";
+
+.category-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    object-fit: cover;
+    object-position: center;
+    transition: .3s ease-in-out all;
+    &:hover {
+      opacity: .85;
+    }
+  }
+  h3 {
+    position: absolute;
+    color: $white;
+    font-size: 3rem;
+    font-weight: 300;
+    @media #{$tablet} {
+      font-size: 4rem;
+    }
+  }
+}
