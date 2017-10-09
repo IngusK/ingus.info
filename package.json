@@ -54,10 +54,12 @@
     "webpack-cleanup-plugin": "^0.5.1"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   }
