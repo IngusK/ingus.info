@@ -34,7 +34,8 @@ module.exports = {
         rules: [
           {
             test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
+            //UglifyJsPlugin FUCKS UP need to comment this
+            // exclude: /node_modules/,
             loader: 'babel-loader?cacheDirectory=true',
             query: {
               babelrc: false,
