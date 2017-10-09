@@ -26,14 +26,76 @@
   }
   ul {
     display: grid;
-    grid-gap: 4rem;
-    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    grid-template-areas:
+                         "aerial"
+                         "travel"
+                         "nature"
+                         "people"
+                         "city";
     @media #{$tablet} {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+                           "aerial aerial"
+                           "city travel"
+                           "people travel"
+                           "nature nature";
+    }
+    .aerial {
+      grid-area: aerial;
+    }
+    .nature {
+      grid-area: nature;
+    }
+    .people {
+      grid-area: people;
+    }
+    .city {
+      grid-area: city;
+    }
+    .travel {
+      grid-area: travel;
     }
     li {
+      position: relative;
+      height: 200px;
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: 100%;
+        background: rgba(0,0,0,0.1);
+      }
+      @media #{$tablet} {
+        height: 100%;
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          left: 0;
+          height: 100%;
+          background: rgba(0,0,0,0.15);
+          transition: .3s ease-in-out all;
+        }
+        &:hover {
+          &:after {
+            top: auto;
+            right: 0;
+            bottom: auto;
+            left: 0;
+            height: 110px;
+            background: rgba(0,0,0,0.4);
+          }
+        }
+      }
+      h3 {
+        z-index: 9;
+      }
       img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
       }
     }
   }
