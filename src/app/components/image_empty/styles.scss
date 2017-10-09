@@ -9,9 +9,6 @@
     object-fit: cover;
     object-position: center;
     transition: .3s ease-in-out all;
-    &:hover {
-      opacity: .85;
-    }
   }
   h3 {
     position: absolute;

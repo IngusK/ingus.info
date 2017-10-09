@@ -28,7 +28,7 @@ header {
     span {
       font-size: 1.5rem;
     }
-    @media #{$mobile} {
+    @media #{$tablet} {
       font-size: 4rem;
       span {
         font-size: 2rem;
