@@ -31,7 +31,7 @@ export default class Photography extends React.PureComponent {
     return (
       <div className="photo-content">
         <h2>My portfolio</h2>
-        <p>Choose a category you want to explore</p>
+        <p>Choose a photo category you want to explore.<br/>All photos were taken during some of my trips in the recent years</p>
         <ul>
           <Link to='/aerial' className="aerial">
             <Image

@@ -7,18 +7,21 @@
   width: 100%;
   h2 {
     font-size: 4rem;
-    font-weight: 300;
-    margin: 0;
+    font-family: $logo;
     text-align: center;
+    margin-top: 1rem;
+    @media #{$tablet} {
+      margin: 0 0 4rem 0;
+    }
   }
+
   p {
-    font-size: 1.6rem;
-    line-height: 3rem;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
     font-weight: 300;
+    margin: 2.5rem auto 2rem;
     text-align: center;
-    margin: 1rem auto;
-    font-family: $medium;
-    color: $darkGrey;
+    max-width: 98rem;
     @media #{$tablet} {
       margin: 1rem auto 4rem;
       max-width: 88rem;
@@ -40,56 +43,134 @@
                            "people travel"
                            "nature nature";
     }
+    h3 {
+      z-index: 9;
+    }
     .aerial {
       grid-area: aerial;
+      overflow: hidden;
+      h3 {
+        font-size: 12rem;
+        left: -2rem;
+        bottom: -3rem;
+        font-weight: 100;
+        @include transition;
+        @media #{$tablet} {
+          font-size: 22rem;
+          left: -3rem;
+          bottom: -5rem;
+        }
+      }
+      &:hover {
+        h3 {
+          left: 5rem;
+        }
+      }
     }
     .nature {
       grid-area: nature;
+      overflow: hidden;
+      h3 {
+        font-size: 12rem;
+        right: -2rem;
+        bottom: -3rem;
+        font-weight: 100;
+        @include transition;
+        @media #{$tablet} {
+          font-size: 22rem;
+          right: -4rem;
+          bottom: -5rem;
+        }
+      }
+      &:hover {
+        h3 {
+          right: 4rem;
+        }
+      }
     }
     .people {
       grid-area: people;
+      overflow: hidden;
+      h3 {
+        font-size: 12rem;
+        right: -2rem;
+        bottom: -3rem;
+        font-weight: 100;
+        @include transition;
+        @media #{$tablet} {
+          font-size: 18rem;
+          right: -2rem;
+          bottom: -4rem;
+        }
+      }
+      &:hover {
+        h3 {
+          bottom: 2rem;
+        }
+      }
     }
-    .city {
+    .citylife {
       grid-area: city;
+      overflow: hidden;
+      h3 {
+        font-size: 10rem;
+        left: -2rem;
+        bottom: -1rem;
+        font-weight: 100;
+        @include transition;
+        @media #{$tablet} {
+          font-size: 15rem;
+          left: -3rem;
+          bottom: -3rem;
+        }
+      }
+      &:hover {
+        h3 {
+          bottom: 1rem;
+        }
+      }
     }
     .travel {
       grid-area: travel;
+      overflow: hidden;
+      h3 {
+        font-size: 12rem;
+        right: -1rem;
+        bottom: -3rem;
+        font-weight: 100;
+        @include transition;
+        @media #{$tablet} {
+          font-size: 19rem;
+          right: -1rem;
+          bottom: -5rem;
+        }
+      }
+      &:hover {
+        h3 {
+          bottom: 1rem;
+        }
+      }
     }
     li {
       position: relative;
       height: 200px;
+      @media #{$tablet} {
+        height: 100%;
+      }
       &:after {
         content: '';
         position: absolute;
         right: 0;
         left: 0;
-        height: 100%;
+        top: 0;
+        bottom: 0;
         background: rgba(0,0,0,0.1);
+        @include transition;
       }
-      @media #{$tablet} {
-        height: 100%;
+      &:hover {
         &:after {
-          content: '';
-          position: absolute;
-          right: 0;
-          left: 0;
-          height: 100%;
-          background: rgba(0,0,0,0.15);
-          transition: .3s ease-in-out all;
+          background: rgba(0,0,0,0.25);
         }
-        &:hover {
-          &:after {
-            top: auto;
-            right: 0;
-            bottom: auto;
-            left: 0;
-            height: 110px;
-            background: rgba(0,0,0,0.4);
-          }
-        }
-      }
-      h3 {
-        z-index: 9;
       }
       img {
         width: 100%;

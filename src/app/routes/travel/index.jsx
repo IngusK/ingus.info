@@ -1,8 +1,9 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import WorldMap from '../../components/WorldMap.jsx';
-import style from './styles.scss';
 import ReactTooltip from 'react-tooltip';
+
+import style from './styles.scss';
 
 const Travel = (props, { instagram }) => {
   if (instagram.length < 1) return null;
