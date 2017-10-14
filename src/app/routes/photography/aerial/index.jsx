@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '../../../components/image_empty/index.jsx';
+import PortfolioImage from '../../../components/portfolio_image/index.jsx';
 import {Link} from 'react-router-dom';
 import {database} from "firebase";
 
@@ -32,6 +32,16 @@ export default class PhotographyAerial extends React.PureComponent {
       <div className="photo-content">
         <h2>Aerial</h2>
         <p>Aerial photos</p>
+        <PortfolioImage
+          img={"../../img/portfolio/aerial/aerial.jpg"}
+          alt={"Aerial"}
+          descr={"This is an image description"}
+        />
+        <PortfolioImage
+          img={"../img/portfolio/citylife/city.jpg"}
+          alt={"Aerial"}
+          descr={"This is an image description"}
+        />
       </div>
     );
   }
