@@ -35,7 +35,7 @@ export default class Photography extends React.PureComponent {
         <ul>
           <Link to='/aerial' className="aerial">
             <Image
-              img={"../img/portfolio/aerial/aerial.jpg"}
+              img={"../img/portfolio/aerial/riga.jpg"}
               alt={"Aerial"}
             />
           </Link>
