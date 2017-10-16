@@ -30,17 +30,32 @@ export default class PhotographyAerial extends React.PureComponent {
   render() {
     return (
       <div className="photo-content">
-        <h2>Aerial</h2>
-        <p>Aerial photos</p>
+        <h2>Aerial collection</h2>
+        <p>Selection of my aerial photo collections. All of these photos were taken by me personally using different tools.<br/>In most cases I've used a drone but there are cases where a shot was taken from a plane, helicopter, hight building etc. </p>
         <PortfolioImage
-          img={"../../img/portfolio/aerial/aerial.jpg"}
-          alt={"Aerial"}
-          descr={"This is an image description"}
+          img={"../../img/portfolio/aerial/riga.jpg"}
+          alt={"Aerial image of Riga old town"}
+          descr={"Panoramic view of the Riga old town in Latvia"}
         />
         <PortfolioImage
-          img={"../img/portfolio/citylife/city.jpg"}
-          alt={"Aerial"}
-          descr={"This is an image description"}
+          img={"../img/portfolio/aerial/la_sunset.jpg"}
+          alt={"Sunset in Los Angeles"}
+          descr={"Beautiful early morning sunset view over Venice beach in Los Angeles"}
+        />
+        <PortfolioImage
+          img={"../../img/portfolio/aerial/hollywood.jpg"}
+          alt={"Hollywood district"}
+          descr={"Gorgeous view of the Hollydwood sign district in Los Angeles"}
+        />
+        <PortfolioImage
+          img={"../img/portfolio/aerial/death_valley.jpg"}
+          alt={"Death valley desert"}
+          descr={"Lonely road that goes through an endless Death Valley desert"}
+        />
+        <PortfolioImage
+          img={"../../img/portfolio/aerial/horse.jpg"}
+          alt={"Horseshoe bend"}
+          descr={"Amazing view of the horseshoe bend canyon in Arizona near the Grand Canyon"}
         />
       </div>
     );

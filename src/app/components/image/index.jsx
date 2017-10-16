@@ -17,11 +17,13 @@ export default class Image extends React.PureComponent {
   static defaultProps = {
     img: '',
     alt: 'Default alt text',
+    descr: '',
   }
 
   props: {
     img: string,
     alt: string,
+    descr: string,
   }
 
   componentDidMount() {
@@ -31,7 +33,7 @@ export default class Image extends React.PureComponent {
   }
 
   render() {
-    const {img, alt} = this.props;
+    const {img, alt, descr} = this.props;
     return (
       <li className={`image ${this.state.isZoomed ? 'is-zoomed' : ''}`}>
         <img
