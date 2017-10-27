@@ -1,7 +1,10 @@
 @import "../../../app/styles/_theme.scss";
 
-li{
+.menu {
+  padding-bottom: 5px;
+  border-bottom: .2rem solid transparent;
   &.active {
     border-bottom: .2rem solid $pink;
+    padding-bottom: 5px;
   }
 }

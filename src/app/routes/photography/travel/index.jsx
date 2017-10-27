@@ -30,7 +30,7 @@ export default class PhotographyAerial extends React.PureComponent {
   render() {
     return (
       <div className="photo-content">
-        <h2>Aerial collection</h2>
+        <h2>Travel collection</h2>
         <p>Selection of my aerial photo collections. All of these photos were taken by me personally using different tools.<br/>In most cases I've used a drone but there are cases where a shot was taken from a plane, helicopter, hight building etc. </p>
         <PortfolioImage
           img={"../../img/portfolio/aerial/riga.jpg"}
