@@ -57,7 +57,7 @@ export default class Wrapper extends React.Component {
             <Header />
             {children}
             <Footer />
-          </div> 
+          </div>
       </div>
     );
   }

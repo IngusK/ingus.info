@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import {NavLink, withRouter} from 'react-router-dom';
 import {database} from "firebase";
 
 import style from './styles.scss';
@@ -23,8 +23,8 @@ import style from './styles.scss';
 // };
 
 const MenuLink = ({ location: {pathname}, title = 'Home page', url = '/' }) => (
-  <li className={pathname === url ? 'active' : ''}>
-    <Link to={url}>{title}</Link>
+  <li className={`menu ${pathname.indexOf(url) !== -1 ? 'active' : ''}`}>
+    <NavLink to={url}>{title}</NavLink>
   </li>
 );
 

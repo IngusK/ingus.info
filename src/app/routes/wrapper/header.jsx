@@ -1,6 +1,6 @@
 import React from 'react';
 import {database} from "firebase";
-import {Link, withRouter} from 'react-router-dom';
+import {NavLink, withRouter} from 'react-router-dom';
 import Menu from '../../components/menu/index.jsx';
 
 import styles from './styles/styles-header.scss';
@@ -32,36 +32,36 @@ export default class Header extends React.Component {
     return (
       <header>
         <div className="logo">
-          <Link to='/'><h1>Ingus<span>.info</span></h1></Link>
+          <NavLink to='/'><h1>Ingus<span>.info</span></h1></NavLink>
           <h2>Travel. Photography. Coding</h2>
         </div>
         <nav>
           <ul className="nav-large">
             <Menu
-              title={'Travel'}
-              url={'/travel'}
+              title='Travel'
+              url='/travel'
             />
             <Menu
-              title={'Story Blog'}
-              url={'/story-blog'}
+              title='Story Blog'
+              url='/story-blog'
             />
             <Menu
-              title={'Photography'}
-              url={'/photography'}
+              title='Photography'
+              url='/photography'
             />
           </ul>
           <ul className="nav-small">
             <Menu
-              title={'About'}
-              url={'/about'}
+              title='About'
+              url='/about'
             />
             <Menu
-              title={'CTO'}
-              url={'/cto'}
+              title='CTO'
+              url='/cto'
             />
             <Menu
-              title={'CV'}
-              url={'/cv'}
+              title='CV'
+              url='/cv'
             />
           </ul>
         </nav>
