@@ -1,35 +1,79 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {database} from "firebase";
 
 import style from './styles.scss';
 
-export default class Blog extends React.PureComponent {
+export default class Posts extends React.PureComponent {
 
   constructor(...args) {
     super(...args);
-    this.getValue = this.getValue.bind(this);
+    this.getBlogPosts = this.getBlogPosts.bind(this);
+    this.getMainPost = this.getMainPost.bind(this);
   }
 
   state = {
-    blogPageContent: [],
+    posts: [],
+    lastPost: {},
   }
 
   componentDidMount() {
-    var blogPage = database().ref('blog/');
-    blogPage.on('value', (data) => {
-      this.setState({ blogPageContent: data.val() });
-    });
+    this.getBlogPosts();
+    this.getMainPost();
   };
 
-  getValue(val, nr) {
-    return this.state.blogPageContent[nr] && this.state.blogPageContent[nr][val];
+  getBlogPosts() {
+    var posts = database().ref('posts/').limitToLast(9);
+    posts.on('value', (data) => {
+      // get last 9 posts, reverse the order and remove first element
+      const posts = data.val().reverse().slice(1);
+      // save posts into state
+      this.setState({ posts });
+    });
+  }
+
+  getMainPost() {
+    var posts = database().ref('posts/').limitToLast(1);
+    posts.on('value', (data) => {
+      // get last/latest post
+      const post = data.val();
+      // returned post is object with value key
+      // get the right key. We don't know which key gets returned
+      // so we get a massive with all keys in Object and get the first key (which ever it is)
+      const elementKey = Object.keys(post)[0];
+      // save post into state with the received key
+      this.setState({ lastPost: post[elementKey] });
+    });
   }
 
   render() {
+    const { lastPost, posts } = this.state;
     return (
       <div className="blog-content">
-        Blog content
+        <div className="top-slider">
+          <div className="slider-description">
+            <h3>{lastPost.date}</h3>
+            <NavLink to=''><h2>{lastPost.title}</h2></NavLink>
+            <h5>{lastPost.category}</h5>
+            <p>{lastPost.description}</p>
+          </div>
+          <div className="slider-photo">
+            <NavLink to=''><img src={lastPost.photo} alt={lastPost.title} /></NavLink>
+          </div>
+        </div>
+
+        <h2>Welcome to my blog</h2>
+        <div className="posts">
+          {posts.map((post, index) => (
+            <div className={`post-${index + 1}`} key={index}>
+              <NavLink to=''><img src={post.photo} alt={post.title} /></NavLink>
+              <h3>{post.date}</h3>
+              <NavLink to=''><h4>{post.title}</h4></NavLink>
+              <h5>{post.category}</h5>
+              <p>{post.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

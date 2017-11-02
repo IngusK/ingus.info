@@ -1,26 +1,249 @@
 @import "../../../app/styles/_theme.scss";
 
 .blog-content {
-  display: grid;
+  display: block;
   grid-area: content;
-  margin: 5rem auto 0;
+  margin: 0 auto;
   max-width: 128rem;
   width: 100%;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr;
-  align-items: flex-start;
+  position: relative;
+  grid-template-rows: auto auto auto 2fr;
   grid-template-areas:
-                       "title"
-                       "content";
-  @media #{$mobile} {
-    margin: 7rem auto 0;
+                       "slider slider slider"
+                       "content content content";
+  @media #{$tablet} {
+    grid-template-areas: "title title title"
+                         "slider slider slider"
+                         "subtitle subtitle subtitle"
+                         "content content content";
   }
-  @media #{$mobileLarge} {
-    margin: 4rem auto 0;
+  h1 {
+    grid-area: title;
+    margin: 3rem auto 1rem;
+    text-align: center;
+    font-family: $lato;
+    font-size: 2rem;
+    line-height: 3.5rem;
+    width: 100%;
+    display: none;
+    @media #{$tablet} {
+      display: block;
+    }
+    span {
+      font-size: 3.5rem;
+    }
   }
-  @media #{$tabletLarge} {
-    grid-template-columns: 37rem 3fr;
-    grid-template-areas: "title content"
-                         "title content";
+  h2 {
+    grid-area: subtitle;
+    font-size: 2.6rem;
+    margin: 5rem 0 2rem;
+  }
+  .arrow {
+    width: 10rem;
+    position: absolute;
+    left: 30%;
+    top: 3rem;
+    transform: rotate(220deg);
+    display: none;
+    @media #{$tablet} {
+      display: block;
+    }
+  }
+  .top-slider {
+    display: flex;
+    grid-area: slider;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 4rem 0;
+    @media #{$tablet} {
+      flex-direction: row;
+      &.reverse {
+        flex-direction: row-reverse;
+      }
+    }
+    .slider-description {
+      text-align: left;
+      @media #{$tablet} {
+        width: 50%;
+        padding-right: 2rem;
+        h2, h3, h5 {
+          text-align: left;
+        }
+      }
+      h3 {
+        font: 300 1.5rem $lato;
+        margin-top: 3rem;
+        @media #{$mobile} {
+          margin-top: 4rem;
+        }
+        @media #{$tablet} {
+          font: 300 1.7rem $lato;
+          margin-top: 0;
+        }
+      }
+      h2 {
+        font: 300 2.8rem $lato;
+        line-height: 3rem;
+        margin: 1rem 0;
+        display: inline-block;
+        @media #{$mobile} {
+          font: 300 3.8rem $lato;
+          line-height: 4rem;
+        }
+        &:after {
+          content: "";
+          background: $pink;
+          width: 7rem;
+          height: .4rem;
+          display: block;
+          margin: 1.5rem 0 1.5rem 0rem;
+          @media #{$mobile} {
+            margin: 1.5rem 0 2.5rem -1.5rem;
+          }
+          @media #{$tablet} {
+            margin: 1.5rem 0 2.5rem -2rem;
+          }
+        }
+        &:hover {
+          color: $pink;
+        }
+      }
+      h5 {
+        font: 300 1.5rem $lato;
+        margin-bottom: 2rem;
+      }
+      p {
+        text-align: left;
+        font: 300 1.8rem $lato;
+        line-height: 3rem;
+      }
+    }
+    .slider-photo {
+      img {
+        object-fit: cover;
+        width: 100%;
+        max-width: 100%;
+        @media #{$tablet} {
+          max-width: 60rem;
+        }
+      }
+    }
+  }
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4rem;
+    grid-template-areas:
+                        "post1"
+                        "post2"
+                        "post3"
+                        "post4"
+                        "post5"
+                        "post6"
+                        "post7";
+    margin-top: 3rem;
+    @media #{$tablet} {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+                          "post1 post1 post1"
+                          "post2 post2 post3"
+                          "post4 post5 post5"
+                          "post6 post7 post8";
+    }
+    img {
+      width: 100%;
+      max-height: 32rem;
+      object-fit: cover;
+      object-position: center;
+      @include transition;
+      @media #{$tablet} {
+        height: 35rem;
+      }
+      &:hover {
+        object-position: bottom right;
+      }
+    }
+    font: 300 2rem $lato;
+    line-height: 3rem;
+    margin: 1rem 0;
+    @media #{$mobile} {
+      font: 300 2rem $lato;
+      line-height: 3rem;
+    }
+    h4 {
+      font-size: 2.6rem;
+      display: inline-block;
+      &:hover {
+        color: $pink;
+      }
+      &:after {
+        content: "";
+        background: $pink;
+        width: 5rem;
+        height: .4rem;
+        display: block;
+        margin: 1rem 0 1rem -1.5rem;
+        @media #{$tablet} {
+          margin: 1.5rem 0 1.5rem -2rem;
+        }
+      }
+    }
+    h3 {
+      font: 300 1.4rem $lato;
+      margin: 1rem 0;
+    }
+    h5 {
+      font: 300 1.4rem $lato;
+    }
+    p {
+      text-align: left;
+      font: 300 1.6rem $lato;
+      line-height: 2.5rem;
+    }
+  }
+
+  .post-1 {
+    grid-area: post1;
+    @media #{$tablet} {
+      grid-area: post1
+    }
+  }
+  .post-2 {
+    grid-area: post2;
+    @media #{$tablet} {
+      grid-area: post2
+    }
+  }
+  .post-3 {
+    grid-area: post3;
+    @media #{$tablet} {
+      grid-area: post3
+    }
+  }
+  .post-4 {
+    grid-area: post4;
+    @media #{$tablet} {
+      grid-area: post4
+    }
+  }
+  .post-5 {
+    grid-area: post5;
+    @media #{$tablet} {
+      grid-area: post5
+    }
+  }
+  .post-6 {
+    grid-area: post6;
+    @media #{$tablet} {
+      grid-area: post6
+    }
+  }
+  .post-7 {
+    grid-area: post7;
+    @media #{$tablet} {
+      grid-area: post7
+    }
   }
 }

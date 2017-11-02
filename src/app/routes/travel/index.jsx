@@ -6,7 +6,7 @@ import ReactTooltip from 'react-tooltip';
 import style from './styles.scss';
 
 const Travel = (props, { instagram }) => {
-  if (instagram.length < 1) return null;
+  if (instagram && instagram.length < 1) return null;
   console.log('Instagram API data', instagram);
 
   return (
@@ -19,21 +19,26 @@ const Travel = (props, { instagram }) => {
       <div className="map-wrapper">
         <WorldMap />
       </div>
-      <h3>Some of my recent travel adventures..</h3>
-      <h4>Feel free to follow me on <a href="https://www.instagram.com/ingus/" target="_blank">Instagram</a></h4>
-      <div className="photo-grid">
-        {instagram.map((obj, key) => (
-          <a href={obj.link} key={key} target="_blank">
-            <img src={obj.images.low_resolution.url} alt={obj.caption.text.substring(0, 50)} />
-          </a>
-        ))}
-      </div>
+
+      {instagram &&
+        <div>
+          <h3>Some of my recent travel adventures..</h3>
+          <h4>Feel free to follow me on <a href="https://www.instagram.com/ingus/" target="_blank">Instagram</a></h4>
+          <div className="photo-grid">
+            {instagram.map((obj, key) => (
+              <a href={obj.link} key={key} target="_blank">
+                <img src={obj.images.low_resolution.url} alt={obj.caption.text.substring(0, 50)} />
+              </a>
+            ))}
+          </div>
+        </div>
+      }
     </div>
   );
 }
 
 Travel.contextTypes = {
-  instagram: propTypes.array.isRequired,
+  instagram: propTypes.array,
 };
 
 export default Travel;
