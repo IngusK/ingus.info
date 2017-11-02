@@ -106,7 +106,7 @@ export default class WorldMap extends React.PureComponent {
           <g className="markers">
             {
                 this.state.cities.length > 0 && this.state.cities.map((city, i) => (
-                <a href={city.url || 'https://triptemptation.com'} key={i} target="_blank">
+                <a href={city.url || 'https://www.triptemptation.com'} key={i} target="_blank">
 
                 <circle
                   data-tip={city.name}
