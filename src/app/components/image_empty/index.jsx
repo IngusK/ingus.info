@@ -19,12 +19,12 @@ export default class ImageEmpty extends React.PureComponent {
     const {img, alt} = this.props;
     return (
       <li className="category-image">
+        <h3>{alt}</h3>
         <img
           alt={alt}
           ref="image"
           src={img}
         />
-        <h3>{alt}</h3>
       </li>
     );
   }

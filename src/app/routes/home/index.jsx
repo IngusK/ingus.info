@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Arrow from '../../../../img/icons/arrow.svg';
 import {database} from "firebase";
 
@@ -56,12 +56,12 @@ export default class Posts extends React.PureComponent {
         <div className="top-slider">
           <div className="slider-description">
             <h3>{lastPost.date}</h3>
-            <Link to=''><h2>{lastPost.title}</h2></Link>
+            <NavLink to=''><h2>{lastPost.title}</h2></NavLink>
             <h5>{lastPost.category}</h5>
             <p>{lastPost.description}</p>
           </div>
           <div className="slider-photo">
-            <Link to=''><img src={lastPost.photo} alt={lastPost.title} /></Link>
+            <NavLink to=''><img src={lastPost.photo} alt={lastPost.title} /></NavLink>
           </div>
         </div>
 
@@ -69,9 +69,9 @@ export default class Posts extends React.PureComponent {
         <div className="posts">
           {posts.map((post, index) => (
             <div className={`post-${index + 1}`} key={index}>
-              <Link to=''><img src={post.photo} alt={post.title} /></Link>
+              <NavLink to=''><img src={post.photo} alt={post.title} /></NavLink>
               <h3>{post.date}</h3>
-              <Link to=''><h4>{post.title}</h4></Link>
+              <NavLink to=''><h4>{post.title}</h4></NavLink>
               <h5>{post.category}</h5>
               <p>{post.description}</p>
             </div>

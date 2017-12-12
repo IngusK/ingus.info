@@ -41,6 +41,10 @@ h2 {
   display: block;
 }
 
+.medium-zoom--open {
+  overflow-x: hidden;
+}
+
 @supports(display: grid) {
   .message {
     display: none;

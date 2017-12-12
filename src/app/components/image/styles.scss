@@ -3,8 +3,7 @@
 .image {
   img {
     object-fit: cover;
-    object-position: center;
-    transition: .3s ease-in-out all;
+  
   }
   &.is-zoomed {
     img {

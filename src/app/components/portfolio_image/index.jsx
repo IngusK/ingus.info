@@ -4,7 +4,7 @@ import mediumZoom from 'medium-zoom';
 
 import style from './styles.scss';
 
-export default class Image extends React.PureComponent {
+export default class PortfolioImage extends React.PureComponent {
 
   constructor(args) {
     super(args);
@@ -16,7 +16,7 @@ export default class Image extends React.PureComponent {
 
   static defaultProps = {
     img: '',
-    alt: 'Default alt text',
+    alt: '',
     descr: '',
   }
 
@@ -35,13 +35,14 @@ export default class Image extends React.PureComponent {
   render() {
     const {img, alt, descr} = this.props;
     return (
-      <li className={`image ${this.state.isZoomed ? 'is-zoomed' : ''}`}>
+      <div className={`portfolio-image ${this.state.isZoomed ? 'is-zoomed' : ''}`}>
         <img
           alt={alt}
           ref="image"
           src={img}
         />
-      </li>
+        <p>{descr}</p>
+      </div>
     );
   }
 };
