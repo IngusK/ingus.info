@@ -43,7 +43,7 @@ export default class Header extends React.Component {
             />
             <Menu
               title='Story Blog'
-              url='/story-blog'
+              url='/blog'
             />
             <Menu
               title='Photography'

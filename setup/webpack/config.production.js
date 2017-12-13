@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 var path = require('path');
 
 const ROOT_DIR = path.resolve(__dirname, '../../');
@@ -82,6 +84,7 @@ module.exports = {
       }),
       new webpack.optimize.UglifyJsPlugin({
           beautify: false,
+          parallel: true,
           mangle: {
               screw_ie8: true,
               keep_fnames: true
