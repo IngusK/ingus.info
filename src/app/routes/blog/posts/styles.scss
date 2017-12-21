@@ -1,10 +1,10 @@
 @import "../../../../app/styles/_theme.scss";
 
-.blog-content {
+.blog-content,
+.blog-post  {
   display: block;
   grid-area: content;
   margin: 0 auto;
-  max-width: 128rem;
   width: 100%;
   position: relative;
   grid-template-rows: auto auto auto 2fr;
@@ -17,6 +17,63 @@
                          "subtitle subtitle subtitle"
                          "content content content";
   }
+}
+
+.blog-post {
+  .blog-post-content {
+    max-width: 75rem;
+    margin: 0 auto;
+    h2 {
+      font-size: 4.2rem;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-top: 7rem;
+    }
+    p {
+      font: 1.85rem $medium;
+      line-height: 1.78;
+      letter-spacing: -.01em;
+      margin-top: 2.9rem;
+      a {
+        border-bottom: .2rem solid $pink;
+        color: $text;
+        &:hover {
+          color: $pink;
+        }
+      }
+    }
+  }
+  .blog-post-slide {
+    margin: 3rem 0;
+    img {
+      width: 100%;
+      height: 50rem;
+      object-fit: cover;
+    }
+    h5 {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: $text;
+      a {
+        border-bottom: .2rem solid $pink;
+        padding-bottom: .2rem;
+        color: $text;
+        &:hover {
+          color: $pink;
+        }
+      }
+    }
+  }
+}
+
+.blog-content {
+  max-width: 128rem;
   h1 {
     grid-area: title;
     margin: 3rem auto 1rem;
