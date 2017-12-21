@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Image from '../../../../components/image/index.jsx';
 import {database} from "firebase";
 
 import style from '../styles.scss';
@@ -53,17 +54,53 @@ export default class BogPost extends React.PureComponent {
           <p>Whatever technique you use, it is important to bear in mind how it works — and most importantly how your words affect the person you are talking to.</p>
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
           <div className="blog-post-photo left">
-            <img
-              alt="Alt text"
-              src="../../../../../../img/blog/1/elephant.jpeg"
+            <Image
+              img={"../../../../../../img/blog/1/soldier.jpeg"}
+              alt={"Aerial image of Riga old town"}
             />
             <h5>Photo by <a href="https://www.shutterstock.com/g/inguskruklitis" target="_blank">Bdougherty on Pixbay</a></h5>
           </div>
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/5yluPQd2qYA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+          <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
+          <iframe width="100%" height="400" src="https://www.youtube.com/embed/5yluPQd2qYA" frameBorder="0" gesture="media" allow="encrypted-media" allowFullScreen></iframe>
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
           <p>So when you pitch any idea, every word that you use causes the person listening to fire up requests along neural fibres that gather up the necessary images and combine them, ready to picture the game.</p>
+        </div>
+        <div className="related-posts">
+          <h2>You may also be interested in</h2>
+          <ul>
+            <li>
+              <a href="#">
+                <img
+                  alt="Alt text"
+                  src="../../../../../../img/blog/1/elephant.jpeg"
+                />
+                <h5>Travel</h5>
+                <h3>Can VR be used for social change?</h3>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  alt="Alt text"
+                  src="../../../../../../img/blog/1/elephant.jpeg"
+                />
+                <h5>Travel</h5>
+                <h3>Can VR be used for social change?</h3>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  alt="Alt text"
+                  src="../../../../../../img/blog/1/soldier.jpeg"
+                />
+                <h5>Travel</h5>
+                <h3>Can VR be used for social change?</h3>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     );
