@@ -24,16 +24,32 @@
   @media #{$tablet} {
     margin-top: 3rem;
   }
+  h4 {
+    text-align: center;
+    font: italic 2.2rem/3rem $medium;
+    max-width: 50rem;
+    margin: 6rem auto;
+    color: $text;
+    &:after {
+      content: '';
+      border-bottom: .3rem solid $pink;
+      position: absolute;
+      width: 15rem;
+      height: 4.5rem;
+      left: 50%;
+      margin-left: -7.5rem;
+    }
+  }
   h5 {
     margin-top: 1rem;
     font-size: 1.4rem;
     font-weight: 400;
     text-align: center;
-    color: $text;
+    color: $grey;
     a {
       border-bottom: .2rem solid $pink;
       padding-bottom: .2rem;
-      color: $text;
+      color: $grey;
       &:hover {
         color: $pink;
       }
@@ -77,12 +93,47 @@
   }
 
   .blog-post-photo {
+    img,
+    iframe {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+      object-position: center center;
+      margin-bottom: .3rem;
+    }
+    .iframe-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+	    padding-top: 2.5rem;
+      height: 0;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    h5 {
+      margin-bottom: 1rem;
+    }
     &.left {
       margin: 0;
       float: none;
       @media #{$tablet} {
         float: left;
         margin: 2rem 3rem 0 -10rem;
+      }
+      img {
+        @media #{$tablet} {
+          max-width: 50rem;
+        }
+      }
+      .iframe-wrapper {
+        @media #{$tablet} {
+          width: 50rem;
+        }
       }
     }
     &.right {
@@ -92,15 +143,26 @@
         float: right;
         margin: 2rem -10rem 0 3rem;
       }
+      img {
+        @media #{$tablet} {
+          max-width: 50rem;
+        }
+      }
+      .iframe-wrapper {
+        @media #{$tablet} {
+          width: 50rem;
+        }
+      }
     }
-    img {
-      width: 100%;
-      max-width: 100%;
-      object-fit: cover;
-      object-position: center center;
-      margin-bottom: .3rem;
+    &.double {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 2rem 0;
+      margin: 4rem 0 0;
       @media #{$tablet} {
-        max-width: 50rem;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 2rem;
+        margin: 4rem -10rem 0;
       }
     }
   }
