@@ -31,6 +31,10 @@ h2 {
   font-family: $lato;
 }
 
+.clearfix {
+  clear: both;
+}
+
 .message {
   font-size: 2rem;
   width: 100%;

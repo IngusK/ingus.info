@@ -45,6 +45,7 @@ export default class BogPost extends React.PureComponent {
           <p>And yet, <a href="#">at the start everyone</a> has an idea in their head what that game looks like. The concept is clear. Mostly.</p>
           <p>The path that takes a game from concept to execution is a long and arduous one — and very similar for any idea. In any industry, when someone comes to you with a new idea and wants to create something from scratch, then everyone has the same set of problems.</p>
           <p>The first problem is how to communicate your vision.</p>
+          <h4>Stay away from negative people they have a problem for every solution</h4>
           <p>How do you take an idea to your manager and talk about it in a way that the manager will understand, appreciate and dream alongside you?</p>
           <p>How do game ideas become reality?</p>
           <h3>Simon P P Williams is COO of Mitenkai — Find Your Way</h3>
@@ -53,7 +54,7 @@ export default class BogPost extends React.PureComponent {
           <p>This <a href="#">particular</a> language problem has been solved to an extent in Hollywood by the elevator pitch. As any writer will tell you, trying to distill anything into a short sentence or paragraph is a lot harder than writing 1000 words about something. But the elevator pitch has developed into a formula for doing just that. And the games industry has something similar — with different terminology but the same purpose: to communicate simply and clearly what the game will be.</p>
           <p>Whatever technique you use, it is important to bear in mind how it works — and most importantly how your words affect the person you are talking to.</p>
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
-          <div className="blog-post-photo left">
+          <div className="blog-post-photo right">
             <Image
               img={"../../../../../../img/blog/1/soldier.jpeg"}
               alt={"Aerial image of Riga old town"}
@@ -63,9 +64,31 @@ export default class BogPost extends React.PureComponent {
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
-          <iframe width="100%" height="400" src="https://www.youtube.com/embed/5yluPQd2qYA" frameBorder="0" gesture="media" allow="encrypted-media" allowFullScreen></iframe>
+          <div className="blog-post-photo left">
+            <div className="iframe-wrapper">
+              <iframe src="https://www.youtube.com/embed/5yluPQd2qYA" frameBorder="0" gesture="media" allow="encrypted-media" allowFullScreen></iframe>
+            </div>
+            <h5>Photo by <a href="https://www.shutterstock.com/g/inguskruklitis" target="_blank">Bdougherty on Pixbay</a></h5>
+          </div>
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
           <p>So when you pitch any idea, every word that you use causes the person listening to fire up requests along neural fibres that gather up the necessary images and combine them, ready to picture the game.</p>
+          <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
+          <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
+          <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
+          <div className="blog-post-photo double">
+            <Image
+              img={"../../../../../../img/sample.jpg"}
+              alt={"Aerial image of Riga old town"}
+            />
+            <Image
+              img={"../../../../../../img/sample.jpg"}
+              alt={"Aerial image of Riga old town"}
+            />
+          </div>
+          <h5>Photo by <a href="https://www.shutterstock.com/g/inguskruklitis" target="_blank">Bdougherty on Pixbay</a></h5>
+          <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
+          <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
+          <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
         </div>
         <div className="related-posts">
           <h2>You may also be interested in</h2>
