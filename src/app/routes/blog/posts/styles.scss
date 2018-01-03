@@ -59,9 +59,15 @@
     max-width: 75rem;
     margin: 0 auto;
     h2 {
-      font-size: 4.2rem;
+      font-size: 3rem;
       font-weight: 600;
-      margin-top: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+      @media #{$tablet} {
+        font-size: 4rem;
+        margin-top: 2rem;
+        text-align: left;
+      }
     }
     h3 {
       font-size: 2.5rem;
@@ -93,8 +99,7 @@
   }
 
   .blog-post-photo {
-    img,
-    iframe {
+    img {
       width: 100%;
       height: 100%;
       max-width: 100%;
@@ -152,6 +157,12 @@
         @media #{$tablet} {
           width: 50rem;
         }
+      }
+    }
+    &.single {
+      margin: 4rem 0 0;
+      @media #{$tablet} {
+        margin: 4rem -10rem 0;
       }
     }
     &.double {
