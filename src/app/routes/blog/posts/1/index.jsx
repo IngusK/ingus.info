@@ -1,9 +1,63 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Image from '../../../../components/image/index.jsx';
+import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share';
 import {database} from "firebase";
 
 import style from '../styles.scss';
+
+const {
+  FacebookShareButton,
+  GooglePlusShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  PinterestShareButton,
+  VKShareButton,
+  OKShareButton,
+  TelegramShareButton,
+  WhatsappShareButton,
+  RedditShareButton,
+  EmailShareButton,
+  TumblrShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+} = ShareButtons;
+
+const {
+  FacebookShareCount,
+  GooglePlusShareCount,
+  LinkedinShareCount,
+  PinterestShareCount,
+  VKShareCount,
+  OKShareCount,
+  RedditShareCount,
+  TumblrShareCount,
+} = ShareCounts;
+
+const FacebookIcon = generateShareIcon('facebook');
+const TwitterIcon = generateShareIcon('twitter');
+const GooglePlusIcon = generateShareIcon('google');
+const LinkedinIcon = generateShareIcon('linkedin');
+const PinterestIcon = generateShareIcon('pinterest');
+const VKIcon = generateShareIcon('vk');
+const OKIcon = generateShareIcon('ok');
+const TelegramIcon = generateShareIcon('telegram');
+const WhatsappIcon = generateShareIcon('whatsapp');
+const RedditIcon = generateShareIcon('reddit');
+const TumblrIcon = generateShareIcon('tumblr');
+const MailruIcon = generateShareIcon('mailru');
+const EmailIcon = generateShareIcon('email');
+const LivejournalIcon = generateShareIcon('livejournal');
+
+// Overrides sample of FB default styles
+const facebookIconStyles = {
+  logoFillColor: '#fff',
+  size: 42,
+  round: true,
+  iconBgStyle: {
+    fill: 'red'
+  }
+};
 
 export default class BogPost extends React.PureComponent {
 
@@ -28,6 +82,8 @@ export default class BogPost extends React.PureComponent {
   }
 
   render() {
+    const shareUrl = 'http://github.com';
+    const title = 'GitHub';
     return (
       <div className="blog-post">
         <div className="blog-post-content">
@@ -90,6 +146,48 @@ export default class BogPost extends React.PureComponent {
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
           <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
         </div>
+        <FacebookShareButton
+            url={shareUrl}
+            quote={title}
+            className="Demo__some-network__share-button">
+            <FacebookIcon {...facebookIconStyles} />
+          </FacebookShareButton>
+
+          <FacebookShareCount
+            url={shareUrl}
+            className="Demo__some-network__share-count">
+            {count => count}
+          </FacebookShareCount>
+          <TwitterShareButton
+            url={shareUrl}
+            title={title}
+            className="Demo__some-network__share-button">
+            <TwitterIcon
+              size={32}
+              round />
+          </TwitterShareButton>
+          <TelegramShareButton
+            url={shareUrl}
+            title={title}
+            className="Demo__some-network__share-button">
+            <TelegramIcon size={32} round />
+          </TelegramShareButton>
+          <LinkedinShareButton
+            url={shareUrl}
+            title={title}
+            windowWidth={750}
+            windowHeight={600}
+            className="Demo__some-network__share-button">
+            <LinkedinIcon
+              size={32}
+              round />
+          </LinkedinShareButton>
+
+          <LinkedinShareCount
+            url={shareUrl}
+            className="Demo__some-network__share-count">
+            {count => count}
+          </LinkedinShareCount>
         <div className="related-posts">
           <h2>You may also be interested in</h2>
           <ul>
