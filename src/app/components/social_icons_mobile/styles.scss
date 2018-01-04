@@ -1,15 +1,11 @@
 @import "../../../app/styles/_theme.scss";
 
-.social-icons {
-  display: inline-block;
-  position: relative;
-  display: none;
-  float: left;
-  top: 10rem;
-  margin-left: 5rem;
+.social-icons-mobile {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4rem;
   @media #{$tablet} {
-    position: sticky;
-    display: block;
+    display: none;
   }
   &>div {
     margin-right: 1rem;
