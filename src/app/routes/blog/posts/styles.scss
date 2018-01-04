@@ -7,16 +7,6 @@
   margin: 0 auto;
   width: 100%;
   position: relative;
-  grid-template-rows: auto auto auto 2fr;
-  grid-template-areas:
-                       "slider slider slider"
-                       "content content content";
-  @media #{$tablet} {
-    grid-template-areas: "title title title"
-                         "slider slider slider"
-                         "subtitle subtitle subtitle"
-                         "content content content";
-  }
 }
 
 .blog-post {

@@ -1,0 +1,24 @@
+@import "../../../app/styles/_theme.scss";
+
+.social-icons {
+  display: inline-block;
+  position: sticky;
+  float: left;
+  top: 10rem;
+  margin-left: 5rem;
+  &>div {
+    margin-right: 1rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+    &>div {
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+.social-icon-item {
+  &:hover {
+    cursor: pointer;
+  }
+}
