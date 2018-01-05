@@ -2,6 +2,7 @@ import React from 'react';
 import {database} from "firebase";
 import {NavLink, withRouter} from 'react-router-dom';
 import Menu from '../../components/menu/index.jsx';
+import Bucket from '../../../../img/icons/bucket-list-icon.svg';
 
 import styles from './styles/styles-header.scss';
 
@@ -62,6 +63,10 @@ export default class Header extends React.Component {
             <Menu
               title='CV'
               url='/cv'
+            />
+            <Menu
+              title={<span><Bucket/></span>}
+              url='/bucket-list'
             />
           </ul>
         </nav>

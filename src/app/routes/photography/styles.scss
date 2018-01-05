@@ -2,9 +2,12 @@
 
 .photo-content {
   grid-area: content;
-  margin: 5rem auto 0;
+  margin: 7rem auto 0;
   max-width: 128rem;
   width: 100%;
+  @media #{$tablet} {
+    margin: 4rem auto 0;
+  }
   h2 {
     font-size: 4rem;
     font-family: $logo;
