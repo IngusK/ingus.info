@@ -1,0 +1,71 @@
+@import "../../../app/styles/_theme.scss";
+
+.bucket-content {
+  grid-area: content;
+  margin: 8rem auto 0;
+  max-width: 128rem;
+  width: 100%;
+  @media #{$tablet} {
+    margin: 4rem auto 0;
+  }
+ .title {
+   text-align: center;
+   h2 {
+     font-size: 4rem;
+     font-family: $logo;
+     @media #{$tablet} {
+       margin: 0 0 4rem 0;
+     }
+   }
+   p {
+     font-size: 1.8rem;
+     line-height: 2.8rem;
+     font-weight: 300;
+     margin: 2.5rem auto 0;
+     max-width: 98rem;
+     @media #{$tablet} {
+       margin: 2.5rem auto 0;
+     }
+     strong {
+       display: block;
+       margin: 15px 0;
+     }
+   }
+   a {
+     color: $grey;
+     border-bottom: .2rem solid $pink;
+     &:hover {
+       color: $pink;
+     }
+   }
+ }
+}
+
+.list {
+  text-align: center;
+  padding: 0;
+  margin: 5rem 0 0;
+  li {
+    margin: 1.6rem 0;
+    font: 2.6rem $hand;
+    list-style-type: decimal;
+    list-style-position: inside;
+    a {
+      &:hover {
+        border-bottom: .2rem solid $pink;
+        color: $pink;
+      }
+    }
+    &.done {
+      a {
+        color: $green;
+        text-decoration: line-through;
+        &:hover {
+          border-bottom: .2rem solid $pink;
+          color: $pink;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

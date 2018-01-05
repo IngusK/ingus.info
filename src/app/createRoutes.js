@@ -7,6 +7,7 @@ import About from './routes/about';
 import Cto from './routes/cto';
 import Cv from './routes/cv';
 import Travel from './routes/travel';
+import Bucket from './routes/bucket';
 import Photography from './routes/photography';
 import PhotographyAerial from './routes/photography/aerial';
 import PhotographyCity from './routes/photography/city';
@@ -25,6 +26,7 @@ const createRoutes = () => (
       <Route path="/cto" component={Cto}/>
       <Route path="/cv" component={Cv}/>
       <Route path="/travel" component={Travel}/>
+      <Route path="/bucket-list" component={Bucket}/>
       <Route exact path="/blog" component={Blog}/>
       <Route path="/blog/posts/1" component={BlogPost1}/>
       <Route path="/blog/posts/2" component={BlogPost2}/>
