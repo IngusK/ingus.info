@@ -65,7 +65,7 @@ export default class Header extends React.Component {
               url='/cv'
             />
             <Menu
-              title={<span><Bucket/></span>}
+              title={<Bucket/>}
               url='/bucket-list'
             />
           </ul>

@@ -1,0 +1,9 @@
+@import "../../../app/styles/_theme.scss";
+
+.company-block {
+  border-bottom: .1rem solid $ligthGray;
+  margin-bottom: 2rem;
+  &:last-child {
+    border: none;
+  }
+}
