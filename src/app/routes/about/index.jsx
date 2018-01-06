@@ -22,17 +22,7 @@ export default class About extends React.PureComponent {
     });
   };
 
-  // componentDidMount() {
-  //   var aboutPage = database().ref('about/');
-  //   aboutPage.on('value', (data) => {
-  //     const value = data.val();
-  //     const elementKey = Object.keys(value)[1];
-  //     this.setState({ aboutPageContent: value[elementKey] });
-  //   });
-  // };
-
   getValue(val, nr) {
-    console.log("TEST", this.state.aboutPageContent[nr]);
     return this.state.aboutPageContent[nr] && this.state.aboutPageContent[nr][val];
   }
 
@@ -44,7 +34,7 @@ export default class About extends React.PureComponent {
         </div>
         <div className="description">
           <h2>Who am I?</h2>
-          <h2>{this.getValue('title')}</h2>
+          <h2>{this.getValue('sub', 0)}</h2>
           <p>My name is Ingus Kruklitis. I grew up in Riga, Latvia. Since I was a child I've been quite a lot into sports, trvelling, designing and coding. Now many years later I'm still passionate about all fo those things. I also speak three languages - Latvian, Russian and English which can come very handy.</p>
           <h2>My skills</h2>
           <ul>

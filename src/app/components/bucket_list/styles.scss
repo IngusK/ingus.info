@@ -1,9 +1,26 @@
 @import "../../../app/styles/_theme.scss";
 
-.company-block {
-  border-bottom: .1rem solid $ligthGray;
-  margin-bottom: 2rem;
-  &:last-child {
-    border: none;
+li.bucket-list {
+  margin: 1.2rem auto;
+  font: 2.6rem $hand;
+  list-style-type: decimal;
+  list-style-position: inside;
+  color: $grey;
+  line-height: 3rem;
+  a {
+    color: $green;
+    text-decoration: line-through;
+    &:hover {
+      border-bottom: .2rem solid $pink;
+      color: $pink;
+      text-decoration: none;
+    }
+  }
+  &.done {
+    color: $green;
+    text-decoration: line-through;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }

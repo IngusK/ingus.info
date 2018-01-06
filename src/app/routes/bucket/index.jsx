@@ -9,52 +9,43 @@ export default class BucketList extends React.PureComponent {
 
   constructor(...args) {
     super(...args);
-    this.getValue = this.getValue.bind(this);
+    this.getBucketPosts = this.getBucketPosts.bind(this);
   }
 
   state = {
-    bucketPageContent: [],
+    bucketContent: [],
   }
 
   componentDidMount() {
-    var aboutPage = database().ref('bucket-list/');
-    aboutPage.on('value', (data) => {
-      this.setState({ bucketListPageContent: data.val() });
+    this.getBucketPosts();
+  };
+
+  getBucketPosts() {
+    var value = database().ref('bucketlist/');
+    value.on('value', (data) => {
+      const bucketContent = data.val();
+      this.setState({ bucketContent });
     });
   };
 
-  getValue(val, nr) {
-    return this.state.bucketListPageContent[nr] && this.state.bucketListPageContent[nr][val];
-  }
-
   render() {
+    const { bucketContent } = this.state;
     return (
       <div className="bucket-content">
         <div className="title">
           <h2>Everything is possible..</h2>
-          <p>Bucket list is a never-ending work in progress, continuously being altered, updated, and improved.</p>
+          <p><strong>Bucket list</strong> is a never-ending work in progress, continuously being altered, updated, and improved.</p>
           <p>It is my hope that you use these ideas as inspiration to create your own crazy fun bucket list. And then you take at least one step everyday to complete the items on it. This bucket list has completely changed my life (for the better, of course!) and I wish the same for you.</p>
         </div>
         <ol className="list">
-          <BucketListItem
-            done
-            goal='Lie under the stars'
-            link='/photography/aerial'
+        {bucketContent.map((item, index) => (
+          <BucketListItem key={index}
+            done={item.done}
+            goal={item.goal}
+            link={item.url}
           />
-          <BucketListItem
-            goal='Turn off your cell phone for a week'
-          />
-          <BucketListItem
-            goal='Swim with the dolphins'
-          />
-          <BucketListItem
-            goal='Diving/Snorkeling in a tropical place'
-          />
-          <BucketListItem
-            goal='Drink Tekila in Mexico'
-          />
+        ))}
         </ol>
-
       </div>
     );
   }
