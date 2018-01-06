@@ -26,10 +26,6 @@
      @media #{$tablet} {
        margin: 2.5rem auto 0;
      }
-     strong {
-       display: block;
-       margin: 15px 0;
-     }
    }
    a {
      color: $grey;
@@ -44,29 +40,7 @@
 .list {
   text-align: center;
   padding: 0;
-  margin: 5rem 0 0;
-  li {
-    margin: 1.6rem 0;
-    font: 2.6rem $hand;
-    list-style-type: decimal;
-    list-style-position: inside;
-    color: $grey;
-    a {
-      &:hover {
-        border-bottom: .2rem solid $pink;
-        color: $pink;
-      }
-    }
-    &.done {
-      a {
-        color: $green;
-        text-decoration: line-through;
-        &:hover {
-          border-bottom: .2rem solid $pink;
-          color: $pink;
-          text-decoration: none;
-        }
-      }
-    }
-  }
+  margin: 3rem 0 0;
+  display: flex;
+  flex-direction: column;
 }

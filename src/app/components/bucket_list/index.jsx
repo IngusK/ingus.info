@@ -5,8 +5,8 @@ import {NavLink, withRouter} from 'react-router-dom';
 import style from './styles.scss';
 
 const BucketListItem = ({goal, done, link = '/photography/'}) => (
-  <li className={`${done && 'done'}`}>
-    {done ?
+  <li className={`bucket-list ${done && 'done'}`}>
+    {link ?
       <NavLink to={link}>
         {goal}
       </NavLink>
