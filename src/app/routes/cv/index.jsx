@@ -19,18 +19,18 @@ export default class CV extends React.PureComponent {
   }
 
   state = {
-    aboutPageContent: [],
+    cvPageContent: [],
   }
 
   componentDidMount() {
     var aboutPage = database().ref('cv/');
     aboutPage.on('value', (data) => {
-      this.setState({ aboutPageContent: data.val() });
+      this.setState({ cvPageContent: data.val() });
     });
   };
 
   getValue(val, nr) {
-    return this.state.aboutPageContent[nr] && this.state.aboutPageContent[nr][val];
+    return this.state.cvPageContent[nr] && this.state.cvPageContent[nr][val];
   }
 
   render() {
@@ -39,147 +39,147 @@ export default class CV extends React.PureComponent {
         <div className="main-info">
           <img src="../../../../img/Ingus_kruklitis.jpg" alt="Ingus Kruklitis CV background" />
           <div className="description">
-            <h2>Ingus Kruklitis</h2>
-            <h3>CTO / Front-End developer / Web designer / Travel Photographer</h3>
-            <p>Hi there!<br/>In short I am an experienced <strong>web designer</strong> and <strong>front-end developer</strong> based in Riga, Latvia as well as a professional <strong>travel photographer</strong>. I get joy from crafting great user experiences by creating amazing products using latest technologies. Travelling the world is my second passion, visiting different places and most importantly connecting with people in search of new endless possibilities in life..</p>
+            <h2>{this.getValue('nameBlock', 0)}</h2>
+            <h3>{this.getValue('nameBlock', 1)}</h3>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('nameBlock', 2)}} />
           </div>
         </div>
         <div className="cv_info">
           <div className="coding">
-            <h3><Code />Coding</h3>
-            <p>As I've already mentioned above I'm a <strong>Front-End developer</strong> with more than 8 years of experience in web development. I still remember the times when we had to use tiny png/gif images to have rounded-borders and create our layouts using tables with rows and columns. These days luckily we've switched to latest technologies which make everything just so much simpler but at the same time there's so so much more stuff to handle. Below is the list of technologies that I use on my everyday bases:</p>
+            <h3><Code />{this.getValue('coding', 0)}</h3>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 1)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 2)}} />
             <ul>
-              <li>HTML5, CSS3/CSS4 (including CSS grids and rem units)</li>
-              <li>SCSS, <span>LESS (past)</span>, PostCSS</li>
-              <li>Javascript, ES6, JSON</li>
-              <li>React, Babel, Node, Yarn, Webpack</li>
-              <li>Mobile first approach</li>
-              <li>Crossbrowsers support, SEO, GA, AB testing, Heat maps</li>
-              <li>Git, Stash</li>
+              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 3)}} />
+              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 4)}} />
+              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 5)}} />
+              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 6)}} />
+              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 7)}} />
+              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 8)}} />
             </ul>
-            <p>Ou, and of course Atom and Mac OS</p>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 9)}} />
           </div>
           <div className="travel">
-            <h3><Camera />Travel Photography</h3>
-            <p>Besides my IT education I've also become a professional travel photographer. I go to different places in search of the ideal shot, unique sunset, the perfect moment. And the best part is that I get to meet so many cool people during my journeys. So far I've been to 42 different countries and hundreds of cities world wide and have no intensions of stopping. The stuff that I'm using:</p>
+            <h3><Camera />{this.getValue('travel', 0)}</h3>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('travel', 1)}} />
             <ul>
-              <li>Canon 5D Mark III (planning to switch to Sony A7RII)</li>
-              <li>DJi Mavic Pro</li>
-              <li>Go Pro 5 Black with Dome port</li>
-              <li>Sirui T-025X Carbon Fiber Tripod</li>
-              <li>Lowepro ViewPoint BP 250 AW backpack</li>
+              <li dangerouslySetInnerHTML={{__html:this.getValue('travel', 2)}} />
+              <li dangerouslySetInnerHTML={{__html:this.getValue('travel', 3)}} />
+              <li dangerouslySetInnerHTML={{__html:this.getValue('travel', 4)}} />
+              <li dangerouslySetInnerHTML={{__html:this.getValue('travel', 5)}} />
+              <li dangerouslySetInnerHTML={{__html:this.getValue('travel', 6)}} />
             </ul>
-            <p>If you're interested in Travel or Aerial photography / footage feel free to contact me.</p>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('travel', 7)}} />
           </div>
           <div className="work-exp">
-            <h3>Work Experience</h3>
+            <h3>{this.getValue('workExperience', 0)}</h3>
             <Company
-              date={'2016 - Present'}
-              company={'AS 4Finance Group'}
-              location={'Riga, Latvia'}
-              position={'Front-End Developer'}
-              description={"Creating world wide popular web services using React Framework, Redux and latest technologies."}
+              date={this.getValue('4finance', 0)}
+              company={this.getValue('4finance', 1)}
+              location={this.getValue('4finance', 2)}
+              position={this.getValue('4finance', 3)}
+              description={this.getValue('4finance', 4)}
             />
             <Company
-              date={'2015 - 2016'}
-              company={'Lifland Gaming Group Team'}
-              location={'Riga, Latvia'}
-              position={'UX/UI Designer / Front-End Developer'}
-              description={"Maintaining and redesigning the existing product. Responsible for mobile version design and development. Front-end coding. Working together with other back-end developers."}
+              date={this.getValue('lifland', 0)}
+              company={this.getValue('lifland', 1)}
+              location={this.getValue('lifland', 2)}
+              position={this.getValue('lifland', 3)}
+              description={this.getValue('lifland', 4)}
             />
             <Company
-              date={'2012 - 2015'}
-              company={'AS Geta'}
-              location={'Riga, Latvia / Oslo, Norway'}
-              position={'Front-End Developer'}
-              description={"Main responsibilities include developing and maintaining the company's WEB sites. Main tasks suppose working with HTML and CSS, different browser capability, Flash and ActionScript, Wordpress, etc. In short - representing the company's image live and on the Web."}
+              date={this.getValue('geta', 0)}
+              company={this.getValue('geta', 1)}
+              location={this.getValue('geta', 2)}
+              position={this.getValue('geta', 3)}
+              description={this.getValue('geta', 4)}
             />
             <Company
-              date={'2010 - 2012'}
-              company={'SIA Inbox'}
-              location={'Riga, Latvia'}
-              position={'UX/UI Designer / Front-End Developer'}
-              description={"Working on internal / external projects, creating wiframe samples, converting them into unique web based design elements and front - end coding. Helping other back - end develoeprs with their duty."}
+              date={this.getValue('inbox', 0)}
+              company={this.getValue('inbox', 1)}
+              location={this.getValue('inbox', 2)}
+              position={this.getValue('inbox', 3)}
+              description={this.getValue('inbox', 4)}
             />
             <Company
-              date={'2010'}
-              company={'SIA TezGSM'}
-              location={'Riga, Latvia'}
-              position={'Senior WEB Designer'}
-              description={"Redesigning main web site and provide technical support to other internal projects. Creating different banners and posters for marketing needs."}
+              date={this.getValue('tezgsm', 0)}
+              company={this.getValue('tezgsm', 1)}
+              location={this.getValue('tezgsm', 2)}
+              position={this.getValue('tezgsm', 3)}
+              description={this.getValue('tezgsm', 4)}
             />
             <Company
-              date={'2009'}
-              company={'SIA Hortus Digital'}
-              location={'Riga, Latvia'}
-              position={'WEB project and content manager'}
-              description={"Main responsibilities were developing and maintaining the company's brand and Web page based on Microsoft SharePoint 2007/2010 system. Also had to deal with different issues considering design work (banners, advertisements, web design and typography) and technical documentation."}
+              date={this.getValue('hortus', 0)}
+              company={this.getValue('hortus', 1)}
+              location={this.getValue('hortus', 2)}
+              position={this.getValue('hortus', 3)}
+              description={this.getValue('hortus', 4)}
             />
             <Company
-              date={'2008'}
-              company={'SIA Tieto'}
-              location={'Riga, Latvia'}
-              position={'Technical support consultant'}
-              description={"Based on my education, job included working with IT technologies like Linux, Oracle, SQL data bases, Tuxedo system and Tomcat servers. Had to deal with a large banking system (e-commerce, u-commerce, visa and master-card business, ATM construction, parsing log files), client support (banks and processing centers), finding solutions considering financial and technical issues throughout Europe, including Russian, Ukraine, Lithuania, Bosnia, Serbia, Romania, etc."}
+              date={this.getValue('tieto', 0)}
+              company={this.getValue('tieto', 1)}
+              location={this.getValue('tieto', 2)}
+              position={this.getValue('tieto', 3)}
+              description={this.getValue('tieto', 4)}
             />
           </div>
           <div className="certificates">
-            <h3><Certificate />Certificates</h3>
+            <h3><Certificate />{this.getValue('certificates', 0)}</h3>
             <ul>
               <Image
                 img={"../img/certificates/bachelor_large.jpg"}
-                alt={"Bachelor certificate"}
+                alt={this.getValue('certificates', 1)}
               />
               <Image
                 img={"../img/certificates/business_large.jpg"}
-                alt={"Business certificate"}
+                alt={this.getValue('certificates', 2)}
               />
               <Image
                 img={"../img/certificates/data_pro_large.jpg"}
-                alt={"Data Pro certificate"}
+                alt={this.getValue('certificates', 3)}
               />
               <Image
                 img={"../img/certificates/goethe_large.jpg"}
-                alt={"Goethe certificate"}
+                alt={this.getValue('certificates', 4)}
               />
               <Image
                 img={"../img/certificates/international_house_large.jpg"}
-                alt={"International house certificate"}
+                alt={this.getValue('certificates', 5)}
               />
               <Image
                 img={"../img/certificates/master_large.jpg"}
-                alt={"Master degree certificate"}
+                alt={this.getValue('certificates', 6)}
               />
               <Image
                 img={"../img/certificates/photography_large.jpg"}
-                alt={"Photography certificate"}
+                alt={this.getValue('certificates', 7)}
               />
               <Image
                 img={"../img/certificates/progmeistars_large.jpg"}
-                alt={"Progmeistars certificate"}
+                alt={this.getValue('certificates', 8)}
               />
               <Image
                 img={"../img/certificates/tieto_large.jpg"}
-                alt={"Tieto certificate"}
+                alt={this.getValue('certificates', 9)}
               />
               <Image
                 img={"../img/certificates/w3schools_large.jpg"}
-                alt={"W3chools certificate"}
+                alt={this.getValue('certificates', 10)}
               />
             </ul>
           </div>
           <div className="stocks">
-            <h3><Shutter />Photo stocks</h3>
-            <p>Currently I have two accounts on photo stock website: <a href="https://www.shutterstock.com/g/IngusKruklitis" target="_blank">Shutterstock</a> and <a href="https://eu.fotolia.com/p/205896011" target="_blank">Fotolia</a> by Adobe. Combined my portfolio consists of around 7000 photos and 500 videos and my most popular photo has sold more than 800 times. Feel free to contact me in case you are interested in any of my content or collaboration.</p>
+            <h3><Shutter />{this.getValue('stocks', 0)}</h3>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('stocks', 1)}} />
           </div>
           <div className="cto">
-            <h3><Cto />CTO</h3>
-            <p>I'm a co-foudner of several online projects:</p>
+            <h3><Cto />{this.getValue('cto', 0)}</h3>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('cto', 1)}} />
             <ul>
-              <li><a href="http://weddenly.com/" target="_blank">Weddenly.com</a> - Wedding website building platform</li>
-              <li><a href="https://www.triptemptation.com/" target="_blank">TripTemptation.com</a> - Inspirational travel website blog</li>
+              <li dangerouslySetInnerHTML={{__html:this.getValue('cto', 2)}} />
+              <li dangerouslySetInnerHTML={{__html:this.getValue('cto', 3)}} />
             </ul>
-            <p>Currently I'm working on optimisation tasks and looking forward to the new ones. Always ready for cooperation. Both projects are fully designed and developed (front-end part) by me. Back-end was made my companions (other co-founders). </p>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('cto', 4)}} />
           </div>
         </div>
       </div>

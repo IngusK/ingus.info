@@ -30,37 +30,37 @@ export default class Photography extends React.PureComponent {
   render() {
     return (
       <div className="photo-content">
-        <h2>My portfolio</h2>
-        <p>Choose a photo category you want to explore.<br/>All photos were taken during some of my trips in the recent years</p>
+        <h2>{this.getValue('portfolio', 0)}</h2>
+        <p dangerouslySetInnerHTML={{__html:this.getValue('portfolio', 1)}} />
         <ul>
           <NavLink to='/photography/aerial' className="aerial">
             <Image
               img={"../img/portfolio/aerial/riga.jpg"}
-              alt={"Aerial"}
+              alt={this.getValue('portfolio', 2)}
             />
           </NavLink>
           <NavLink to='/photography/people' className="people">
             <Image
               img={"../img/portfolio/people/people.jpg"}
-              alt={"People"}
+              alt={this.getValue('portfolio', 3)}
             />
           </NavLink>
           <NavLink to='/photography/city' className="citylife">
             <Image
               img={"../img/portfolio/citylife/city.jpg"}
-              alt={"City life"}
+              alt={this.getValue('portfolio', 4)}
             />
           </NavLink>
           <NavLink to='/photography/travel' className="travel">
             <Image
               img={"../img/portfolio/travel/travel.jpg"}
-              alt={"Travel"}
+              alt={this.getValue('portfolio', 5)}
             />
           </NavLink>
           <NavLink to='/photography/nature' className="nature">
             <Image
               img={"../img/portfolio/nature/nature.jpg"}
-              alt={"Nature"}
+              alt={this.getValue('portfolio', 6)}
             />
           </NavLink>
         </ul>
