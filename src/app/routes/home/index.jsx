@@ -16,12 +16,22 @@ export default class Posts extends React.PureComponent {
   state = {
     posts: [],
     lastPost: {},
+    main: [],
   }
 
   componentDidMount() {
     this.getBlogPosts();
     this.getMainPost();
+    this.getMainInfo();
   };
+
+  getMainInfo() {
+    var posts = database().ref('posts/');
+    posts.on('value', (data) => {
+      const posts = data.val();
+      this.setState({ main: data.val() });
+    });
+  }
 
   getBlogPosts() {
     var posts = database().ref('posts/').limitToLast(9);
@@ -47,12 +57,16 @@ export default class Posts extends React.PureComponent {
     });
   }
 
+  getValue(val, nr) {
+    return this.state.main[nr] && this.state.main[nr][val];
+  }
+
   render() {
     const { lastPost, posts } = this.state;
     return (
       <div className="main-content">
         <Arrow className="arrow"/>
-        <h1><span>{lastPost.name}</span><br/>Welcome to my personal web page where I share my <b>travel</b>, <b>coding</b> and <b>photography</b> experience! <br/> <i>Why don't you start with my latest post?</i></h1>
+        <h1 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 0)}} />
         <div className="top-slider">
           <div className="slider-description">
             <h3>{lastPost.date}</h3>

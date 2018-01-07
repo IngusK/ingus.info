@@ -10,6 +10,7 @@ export default class BucketList extends React.PureComponent {
   constructor(...args) {
     super(...args);
     this.getBucketPosts = this.getBucketPosts.bind(this);
+    this.getValue = this.getValue.bind(this);
   }
 
   state = {
@@ -23,19 +24,22 @@ export default class BucketList extends React.PureComponent {
   getBucketPosts() {
     var value = database().ref('bucketlist/');
     value.on('value', (data) => {
-      const bucketContent = data.val();
-      this.setState({ bucketContent });
+      this.setState({ bucketContent: data.val() });
     });
   };
+
+  getValue(val, nr) {
+    return this.state.bucketContent[nr] && this.state.bucketContent[nr][val];
+  }
 
   render() {
     const { bucketContent } = this.state;
     return (
       <div className="bucket-content">
         <div className="title">
-          <h2>Everything is possible..</h2>
-          <p><strong>Bucket list</strong> is a never-ending work in progress, continuously being altered, updated, and improved.</p>
-          <p>It is my hope that you use these ideas as inspiration to create your own crazy fun bucket list. And then you take at least one step everyday to complete the items on it. This bucket list has completely changed my life (for the better, of course!) and I wish the same for you.</p>
+          <h2>{this.getValue('header', 0)}</h2>
+          <p dangerouslySetInnerHTML={{__html:this.getValue('description', 0)}}/>
+          <p dangerouslySetInnerHTML={{__html:this.getValue('description', 1)}}/>
         </div>
         <ol className="list">
         {bucketContent.map((item, index) => (

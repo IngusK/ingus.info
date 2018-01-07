@@ -30,32 +30,32 @@ export default class PhotographyAerial extends React.PureComponent {
   render() {
     return (
       <div className="photo-content">
-        <h2>People collection</h2>
-        <p>Selection of my aerial photo collections. All of these photos were taken by me personally using different tools.<br/>In most cases I've used a drone but there are cases where a shot was taken from a plane, helicopter, hight building etc. </p>
+        <h2>{this.getValue('people', 0)}</h2>
+        <p dangerouslySetInnerHTML={{__html:this.getValue('people', 1)}} />
         <PortfolioImage
           img={"../../img/portfolio/aerial/riga.jpg"}
-          alt={"Aerial image of Riga old town"}
-          descr={"Panoramic view of the Riga old town in Latvia"}
+          alt={this.getValue('people', 2)}
+          descr={this.getValue('people', 2)}
         />
         <PortfolioImage
           img={"../img/portfolio/aerial/la_sunset.jpg"}
-          alt={"Sunset in Los Angeles"}
-          descr={"Beautiful early morning sunset view over Venice beach in Los Angeles"}
+          alt={this.getValue('people', 4)}
+          descr={this.getValue('people', 4)}
         />
         <PortfolioImage
           img={"../../img/portfolio/aerial/hollywood.jpg"}
-          alt={"Hollywood district"}
-          descr={"Gorgeous view of the Hollydwood sign district in Los Angeles"}
+          alt={this.getValue('people', 6)}
+          descr={this.getValue('people', 6)}
         />
         <PortfolioImage
           img={"../img/portfolio/aerial/death_valley.jpg"}
-          alt={"Death valley desert"}
-          descr={"Lonely road that goes through an endless Death Valley desert"}
+          alt={this.getValue('people', 8)}
+          descr={this.getValue('people', 8)}
         />
         <PortfolioImage
           img={"../../img/portfolio/aerial/horse.jpg"}
-          alt={"Horseshoe bend"}
-          descr={"Amazing view of the horseshoe bend canyon in Arizona near the Grand Canyon"}
+          alt={this.getValue('people', 10)}
+          descr={this.getValue('people', 10)}
         />
       </div>
     );
