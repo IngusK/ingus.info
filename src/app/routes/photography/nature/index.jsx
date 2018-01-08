@@ -33,29 +33,29 @@ export default class PhotographyAerial extends React.PureComponent {
         <h2>{this.getValue('nature', 0)}</h2>
         <p dangerouslySetInnerHTML={{__html:this.getValue('nature', 1)}} />
         <PortfolioImage
-          img={"../../img/portfolio/aerial/riga.jpg"}
-          alt={this.getValue('nature', 2)}
-          descr={this.getValue('nature', 2)}
+          img={this.getValue('aerial', 3)}
+          alt={this.getValue('aerial', 2)}
+          descr={this.getValue('aerial', 2)}
         />
         <PortfolioImage
-          img={"../img/portfolio/aerial/la_sunset.jpg"}
-          alt={this.getValue('nature', 4)}
-          descr={this.getValue('nature', 4)}
+          img={this.getValue('aerial', 5)}
+          alt={this.getValue('aerial', 4)}
+          descr={this.getValue('aerial', 4)}
         />
         <PortfolioImage
-          img={"../../img/portfolio/aerial/hollywood.jpg"}
-          alt={this.getValue('nature', 6)}
-          descr={this.getValue('nature', 6)}
+          img={this.getValue('aerial', 7)}
+          alt={this.getValue('aerial', 6)}
+          descr={this.getValue('aerial', 6)}
         />
         <PortfolioImage
-          img={"../img/portfolio/aerial/death_valley.jpg"}
-          alt={this.getValue('nature', 8)}
-          descr={this.getValue('nature', 8)}
+          img={this.getValue('aerial', 9)}
+          alt={this.getValue('aerial', 8)}
+          descr={this.getValue('aerial', 8)}
         />
         <PortfolioImage
-          img={"../../img/portfolio/aerial/horse.jpg"}
-          alt={this.getValue('nature', 10)}
-          descr={this.getValue('nature', 10)}
+          img={this.getValue('aerial', 11)}
+          alt={this.getValue('aerial', 10)}
+          descr={this.getValue('aerial', 10)}
         />
       </div>
     );

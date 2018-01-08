@@ -35,31 +35,31 @@ export default class Photography extends React.PureComponent {
         <ul>
           <NavLink to='/photography/aerial' className="aerial">
             <Image
-              img={"../img/portfolio/aerial/riga.jpg"}
+              img={this.getValue('link', 2)}
               alt={this.getValue('portfolio', 2)}
             />
           </NavLink>
           <NavLink to='/photography/people' className="people">
             <Image
-              img={"../img/portfolio/people/people.jpg"}
+              img={this.getValue('link', 3)}
               alt={this.getValue('portfolio', 3)}
             />
           </NavLink>
           <NavLink to='/photography/city' className="citylife">
             <Image
-              img={"../img/portfolio/citylife/city.jpg"}
+              img={this.getValue('link', 4)}
               alt={this.getValue('portfolio', 4)}
             />
           </NavLink>
           <NavLink to='/photography/travel' className="travel">
             <Image
-              img={"../img/portfolio/travel/travel.jpg"}
+              img={this.getValue('link', 5)}
               alt={this.getValue('portfolio', 5)}
             />
           </NavLink>
           <NavLink to='/photography/nature' className="nature">
             <Image
-              img={"../img/portfolio/nature/nature.jpg"}
+              img={this.getValue('link', 6)}
               alt={this.getValue('portfolio', 6)}
             />
           </NavLink>
