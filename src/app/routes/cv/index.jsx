@@ -127,43 +127,43 @@ export default class CV extends React.PureComponent {
             <h3><Certificate />{this.getValue('certificates', 0)}</h3>
             <ul>
               <Image
-                img={"../img/certificates/bachelor_large.jpg"}
+                img={this.getValue('certificateImages', 1)}
                 alt={this.getValue('certificates', 1)}
               />
               <Image
-                img={"../img/certificates/business_large.jpg"}
+                img={this.getValue('certificateImages', 2)}
                 alt={this.getValue('certificates', 2)}
               />
               <Image
-                img={"../img/certificates/data_pro_large.jpg"}
+                img={this.getValue('certificateImages', 3)}
                 alt={this.getValue('certificates', 3)}
               />
               <Image
-                img={"../img/certificates/goethe_large.jpg"}
+                img={this.getValue('certificateImages', 4)}
                 alt={this.getValue('certificates', 4)}
               />
               <Image
-                img={"../img/certificates/international_house_large.jpg"}
+                img={this.getValue('certificateImages', 5)}
                 alt={this.getValue('certificates', 5)}
               />
               <Image
-                img={"../img/certificates/master_large.jpg"}
+                img={this.getValue('certificateImages', 6)}
                 alt={this.getValue('certificates', 6)}
               />
               <Image
-                img={"../img/certificates/photography_large.jpg"}
+                img={this.getValue('certificateImages', 7)}
                 alt={this.getValue('certificates', 7)}
               />
               <Image
-                img={"../img/certificates/progmeistars_large.jpg"}
+                img={this.getValue('certificateImages', 8)}
                 alt={this.getValue('certificates', 8)}
               />
               <Image
-                img={"../img/certificates/tieto_large.jpg"}
+                img={this.getValue('certificateImages', 9)}
                 alt={this.getValue('certificates', 9)}
               />
               <Image
-                img={"../img/certificates/w3schools_large.jpg"}
+                img={this.getValue('certificateImages', 10)}
                 alt={this.getValue('certificates', 10)}
               />
             </ul>

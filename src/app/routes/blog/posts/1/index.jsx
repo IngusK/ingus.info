@@ -35,95 +35,93 @@ export default class BlogPost extends React.PureComponent {
     return (
       <div className="blog-post">
         <div className="blog-post-content">
-          <h2>Why you should turn an idea into reality quickly</h2>
+          <h2>{this.getValue('title', 0)}</h2>
         </div>
         <div className="blog-post-slide">
           <img
-            alt="Alt text"
-            src="../../../../../../img/blog/1/elephant.jpeg"
+            alt={this.getValue('alt', 0)}
+            src={this.getValue('image', 0)}
           />
-          <h5>Photo by <a href="https://www.shutterstock.com/g/inguskruklitis" target="_blank">Bdougherty on Pixbay</a></h5>
+          <h5 dangerouslySetInnerHTML={{__html:this.getValue('image', 1)}} />
         </div>
         <div className="blog-post-content-wrapper">
           <SocialIcons
-            title = 'ingus.info'
-            shareUrl = 'http://ingus.info'
+            shareUrl = {this.getValue('sharePost', 0)}
           />
           <div className="blog-post-content">
-            <p>It can take years to go from concept to a final video game.</p>
-            <p>And yet, <a href="#">at the start everyone</a> has an idea in their head what that game looks like. The concept is clear. Mostly.</p>
-            <p>The path that takes a game from concept to execution is a long and arduous one — and very similar for any idea. In any industry, when someone comes to you with a new idea and wants to create something from scratch, then everyone has the same set of problems.</p>
-            <p>The first problem is how to communicate your vision.</p>
-            <h4>Stay away from negative people they have a problem for every solution</h4>
-            <p>How do you take an idea to your manager and talk about it in a way that the manager will understand, appreciate and dream alongside you?</p>
-            <p>How do game ideas become reality?</p>
-            <h3>Simon P P Williams is COO of Mitenkai — Find Your Way</h3>
-            <p>The first reality is that for most games, the original idea didn’t come from one person. Of course, there are some game properties that started from the vision of one genius and became gaming heritage. But there are many more games that begin as a version of an existing idea, for example Call of Duty WWII. And many games that begin as a discussion between some very creative individuals.</p>
-            <p>But every game, no matter how it began, requires those that have the initial idea to communicate it. Even if it’s just to say, let’s do Call of Duty and set it in the Second World War.</p>
-            <p>This <a href="#">particular</a> language problem has been solved to an extent in Hollywood by the elevator pitch. As any writer will tell you, trying to distill anything into a short sentence or paragraph is a lot harder than writing 1000 words about something. But the elevator pitch has developed into a formula for doing just that. And the games industry has something similar — with different terminology but the same purpose: to communicate simply and clearly what the game will be.</p>
-            <p>Whatever technique you use, it is important to bear in mind how it works — and most importantly how your words affect the person you are talking to.</p>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 0)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 1)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 2)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 3)}} />
+            <h4>{this.getValue('quote', 0)}</h4>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 4)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 5)}} />
+            <h3>{this.getValue('subtitle', 0)}</h3>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 6)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 7)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 8)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 9)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 10)}} />
             <div className="blog-post-photo right">
               <Image
-                img={"../../../../../../img/blog/1/soldier.jpeg"}
-                alt={"Aerial image of Riga old town"}
+                img={this.getValue('image', 2)}
+                alt={this.getValue('alt', 2)}
               />
-              <h5>Photo by <a href="https://www.shutterstock.com/g/inguskruklitis" target="_blank">Bdougherty on Pixbay</a></h5>
+              <h5 dangerouslySetInnerHTML={{__html:this.getValue('image', 3)}} />
             </div>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 11)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 12)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 13)}} />
             <div className="blog-post-photo left">
               <div className="iframe-wrapper">
-                <iframe src="https://www.youtube.com/embed/5yluPQd2qYA" frameBorder="0" gesture="media" allow="encrypted-media" allowFullScreen></iframe>
+                <iframe src={this.getValue('iframe', 0)} frameBorder="0" gesture="media" allow="encrypted-media" allowFullScreen></iframe>
               </div>
-              <h5>Photo by <a href="https://www.shutterstock.com/g/inguskruklitis" target="_blank">Bdougherty on Pixbay</a></h5>
+              <h5 dangerouslySetInnerHTML={{__html:this.getValue('image', 5)}} />
             </div>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
-            <p>So when you pitch any idea, every word that you use causes the person listening to fire up requests along neural fibres that gather up the necessary images and combine them, ready to picture the game.</p>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 14)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 15)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 16)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 17)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 18)}} />
             <div className="blog-post-photo double">
               <Image
-                img={"../../../../../../img/sample.jpg"}
-                alt={"Aerial image of Riga old town"}
+                img={this.getValue('image', 4)}
+                alt={this.getValue('alt', 4)}
               />
               <Image
-                img={"../../../../../../img/sample.jpg"}
-                alt={"Aerial image of Riga old town"}
+                img={this.getValue('image', 6)}
+                alt={this.getValue('alt', 6)}
               />
             </div>
-            <h5>Photo by <a href="https://www.shutterstock.com/g/inguskruklitis" target="_blank">Bdougherty on Pixbay</a></h5>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
-            <p>Communication is all about the words you choose, and the affect they have on the person you are talking to. Neuroscience is beginning to narrow down how this works and when it comes to a concept, the most important factor involved in communicating it is imagination.</p>
+            <h5 dangerouslySetInnerHTML={{__html:this.getValue('image', 7)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 19)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 20)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 21)}} />
           </div>
           <SocialIconsMobile
-            title = 'ingus.info'
             shareUrl = 'http://ingus.info'
           />
         </div>
         <div className="related-posts">
-          <h2>You may also be interested in</h2>
+          <h2>{this.getValue('related', 0)}</h2>
           <ul>
             <RelatedPosts
-              img={"../../../../../../img/blog/1/elephant.jpeg"}
-              alt={"Aerial image of Riga old town"}
-              category={"Travel"}
-              title={"Can VR be used for social change?"}
+              img={this.getValue('image', 0)}
+              alt={this.getValue('related', 4)}
+              category={this.getValue('related', 2)}
+              title={this.getValue('related', 3)}
             />
             <RelatedPosts
-              img={"../../../../../../img/blog/1/elephant.jpeg"}
-              alt={"Aerial image of Riga old town"}
-              category={"Travel"}
-              title={"Can VR be used for social change?"}
+              img={this.getValue('image', 2)}
+              alt={this.getValue('related', 9)}
+              category={this.getValue('related', 7)}
+              title={this.getValue('related', 8)}
             />
             <RelatedPosts
-              img={"../../../../../../img/blog/1/soldier.jpeg"}
-              alt={"Aerial image of Riga old town"}
-              category={"Travel"}
-              title={"Can VR be used for social change?"}
+              img={this.getValue('image', 4)}
+              alt={this.getValue('related', 14)}
+              category={this.getValue('related', 12)}
+              title={this.getValue('related', 13)}
             />
           </ul>
         </div>
