@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {database} from 'firebase';
 import Image from '../../components/image/index.jsx';
 import Company from '../../components/company/index.jsx';

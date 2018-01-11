@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {database} from "firebase";
 import BucketListItem from '../../components/bucket_list/index.jsx';
 

@@ -2,7 +2,9 @@ import React from 'react';
 import propTypes from 'prop-types';
 import WorldMap from '../../components/WorldMap.jsx';
 import {database} from "firebase";
+import {NavLink, withRouter} from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
+import TravelItem from '../../components/travel_destination/index.jsx';
 
 import style from './styles.scss';
 
@@ -30,6 +32,7 @@ export default class Travel extends React.PureComponent {
   }
 
   render() {
+    const { travelPageContent } = this.state;
     return (
       <div className="travel-content">
         <ReactTooltip />
@@ -39,6 +42,16 @@ export default class Travel extends React.PureComponent {
         </div>
         <div className="map-wrapper">
           <WorldMap />
+        </div>
+        <h3>{this.getValue('mainBlock', 2)}</h3>
+        <h4 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 3)}} />
+        <div className="photo-grid">
+          {travelPageContent.map((item, index) => (
+            <TravelItem key={index}
+              img={item.img}
+              name={item.name}
+            />
+          ))}
         </div>
       </div>
     );

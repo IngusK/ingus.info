@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {database} from "firebase";
 import Facebook from '../../../../img/icons/facebook-icon.svg';
 import Instagram from '../../../../img/icons/instagram-icon.svg';
