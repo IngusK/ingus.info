@@ -1,6 +1,5 @@
 import React from 'react';
 import PortfolioImage from '../../../components/portfolio_image/index.jsx';
-import {Link} from 'react-router-dom';
 import {database} from "firebase";
 
 import style from '../styles.scss';

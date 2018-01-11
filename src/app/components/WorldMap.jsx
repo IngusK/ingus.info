@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {database} from "firebase";
 import { geoMercator, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
