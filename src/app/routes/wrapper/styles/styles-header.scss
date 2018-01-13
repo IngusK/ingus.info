@@ -71,6 +71,17 @@ nav {
     justify-content: flex-end;
     font-weight: 300;
     li{
+      a {
+        svg {
+          @include transition;
+        }
+        &:hover {
+          svg {
+            fill: $pink;
+            transform: rotate(360deg);
+          }
+        }
+      }
       &:hover a {
         color: $pink;
       }
