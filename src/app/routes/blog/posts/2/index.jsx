@@ -1,9 +1,14 @@
 import React from 'react';
+import Image from '../../../../components/image/index.jsx';
 import {database} from "firebase";
+import RelatedPosts from '../../../../components/related_post/index.jsx';
+import SocialIcons from '../../../../components/social_icons/index.jsx';
+import SocialIconsMobile from '../../../../components/social_icons_mobile/index.jsx';
 
 import style from '../styles.scss';
 
-export default class BogPost extends React.PureComponent {
+
+export default class BlogPost extends React.PureComponent {
 
   constructor(...args) {
     super(...args);
@@ -15,7 +20,7 @@ export default class BogPost extends React.PureComponent {
   }
 
   componentDidMount() {
-    var blogPage = database().ref('blog/');
+    var blogPage = database().ref('blog/post/2');
     blogPage.on('value', (data) => {
       this.setState({ blogPostPageContent: data.val() });
     });
@@ -27,9 +32,45 @@ export default class BogPost extends React.PureComponent {
 
   render() {
     return (
-      <div className="blog-content">
-        <h2>Post 2</h2>
-        <p>Selection of my aerial photo collections. All of these photos were taken by me personally using different tools.<br/>In most cases I've used a drone but there are cases where a shot was taken from a plane, helicopter, hight building etc. </p>
+      <div className="blog-post">
+        <div className="blog-post-content">
+          <h2>{this.getValue('title', 0)}</h2>
+        </div>
+        <div className="blog-post-content-wrapper">
+          <SocialIcons
+            shareUrl = {this.getValue('sharePost', 0)}
+          />
+          <div className="blog-post-content">
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 0)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 1)}} />
+            <div className="blog-post-photo right">
+              <Image
+                img={this.getValue('image', 0)}
+                alt={this.getValue('alt', 2)}
+              />
+              <h5 dangerouslySetInnerHTML={{__html:this.getValue('image', 3)}} />
+            </div>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 2)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 3)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 4)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('text', 5)}} />
+          </div>
+          <SocialIconsMobile
+            shareUrl = 'http://ingus.info'
+          />
+        </div>
+        <div className="related-posts">
+          <h2>{this.getValue('related', 0)}</h2>
+          <ul>
+            <RelatedPosts
+              img={this.getValue('related', 5)}
+              alt={this.getValue('related', 4)}
+              category={this.getValue('related', 2)}
+              title={this.getValue('related', 3)}
+              link={this.getValue('related', 6)}
+            />
+          </ul>
+        </div>
       </div>
     );
   }
