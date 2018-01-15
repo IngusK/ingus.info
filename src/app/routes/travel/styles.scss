@@ -62,13 +62,13 @@
   }
   .photo-grid {
     display: grid;
-    grid-gap: 3rem 1rem;
+    grid-gap: 4rem 2rem;
     margin-top: 5rem;
     @media #{$mobile} {
       grid-template-columns: repeat(2, 1fr);
     }
     @media #{$tablet} {
-      grid-template-columns: repeat(10, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
     a {
       img {
@@ -82,7 +82,7 @@
           filter: grayscale(0%);
         }
         @media #{$tablet} {
-          height: 10rem;
+          height: 19rem;
         }
       }
     }

@@ -46,7 +46,7 @@ export default class Travel extends React.PureComponent {
         <h3>{this.getValue('mainBlock', 2)}</h3>
         <h4 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 3)}} />
         <div className="photo-grid">
-          {travelPageContent.map((item, index) => (
+          {travelPageContent.slice(0,12).map((item, index) => (
             <TravelItem key={index}
               img={item.img}
               name={item.name}
