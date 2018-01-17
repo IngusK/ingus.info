@@ -8,7 +8,7 @@ import SocialIconsMobile from '../../../../components/social_icons_mobile/index.
 import style from '../styles.scss';
 
 
-export default class BlogPost extends React.PureComponent {
+export default class BlogPost2 extends React.PureComponent {
 
   constructor(...args) {
     super(...args);
@@ -20,7 +20,7 @@ export default class BlogPost extends React.PureComponent {
   }
 
   componentDidMount() {
-    var blogPage = database().ref('blog/post/2');
+    var blogPage = database().ref('/post/2');
     blogPage.on('value', (data) => {
       this.setState({ blogPostPageContent: data.val() });
     });

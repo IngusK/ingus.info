@@ -16,8 +16,9 @@ import PhotographyPeople from './routes/photography/people';
 import PhotographyNature from './routes/photography/nature';
 import PhotographyTravel from './routes/photography/travel';
 import Blog from './routes/blog';
-import BlogPost1 from './routes/blog/posts/1';
-import BlogPost2 from './routes/blog/posts/2';
+import BlogPost from './routes/blog/posts/post';
+//import BlogPost1 from './routes/blog/posts/1';
+//import BlogPost2 from './routes/blog/posts/2';
 
 const createRoutes = () => (
   <Router>
@@ -31,8 +32,9 @@ const createRoutes = () => (
 
       <Route path="/bucket-list" component={Bucket}/>
       <Route exact path="/blog" component={Blog}/>
-      <Route path="/blog/posts/1" component={BlogPost1}/>
-      <Route path="/blog/posts/2" component={BlogPost2}/>
+      <Route path="/posts/:slug" component={BlogPost}/>
+      {/* <Route path="/blog/posts/1" component={BlogPost1}/>
+      <Route path="/blog/posts/2" component={BlogPost2}/> */}
 
       <Route exact path="/photography" component={Photography}/>
       <Route path="/photography/aerial" component={PhotographyAerial}/>
