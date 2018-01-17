@@ -83,9 +83,9 @@ export default class Posts extends React.PureComponent {
         <div className="posts">
           {posts.map((post, index) => (
             <div className={`post-${index + 1}`} key={index}>
-              <NavLink to='/blog/posts/2'><img src={post.photo} alt={post.title} /></NavLink>
+              <NavLink to={`/posts/${post.slug}`}><img src={post.photo} alt={post.title} /></NavLink>
               <h3>{post.date}</h3>
-              <NavLink to='/blog/posts/2'><h4>{post.title}</h4></NavLink>
+              <NavLink to={`/posts/${post.slug}`}><h4>{post.title}</h4></NavLink>
               <h5>{post.category}</h5>
               <p dangerouslySetInnerHTML={{__html:post.description}} />
             </div>
