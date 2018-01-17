@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from '../../../../components/image/index.jsx';
+import { renderToString } from 'react-dom/server';
 import {database} from "firebase";
 import RelatedPosts from '../../../../components/related_post/index.jsx';
 import SocialIcons from '../../../../components/social_icons/index.jsx';
@@ -29,6 +30,9 @@ export default class BlogPost2 extends React.PureComponent {
   getValue(val, nr) {
     return this.state.blogPostPageContent[nr] && this.state.blogPostPageContent[nr][val];
   }
+
+  var StringImage = renderToString(Image);
+  // https://stackoverflow.com/questions/39988595/react-component-inside-dangerouslysetinnerhtml
 
   render() {
     return (
