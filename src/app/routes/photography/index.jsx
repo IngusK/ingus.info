@@ -32,7 +32,7 @@ export default class Photography extends React.PureComponent {
       <div className="photo-content">
         <h2>{this.getValue('portfolio', 0)}</h2>
         <p dangerouslySetInnerHTML={{__html:this.getValue('portfolio', 1)}} />
-        <ul>
+        <div className="photo-grid">
           <NavLink to='/photography/aerial' className="aerial">
             <Image
               img={this.getValue('link', 2)}
@@ -63,7 +63,7 @@ export default class Photography extends React.PureComponent {
               alt={this.getValue('portfolio', 6)}
             />
           </NavLink>
-        </ul>
+        </div>
       </div>
     );
   }

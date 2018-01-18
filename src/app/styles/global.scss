@@ -31,6 +31,29 @@ h2 {
   font-family: $lato;
 }
 
+pre, code {
+  font-family: monospace, monospace;
+  font-size: 1.6rem;
+  span {
+    color: #d45656;
+  }
+  b {
+    color: #d19151;
+    font-weight: normal;
+  }
+  u {
+    color: #98c379;
+    text-decoration: none;
+  }
+}
+pre {
+  overflow: auto;
+}
+pre > code {
+  padding: 1rem;
+  word-wrap: normal;
+}
+
 .clearfix {
   clear: both;
 }

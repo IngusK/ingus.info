@@ -35,13 +35,13 @@ export default class Image extends React.PureComponent {
   render() {
     const {img, alt, descr} = this.props;
     return (
-      <li className={`image ${this.state.isZoomed ? 'is-zoomed' : ''}`}>
+      <div className={`image ${this.state.isZoomed ? 'is-zoomed' : ''}`}>
         <img
           alt={alt}
           ref="image"
           src={img}
         />
-      </li>
+      </div>
     );
   }
 };

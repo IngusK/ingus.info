@@ -124,7 +124,7 @@ export default class CV extends React.PureComponent {
           </div>
           <div className="certificates">
             <h3><Certificate />{this.getValue('certificates', 0)}</h3>
-            <ul>
+            <div className="certificate-wrapper">
               <Image
                 img={this.getValue('certificateImages', 1)}
                 alt={this.getValue('certificates', 1)}
@@ -165,7 +165,7 @@ export default class CV extends React.PureComponent {
                 img={this.getValue('certificateImages', 10)}
                 alt={this.getValue('certificates', 10)}
               />
-            </ul>
+            </div>
           </div>
           <div className="stocks">
             <h3><Shutter />{this.getValue('stocks', 0)}</h3>
