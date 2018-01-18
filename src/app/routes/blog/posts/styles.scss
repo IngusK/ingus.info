@@ -68,12 +68,18 @@
       font-size: 2.5rem;
       font-weight: 600;
       margin-top: 7rem;
+      &.center {
+        text-align: center;
+      }
     }
     p {
       font: 1.85rem $medium;
       line-height: 1.78;
       letter-spacing: -.01em;
       margin-top: 2.9rem;
+      strong {
+        color: $orange;
+      }
       a {
         border-bottom: .2rem solid $pink;
         color: $text;
@@ -94,6 +100,9 @@
   }
 
   .blog-post-photo {
+    height: 100%;
+    max-height: 600px;
+    overflow-y: scroll;
     img {
       width: 100%;
       height: 100%;
@@ -156,8 +165,12 @@
     }
     &.single {
       margin: 4rem 0 0;
+      text-align: center;
       @media #{$tablet} {
         margin: 4rem -10rem 0;
+      }
+      img {
+        width: auto;
       }
     }
     &.double {
@@ -169,6 +182,14 @@
         grid-template-columns: 1fr 1fr;
         grid-gap: 0 2rem;
         margin: 4rem -10rem 0;
+      }
+    }
+    &.zoom {
+      img {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 100%;
       }
     }
   }

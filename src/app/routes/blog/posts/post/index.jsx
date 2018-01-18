@@ -1,7 +1,8 @@
 import React from 'react';
-import Image from '../../../../components/image/index.jsx';
 import {database} from "firebase";
 import RelatedPosts from '../../../../components/related_post/index.jsx';
+import Image from '../../../../components/image/index.jsx';
+import mediumZoom from 'medium-zoom';
 import SocialIcons from '../../../../components/social_icons/index.jsx';
 import SocialIconsMobile from '../../../../components/social_icons_mobile/index.jsx';
 
@@ -17,20 +18,23 @@ export default class BlogPost extends React.PureComponent {
 
   state = {
     blogPostPageContent: [],
+    isZoomed: false,
   }
 
   componentDidMount() {
     const { match: { params } } = this.props;
     var blogPage = database().ref('posts/').orderByChild('slug')
-    .equalTo(params.slug).limitToFirst(1); //database().ref(blog/post/${params.userId});
+    .equalTo(params.slug).limitToFirst(1);
 
     blogPage.on('value', (data) => {
-      console.log("YYYYYY");
       const post = data.val();
       const elementKey = Object.keys(post)[0];
-      console.log("ZZZZZZ");
       this.setState({ blogPostPageContent: post[elementKey] });
     });
+
+    const zoom = mediumZoom(this.refs.image);
+    zoom.addEventListeners('show', () => this.setState({ isZoomed: true }));
+    zoom.addEventListeners('hidden', () => this.setState({ isZoomed: false }));
   };
 
   getValue(val, nr) {
@@ -38,18 +42,19 @@ export default class BlogPost extends React.PureComponent {
   }
 
   render() {
-    const { blogPostPageContent } = this.state;
+    const { blogPostPageContent, isZoomed } = this.state;
+
     return (
       <div className="blog-post">
         <div className="blog-post-content">
           <h2>{blogPostPageContent.title}</h2>
         </div>
         {
-          blogPostPageContent.photo &&
+          blogPostPageContent.photoSlide &&
           <div className="blog-post-slide">
             <img
               alt={blogPostPageContent.title}
-              src={blogPostPageContent.photo}
+              src={blogPostPageContent.photoSlide}
             />
           </div>
         }
