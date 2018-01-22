@@ -70,12 +70,12 @@ export default class Posts extends React.PureComponent {
         <div className="top-slider">
           <div className="slider-description">
             <h3>{lastPost.date}</h3>
-            <NavLink to='/blog/posts/1'><h2>{lastPost.title}</h2></NavLink>
+            <NavLink to={`/blog/${lastPost.slug}`}><h2>{lastPost.title}</h2></NavLink>
             <h5>{lastPost.category}</h5>
             <p dangerouslySetInnerHTML={{__html:lastPost.description}} />
           </div>
           <div className="slider-photo">
-            <NavLink to='/blog/posts/1'><img src={lastPost.photo} alt={lastPost.title} /></NavLink>
+            <NavLink to={`/blog/${lastPost.slug}`}><img src={lastPost.photo} alt={lastPost.title} /></NavLink>
           </div>
         </div>
 

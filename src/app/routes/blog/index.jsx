@@ -6,12 +6,6 @@ import style from './styles.scss';
 
 export default class Posts extends React.PureComponent {
 
-  constructor(...args) {
-    super(...args);
-    this.getBlogPosts = this.getBlogPosts.bind(this);
-    this.getMainPost = this.getMainPost.bind(this);
-  }
-
   state = {
     posts: [],
     lastPost: {},
@@ -34,9 +28,7 @@ export default class Posts extends React.PureComponent {
   getBlogPosts() {
     var posts = database().ref('posts/').limitToLast(9);
     posts.on('value', (data) => {
-      // get last 9 posts, reverse the order and remove first element
       const posts = data.val().reverse().slice(1);
-      // save posts into state
       this.setState({ posts });
     });
   }
@@ -44,13 +36,8 @@ export default class Posts extends React.PureComponent {
   getMainPost() {
     var posts = database().ref('posts/').limitToLast(1);
     posts.on('value', (data) => {
-      // get last/latest post
       const post = data.val();
-      // returned post is object with value key
-      // get the right key. We don't know which key gets returned
-      // so we get a massive with all keys in Object and get the first key (which ever it is)
       const elementKey = Object.keys(post)[0];
-      // save post into state with the received key
       this.setState({ lastPost: post[elementKey] });
     });
   }
@@ -61,12 +48,12 @@ export default class Posts extends React.PureComponent {
         <div className="top-slider">
           <div className="slider-description">
             <h3>{lastPost.date}</h3>
-            <NavLink to='/blog/posts/1'><h2>{lastPost.title}</h2></NavLink>
+            <NavLink to={`/blog/${lastPost.slug}`}><h2>{lastPost.title}</h2></NavLink>
             <h5>{lastPost.category}</h5>
             <p dangerouslySetInnerHTML={{__html:lastPost.description}} />
           </div>
           <div className="slider-photo">
-            <NavLink to='/blog/posts/1'><img src={lastPost.photo} alt={lastPost.title} /></NavLink>
+            <NavLink to={`/blog/${lastPost.slug}`}><img src={lastPost.photo} alt={lastPost.title} /></NavLink>
           </div>
         </div>
 
