@@ -20,7 +20,16 @@ export default class Posts extends React.PureComponent {
   componentDidMount() {
     this.getBlogPosts();
     this.getMainPost();
+    this.getMainInfo();
   };
+
+  getMainInfo() {
+    var posts = database().ref('posts/');
+    posts.on('value', (data) => {
+      const posts = data.val();
+      this.setState({ main: data.val() });
+    });
+  }
 
   getBlogPosts() {
     var posts = database().ref('posts/').limitToLast(9);
@@ -45,7 +54,6 @@ export default class Posts extends React.PureComponent {
       this.setState({ lastPost: post[elementKey] });
     });
   }
-
   render() {
     const { lastPost, posts } = this.state;
     return (
@@ -65,9 +73,9 @@ export default class Posts extends React.PureComponent {
         <div className="posts">
           {posts.map((post, index) => (
             <div className={`post-${index + 1}`} key={index}>
-              <NavLink to='/blog/posts/2'><img src={post.photo} alt={post.title} /></NavLink>
+              <NavLink to={`/blog/${post.slug}`}><img src={post.photo} alt={post.title} /></NavLink>
               <h3>{post.date}</h3>
-              <NavLink to='/blog/posts/2'><h4>{post.title}</h4></NavLink>
+              <NavLink to={`/blog/${post.slug}`}><h4>{post.title}</h4></NavLink>
               <h5>{post.category}</h5>
               <p dangerouslySetInnerHTML={{__html:post.description}} />
             </div>
