@@ -32,6 +32,8 @@ export default class Footer extends React.PureComponent {
   render() {
     return (
       <footer>
+        <div className="caret"></div>
+        <h3>Follow me..</h3>
         <ul>
           <li><a href="https://www.facebook.com/ingus.kruklitis" target="_blank"><Facebook /></a></li>
           <li><a href="https://www.instagram.com/ingus/" target="_blank"><Instagram /></a></li>

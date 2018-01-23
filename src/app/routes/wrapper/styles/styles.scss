@@ -7,8 +7,5 @@
   grid-template:
                 ". header header header ." 12rem
                 ". content content content ." 1fr
-                ". footer footer footer ." 16rem / 1fr 6fr 6fr 6fr 1fr;
-  // @media #{$tablet} {
-  //   grid-template-rows: 10rem 1fr 18rem ;
-  // }
+                "footer footer footer footer footer" auto / 1fr 6fr 6fr 6fr 1fr;
 }
