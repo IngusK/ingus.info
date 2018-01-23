@@ -90,7 +90,7 @@ export default class WorldMap extends React.PureComponent {
                 return (
                   <path
                     data-tip={filteredData.country}
-                    key={ `path-${ i }` }
+                    key={`path-${ i }`}
                     d={ geoPath().projection(this.projection())(country) }
                     className="country"
                     fill={colorType}
@@ -105,7 +105,7 @@ export default class WorldMap extends React.PureComponent {
           <g className="markers">
             {
                 this.state.cities.length > 0 && this.state.cities.map((city, i) => (
-                <a href={city.url || 'https://www.triptemptation.com'} key={i} target="_blank">
+                <a href={`/travel/${city.name.toLowerCase().split(' ').join('-')}`} key={i}>
 
                 <circle
                   data-tip={city.name}

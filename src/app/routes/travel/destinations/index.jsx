@@ -1,8 +1,8 @@
 import React from 'react';
-import PortfolioImage from '../../../../components/portfolio_image/index.jsx';
+import PortfolioImage from '../../../components/portfolio_image/index.jsx';
 import {database} from "firebase";
 
-import style from '../../styles.scss';
+import style from '../styles.scss';
 
 export default class TravelPage extends React.PureComponent {
 
@@ -27,9 +27,10 @@ export default class TravelPage extends React.PureComponent {
   }
 
   render() {
+    const { travelPageContent } = this.state;
     return (
       <div className="photo-content">
-        <h2>{this.getValue('name', 0)}</h2>
+        <h2>{travelPageContent.title}</h2>
         <PortfolioImage
           img={this.getValue('img', 0)}
           alt={this.getValue('name', 0)}

@@ -1,42 +1,37 @@
 @import "../../../../app/styles/_theme.scss";
 
 footer {
-  display: grid;
   font-size: 1.2rem;
   grid-area: footer;
-  justify-content: center;
-  align-items: flex-end;
-  color: $grey;
-  max-width: 128rem;
+  background: $black;
+  color: $white;
   width: 100%;
-  margin: 4rem auto 0;
-  border-top: 0.1rem solid $ligthGray;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-                       "social"
-                       "text";
- @media #{$tablet} {
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-template-areas:
-                          ". . social"
-                          ". text .";
-    }
+  margin: 8rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 1rem;
+  h3 {
+    margin: 3rem 0 1.6rem;
+    font-family: $hand;
+    font-size: 2.2rem;
+    letter-spacing: .2rem;
+  }
   ul {
-    grid-area: social;
     display: flex;
     justify-content: center;
-    @media #{$tablet} {
-      justify-content: flex-end;
-    }
+    margin-bottom: 2rem;
     li {
+      margin: 0 1.2rem;
       a {
         display: block;
         margin: 0 0 0 1rem;
         @include transition;
         svg {
-          width: 3.4rem;
+          width: 4rem;
           opacity: 0.8;
-          fill: #414752;
+          fill: #FFFFFF;
         }
         &:hover {
           svg {
@@ -46,9 +41,18 @@ footer {
       }
     }
   }
+  .caret {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    text-align: center;
+    margin: 0 auto;
+    border-width: 1.5rem 1.5rem 0 1.5rem;
+    border-color: $white transparent transparent transparent;
+  }
   p {
-    grid-area: text;
     text-align: center;
     font-weight: 300;
+    color: $ligthGray;
   }
 }
