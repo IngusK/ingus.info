@@ -1,9 +1,10 @@
 @import "../../../app/styles/_theme.scss";
 
 .thumb {
+  text-align: center;
   h5 {
     font-size: 1.5rem;
-    text-align: center;
     margin-top: .5rem;
+    display: inline-block;
   }
 }

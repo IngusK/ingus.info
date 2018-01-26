@@ -10,18 +10,14 @@ export default class TravelPage extends React.PureComponent {
     travelPageContent: [],
   }
 
-  // componentDidMount() {
-  //   var travelPage = database().ref('travel/');
-  //   travelPage.on('value', (data) => {
-  //     this.setState({ travelPageContent: data.val() });
-  //   });
-  // };
-
   componentDidMount() {
-    var travelPage = database().ref('travel/');
+    const { match: { params } } = this.props;
+    var travelPage = database().ref('travel/').orderByChild('slug').equalTo(params.slug);
+
     travelPage.on('value', (data) => {
       const post = data.val();
-      this.setState({ travelPageContent: post[0] });
+      const elementKey = Object.keys(post)[0];
+      this.setState({ travelPageContent: post[elementKey] });
     });
   };
 
