@@ -49,7 +49,7 @@ export default class Travel extends React.PureComponent {
           {travelPageContent.slice(0,12).map((item, index) => (
             <TravelItem key={index}
               img={item.img}
-              name={item.name}
+              name={item.slug}
             />
           ))}
         </div>

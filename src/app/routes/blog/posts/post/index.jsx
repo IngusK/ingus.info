@@ -33,6 +33,7 @@ export default class BlogPost extends React.PureComponent {
     });
 
     const zoom = mediumZoom(this.refs.image);
+    console.log(zoom);
     zoom.addEventListeners('show', () => this.setState({ isZoomed: true }));
     zoom.addEventListeners('hidden', () => this.setState({ isZoomed: false }));
   };
