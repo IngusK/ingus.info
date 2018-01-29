@@ -7,7 +7,6 @@ export default class RelatedPosts extends React.PureComponent {
 
   render() {
     const {img, alt, category, title, link="/"} = this.props;
-    console.log("link", link);
     return (
       <li>
         <NavLink to={`/blog/${link}`}>
