@@ -2,7 +2,6 @@ import React from 'react';
 import {database} from "firebase";
 import RelatedPosts from '../../../../components/related_post/index.jsx';
 import Image from '../../../../components/image/index.jsx';
-import mediumZoom from 'medium-zoom';
 import SocialIcons from '../../../../components/social_icons/index.jsx';
 import SocialIconsMobile from '../../../../components/social_icons_mobile/index.jsx';
 
@@ -18,10 +17,23 @@ export default class BlogPost extends React.PureComponent {
 
   state = {
     blogPostPageContent: [],
-    isZoomed: false,
+    main: [],
   }
 
   componentDidMount() {
+    this.getBlogPosts();
+    this.getMainInfo();
+  };
+
+  getMainInfo() {
+    var posts = database().ref('posts/');
+    posts.on('value', (data) => {
+      const posts = data.val();
+      this.setState({ main: data.val() });
+    });
+  }
+
+  getBlogPosts() {
     const { match: { params } } = this.props;
     var blogPage = database().ref('posts/').orderByChild('slug')
     .equalTo(params.slug).limitToFirst(1);
@@ -31,19 +43,14 @@ export default class BlogPost extends React.PureComponent {
       const elementKey = Object.keys(post)[0];
       this.setState({ blogPostPageContent: post[elementKey] });
     });
-
-    const zoom = mediumZoom(this.refs.image);
-    console.log(zoom);
-    zoom.addEventListeners('show', () => this.setState({ isZoomed: true }));
-    zoom.addEventListeners('hidden', () => this.setState({ isZoomed: false }));
   };
 
   getValue(val, nr) {
-    return this.state.blogPostPageContent[nr] && this.state.blogPostPageContent[nr][val];
+    return this.state.main[nr] && this.state.main[nr][val];
   }
 
   render() {
-    const { blogPostPageContent, isZoomed } = this.state;
+    const { blogPostPageContent } = this.state;
 
     return (
       <div className="blog-post">
@@ -70,18 +77,20 @@ export default class BlogPost extends React.PureComponent {
             shareUrl = 'http://ingus.info'
           />
         </div>
-        <div className="related-posts">
-          <h2>{this.getValue('related', 0)}</h2>
-          <ul>
-            <RelatedPosts
-              img={this.getValue('related', 5)}
-              alt={this.getValue('related', 4)}
-              category={this.getValue('related', 2)}
-              title={this.getValue('related', 3)}
-              link={this.getValue('related', 6)}
-            />
-          </ul>
-        </div>
+        {blogPostPageContent.relatedImg &&
+          <div className="related-posts">
+            <h2>{this.getValue('mainBlock', 2)}</h2>
+            <ul>
+              <RelatedPosts
+                img={blogPostPageContent.relatedImg}
+                alt={blogPostPageContent.relatedTitle}
+                category={blogPostPageContent.relatedCategory}
+                title={blogPostPageContent.relatedTitle}
+                link={blogPostPageContent.relatedLink}
+              />
+            </ul>
+          </div>
+        }
       </div>
     );
   }
