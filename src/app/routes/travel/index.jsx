@@ -49,7 +49,8 @@ export default class Travel extends React.PureComponent {
           {travelPageContent.slice(0,12).map((item, index) => (
             <TravelItem key={index}
               img={item.img}
-              name={item.slug}
+              name={item.name}
+              slug={item.slug}
             />
           ))}
         </div>
