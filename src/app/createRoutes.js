@@ -30,7 +30,7 @@ const createRoutes = () => (
 
       <Route path="/bucket-list" component={Bucket}/>
       <Route exact path="/blog" component={Blog}/>
-      <Route exact path="/blog/:slug" component={BlogPost}/>
+      <Route path="/blog/:slug" component={BlogPost}/>
 
       <Route exact path="/photography" component={Photography}/>
       <Route path="/photography/aerial" component={PhotographyAerial}/>
