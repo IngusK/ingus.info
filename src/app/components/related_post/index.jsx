@@ -9,14 +9,15 @@ export default class RelatedPosts extends React.PureComponent {
     const {img, alt, category, title, link="/"} = this.props;
     return (
       <li>
-        <NavLink to={link}>
+        {/* <NavLink to={link}> */}
+        <a href={link}>
           <img
             alt={alt}
             src={img}
           />
           <h5>{category}</h5>
           <h3>{title}</h3>
-        </NavLink>
+        </a>
       </li>
     );
   }
