@@ -29,6 +29,7 @@ export default class Posts extends React.PureComponent {
     var posts = database().ref('posts/').limitToLast(9);
     posts.on('value', (data) => {
       const posts = data.val().reverse().slice(1);
+
       this.setState({ posts });
     });
   }
@@ -41,6 +42,7 @@ export default class Posts extends React.PureComponent {
       this.setState({ lastPost: post[elementKey] });
     });
   }
+
   render() {
     const { lastPost, posts } = this.state;
     return (

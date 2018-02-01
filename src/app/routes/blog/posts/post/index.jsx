@@ -88,6 +88,24 @@ export default class BlogPost extends React.PureComponent {
                 title={blogPostPageContent.relatedTitle}
                 link={blogPostPageContent.relatedLink}
               />
+              {blogPostPageContent.relatedImg2 &&
+                <RelatedPosts
+                  img={blogPostPageContent.relatedImg2}
+                  alt={blogPostPageContent.relatedTitle2}
+                  category={blogPostPageContent.relatedCategory2}
+                  title={blogPostPageContent.relatedTitle2}
+                  link={blogPostPageContent.relatedLink2}
+                />
+              }
+              {blogPostPageContent.relatedImg3 &&
+                <RelatedPosts
+                  img={blogPostPageContent.relatedImg3}
+                  alt={blogPostPageContent.relatedTitle3}
+                  category={blogPostPageContent.relatedCategory3}
+                  title={blogPostPageContent.relatedTitle3}
+                  link={blogPostPageContent.relatedLink3}
+                />
+              }
             </ul>
           </div>
         }
