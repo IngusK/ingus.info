@@ -133,7 +133,7 @@
   .posts {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 4rem;
+    grid-gap: 6rem 4rem;
     grid-template-areas:
                         "post1"
                         "post2"
@@ -198,8 +198,8 @@
     }
     p {
       text-align: left;
-      font: 300 1.6rem $lato;
-      line-height: 2.5rem;
+      font: 300 1.7rem $lato;
+      line-height: 2.8rem;
     }
   }
 
