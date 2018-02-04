@@ -6,10 +6,9 @@ import style from './styles.scss';
 export default class RelatedPosts extends React.PureComponent {
 
   render() {
-    const {img, alt, category, title, link="/"} = this.props;
+    const {img, alt, category, title, link} = this.props;
     return (
       <li>
-        {/* <NavLink to={link}> */}
         <a href={link}>
           <img
             alt={alt}
