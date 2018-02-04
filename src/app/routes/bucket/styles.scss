@@ -8,6 +8,13 @@
   @media #{$tablet} {
     margin: 4rem auto 0;
   }
+  h3 {
+    font-family: $hand;
+    font-size: 4rem;
+    margin-top: 7rem;
+    letter-spacing: .2rem;
+    text-align: center;
+  }
  .title {
    text-align: center;
    h2 {

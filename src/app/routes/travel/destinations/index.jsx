@@ -1,5 +1,5 @@
 import React from 'react';
-import PortfolioImage from '../../../components/portfolio_image/index.jsx';
+import TravelImage from '../../../components/travel_image/index.jsx';
 import {database} from "firebase";
 
 import style from '../styles.scss';
@@ -26,7 +26,7 @@ export default class TravelPage extends React.PureComponent {
     return (
       <div className="photo-content">
         <h2>{travelPageContent.name}</h2>
-        <PortfolioImage
+        <TravelImage
           img={travelPageContent.img}
           alt={travelPageContent.name}
           descr={travelPageContent.descr}

@@ -2,6 +2,7 @@ import React from 'react';
 import {database} from "firebase";
 import { geoMercator, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
+import {NavLink, withRouter} from 'react-router-dom';
 import json from '../world-110m.json';
 import ReactTooltip from 'react-tooltip';
 
@@ -105,8 +106,7 @@ export default class WorldMap extends React.PureComponent {
           <g className="markers">
             {
                 this.state.cities.length > 0 && this.state.cities.map((city, i) => (
-                <a href={`/travel/${city.slug}`} key={i}>
-
+                <NavLink to={`/travel/${city.slug}`} key={i} >
                 <circle
                   data-tip={city.name}
                   key={`marker-${i}`}
@@ -118,7 +118,7 @@ export default class WorldMap extends React.PureComponent {
                   strokeWidth={ 0.4 }
                   className="marker"
                 />
-              </a>
+              </NavLink>
               ))
             }
           </g>

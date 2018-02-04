@@ -4,6 +4,7 @@ import RelatedPosts from '../../../../components/related_post/index.jsx';
 import Image from '../../../../components/image/index.jsx';
 import SocialIcons from '../../../../components/social_icons/index.jsx';
 import SocialIconsMobile from '../../../../components/social_icons_mobile/index.jsx';
+import ImageZoom from 'react-medium-image-zoom';
 
 import style from '../styles.scss';
 

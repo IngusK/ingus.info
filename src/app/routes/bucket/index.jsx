@@ -40,12 +40,13 @@ export default class BucketList extends React.PureComponent {
           <p dangerouslySetInnerHTML={{__html:this.getValue('description', 0)}}/>
           <p dangerouslySetInnerHTML={{__html:this.getValue('description', 1)}}/>
         </div>
+        <h3>{this.getValue('header', 1)}</h3>
         <ol className="list">
         {bucketContent.map((item, index) => (
           <BucketListItem key={index}
             done={item.done}
             goal={item.goal}
-            link={item.url}
+            link={item.slug}
           />
         ))}
         </ol>
