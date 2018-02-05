@@ -2,14 +2,30 @@
 
 .photo-content {
   .descr-image {
-    margin-bottom: 100px;
+    margin-bottom: 10rem;
     text-align: center;
-    margin: 0 auto 85px;
+    margin: 3rem auto 8.5rem;
     position: relative;
 
     img {
       width: 100%;
-      max-width: 900px;
+      max-width: 90rem;
+    }
+    .iframe-wrapper {
+      padding-bottom: 56.25%;
+      padding-top: 2.5rem;
+      height: 0;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        z-index: 999;
+        @media #{$tablet} {
+          height: 90%;
+        }
+      }
     }
     p {
       font-style: italic;
