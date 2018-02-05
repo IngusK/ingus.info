@@ -1,14 +1,14 @@
 @import "../../../app/styles/_theme.scss";
 
 .photo-content {
-  .travel-image {
+  .descr-image {
     margin-bottom: 100px;
     text-align: center;
     margin: 0 auto 85px;
     position: relative;
 
     img {
-      width: auto;
+      width: 100%;
       max-width: 900px;
     }
     p {

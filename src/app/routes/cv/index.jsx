@@ -1,6 +1,6 @@
 import React from 'react';
 import {database} from 'firebase';
-import Image from '../../components/image/index.jsx';
+import DescriptionPage from '../../components/descr_page/index.jsx';
 import Company from '../../components/company/index.jsx';
 import Code from '../../../../img/icons/code-icon.svg';
 import Camera from '../../../../img/icons/camera-icon.svg';
@@ -125,43 +125,43 @@ export default class CV extends React.PureComponent {
           <div className="certificates">
             <h3><Certificate />{this.getValue('certificates', 0)}</h3>
             <div className="certificate-wrapper">
-              <Image
+              <DescriptionPage
                 img={this.getValue('certificateImages', 1)}
                 alt={this.getValue('certificates', 1)}
               />
-              <Image
+              <DescriptionPage
                 img={this.getValue('certificateImages', 2)}
                 alt={this.getValue('certificates', 2)}
               />
-              <Image
+              <DescriptionPage
                 img={this.getValue('certificateImages', 3)}
                 alt={this.getValue('certificates', 3)}
               />
-              <Image
+              <DescriptionPage
                 img={this.getValue('certificateImages', 4)}
                 alt={this.getValue('certificates', 4)}
               />
-              <Image
+              <DescriptionPage
                 img={this.getValue('certificateImages', 5)}
                 alt={this.getValue('certificates', 5)}
               />
-              <Image
+              <DescriptionPage
                 img={this.getValue('certificateImages', 6)}
                 alt={this.getValue('certificates', 6)}
               />
-              <Image
+              <DescriptionPage
                 img={this.getValue('certificateImages', 7)}
                 alt={this.getValue('certificates', 7)}
               />
-              <Image
+              <DescriptionPage
                 img={this.getValue('certificateImages', 8)}
                 alt={this.getValue('certificates', 8)}
               />
-              <Image
+              <DescriptionPage
                 img={this.getValue('certificateImages', 9)}
                 alt={this.getValue('certificates', 9)}
               />
-              <Image
+              <DescriptionPage
                 img={this.getValue('certificateImages', 10)}
                 alt={this.getValue('certificates', 10)}
               />

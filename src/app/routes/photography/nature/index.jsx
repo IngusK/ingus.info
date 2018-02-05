@@ -1,5 +1,5 @@
 import React from 'react';
-import PortfolioImage from '../../../components/portfolio_image/index.jsx';
+import DescriptionPage from '../../../components/descr_page/index.jsx';
 import {database} from "firebase";
 
 import style from '../styles.scss';
@@ -31,27 +31,27 @@ export default class PhotographyAerial extends React.PureComponent {
       <div className="photo-content">
         <h2>{this.getValue('nature', 0)}</h2>
         <p dangerouslySetInnerHTML={{__html:this.getValue('nature', 1)}} />
-        <PortfolioImage
+        <DescriptionPage
           img={this.getValue('aerial', 3)}
           alt={this.getValue('aerial', 2)}
           descr={this.getValue('aerial', 2)}
         />
-        <PortfolioImage
+        <DescriptionPage
           img={this.getValue('aerial', 5)}
           alt={this.getValue('aerial', 4)}
           descr={this.getValue('aerial', 4)}
         />
-        <PortfolioImage
+        <DescriptionPage
           img={this.getValue('aerial', 7)}
           alt={this.getValue('aerial', 6)}
           descr={this.getValue('aerial', 6)}
         />
-        <PortfolioImage
+        <DescriptionPage
           img={this.getValue('aerial', 9)}
           alt={this.getValue('aerial', 8)}
           descr={this.getValue('aerial', 8)}
         />
-        <PortfolioImage
+        <DescriptionPage
           img={this.getValue('aerial', 11)}
           alt={this.getValue('aerial', 10)}
           descr={this.getValue('aerial', 10)}
