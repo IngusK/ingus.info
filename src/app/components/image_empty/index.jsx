@@ -22,7 +22,6 @@ export default class ImageEmpty extends React.PureComponent {
         <h3>{alt}</h3>
         <img
           alt={alt}
-          ref="image"
           src={img}
         />
       </li>

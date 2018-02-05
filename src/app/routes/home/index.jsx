@@ -9,8 +9,6 @@ export default class Posts extends React.PureComponent {
 
   constructor(...args) {
     super(...args);
-    // this.getBlogPosts = this.getBlogPosts.bind(this);
-    // this.getMainPost = this.getMainPost.bind(this);
   }
 
   state = {
