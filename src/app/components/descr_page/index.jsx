@@ -24,7 +24,7 @@ export default class DescrPage extends React.PureComponent {
     const {img, alt, descr, descrDef} = this.props;
     return (
       <div className={'descr-image'}>
-        {img && img.includes(".jpg") ?
+        {img.includes(".jpg") &&
           <ImageZoom
             image={{
               src: img,
@@ -32,7 +32,9 @@ export default class DescrPage extends React.PureComponent {
               style: {'height': 'auto'}
             }}
             shouldRespectMaxDimension={true}
-          /> :
+          />
+        }
+        {img.includes("youtube") &&
           <div className="iframe-wrapper">
             <iframe src={img} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
