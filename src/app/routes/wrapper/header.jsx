@@ -29,7 +29,6 @@ export default class Header extends React.Component {
   }
 
   render() {
-
     return (
       <header>
         <div className="logo">
@@ -40,10 +39,6 @@ export default class Header extends React.Component {
         </div>
         <nav>
           <ul className="nav-large">
-            <Menu
-              title={this.getValue('menuTitle', 0)}
-              url={this.getValue('menuLink', 0)}
-            />
             <Menu
               title={this.getValue('menuTitle', 1)}
               url={this.getValue('menuLink', 1)}
@@ -58,6 +53,10 @@ export default class Header extends React.Component {
             />
           </ul>
           <ul className="nav-small">
+            <Menu
+              title={this.getValue('menuTitle', 0)}
+              url={this.getValue('menuLink', 0)}
+            />
             <Menu
               title={this.getValue('menuTitle', 4)}
               url={this.getValue('menuLink', 4)}

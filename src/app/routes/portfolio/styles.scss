@@ -42,12 +42,56 @@
      }
    }
  }
-}
 
-.list {
-  text-align: center;
-  padding: 0;
-  margin: 3rem 0 0;
-  display: flex;
-  flex-direction: column;
+ .portfolio-grid {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-gap: 4rem;
+   @media #{$tablet} {
+     grid-template-columns: repeat(3, 1fr);
+   }
+   img {
+     width: 100%;
+     max-height: 30rem;
+     object-fit: cover;
+     object-position: top;
+     @include transition;
+     @media #{$tablet} {
+       height: 23rem;
+     }
+     &:hover {
+       object-position: bottom right;
+     }
+   }
+   font: 300 2rem $lato;
+   line-height: 3rem;
+   margin: 1rem 0;
+   @media #{$mobile} {
+     font: 300 2rem $lato;
+     line-height: 3rem;
+   }
+   h4 {
+     font-size: 2.6rem;
+     display: inline-block;
+     &:hover {
+       color: $pink;
+     }
+     &:after {
+       content: "";
+       background: $pink;
+       width: 5rem;
+       height: .3rem;
+       display: block;
+       margin: 1rem 0 1rem -1.5rem;
+       @media #{$tablet} {
+         margin: .8rem 0 .8rem -2rem;
+       }
+     }
+   }
+   p {
+     text-align: left;
+     font: 300 1.6rem $lato;
+     line-height: 2.5rem;
+   }
+ }
 }
