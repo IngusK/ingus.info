@@ -17,7 +17,8 @@ export default class Posts extends React.PureComponent {
   };
 
   getBlogPosts() {
-    var posts = database().ref('posts/').orderByChild('slug').startAt('my-sky-diving-experience');
+    // var posts = database().ref('posts/').orderByChild('slug').startAt('my-sky-diving-experience');
+    var posts = database().ref('posts/');
     posts.on('value', (data) => {
       const posts = data.val().reverse().slice(1);
 
@@ -52,7 +53,7 @@ export default class Posts extends React.PureComponent {
 
         <div className="posts">
           {posts.map((post, index) => (
-            <div className={`post-${index + 1}`} key={index}>
+            <div key={index}>
               <NavLink to={`/story-blog/${post.slug}`}><img src={post.photo} alt={post.title} /></NavLink>
               <h3>{post.date}</h3>
               <NavLink to={`/story-blog/${post.slug}`}><h4>{post.title}</h4></NavLink>

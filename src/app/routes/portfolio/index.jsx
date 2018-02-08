@@ -1,6 +1,6 @@
 import React from 'react';
 import {database} from "firebase";
-import DescriptionPage from '../../components/descr_page/index.jsx';
+import ImageZoom from 'react-medium-image-zoom';
 
 import style from './styles.scss';
 
@@ -40,12 +40,21 @@ export default class Portfolio extends React.PureComponent {
           <p dangerouslySetInnerHTML={{__html:this.getValue('description', 0)}}/>
         </div>
         <h3>{this.getValue('header', 1)}</h3>
-        {portfolioContent.map((item, index) => (
-          <DescriptionPage key={index}
-            img={item.img}
-            alt={item.name}
-          />
-        ))}
+        <div className="portfolio-grid">
+          {portfolioContent.map((item, index) => (
+            <div key={index}>
+              <ImageZoom
+                image={{
+                  src: item.img,
+                  alt: item.name,
+                }}
+                shouldRespectMaxDimension={true}
+              />
+              <h4>{item.name}</h4>
+              <p dangerouslySetInnerHTML={{__html:item.descr}} />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
