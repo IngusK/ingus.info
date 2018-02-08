@@ -29,7 +29,7 @@ export default class DescrPage extends React.PureComponent {
             image={{
               src: img,
               alt: alt,
-              style: {'height': 'auto'}
+              style: {'height': 'auto'},
             }}
             shouldRespectMaxDimension={true}
           />

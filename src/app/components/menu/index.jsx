@@ -22,7 +22,7 @@ import style from './styles.scss';
 //   }
 // };
 
-const MenuLink = ({ location: {pathname}, title = 'Home page', url = '/' }) => (
+const MenuLink = ({ location: {pathname}, title, url = '/' }) => (
   <li className={`menu ${pathname.indexOf(url) !== -1 ? 'active' : ''}`}>
     <NavLink to={url}>{title}</NavLink>
   </li>
