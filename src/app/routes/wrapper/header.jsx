@@ -18,14 +18,14 @@ export default class Header extends React.Component {
   }
 
   componentDidMount() {
-    var posts = database().ref('master/');
+    var posts = database().ref('posts/');
     posts.on('value', (data) => {
       this.setState({ content: data.val() });
     });
   };
 
-  getValue(val) {
-    return this.state.posts[0] && this.state.posts[0][val];
+  getValue(val, nr) {
+    return this.state.content[nr] && this.state.content[nr][val];
   }
 
   render() {
@@ -33,36 +33,42 @@ export default class Header extends React.Component {
     return (
       <header>
         <div className="logo">
-          <NavLink to='/'><h1>Ingus<span>.info</span></h1></NavLink>
-          <h2>Travel. Photography. Coding</h2>
+          <NavLink to='/'>
+            <h1 dangerouslySetInnerHTML={{__html:this.getValue('logo', 0)}} />
+          </NavLink>
+          <h2>{this.getValue('logo', 1)}</h2>
         </div>
         <nav>
           <ul className="nav-large">
             <Menu
-              title='Travel'
-              url='/travel'
+              title={this.getValue('menuTitle', 0)}
+              url={this.getValue('menuLink', 0)}
             />
             <Menu
-              title='Story Blog'
-              url='/blog'
+              title={this.getValue('menuTitle', 1)}
+              url={this.getValue('menuLink', 1)}
             />
             <Menu
-              title='Photography'
-              url='/photography'
+              title={this.getValue('menuTitle', 2)}
+              url={this.getValue('menuLink', 2)}
+            />
+            <Menu
+              title={this.getValue('menuTitle', 3)}
+              url={this.getValue('menuLink', 3)}
             />
           </ul>
           <ul className="nav-small">
             <Menu
-              title='About'
-              url='/about'
+              title={this.getValue('menuTitle', 4)}
+              url={this.getValue('menuLink', 4)}
             />
             <Menu
-              title='CTO'
-              url='/cto'
+              title={this.getValue('menuTitle', 5)}
+              url={this.getValue('menuLink', 5)}
             />
             <Menu
-              title='CV'
-              url='/cv'
+              title={this.getValue('menuTitle', 6)}
+              url={this.getValue('menuLink', 6)}
             />
             <Menu
               title={<Bucket/>}
