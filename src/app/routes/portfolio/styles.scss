@@ -73,6 +73,8 @@
    h4 {
      font-size: 2.6rem;
      display: inline-block;
+     text-transform: capitalize;
+     margin-top: 1.6rem;
      &:hover {
        color: $pink;
      }
@@ -92,6 +94,7 @@
      text-align: left;
      font: 300 1.6rem $lato;
      line-height: 2.5rem;
+     margin-bottom: 5rem;
    }
  }
 }

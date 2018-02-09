@@ -6,51 +6,39 @@ import style from './styles.scss';
 
 export default class Posts extends React.PureComponent {
 
+  constructor(...args) {
+    super(...args);
+    this.getValue = this.getValue.bind(this);
+  }
+
   state = {
     posts: [],
-    lastPost: {},
   }
 
   componentDidMount() {
     this.getBlogPosts();
-    this.getMainPost();
   };
 
   getBlogPosts() {
     // var posts = database().ref('posts/').orderByChild('slug').startAt('my-sky-diving-experience');
     var posts = database().ref('posts/');
     posts.on('value', (data) => {
-      const posts = data.val().reverse().slice(1);
+      const posts = data.val().reverse();
 
       this.setState({ posts });
     });
   }
 
-  getMainPost() {
-    var posts = database().ref('posts/').limitToLast(1);
-    posts.on('value', (data) => {
-      const post = data.val();
-      const elementKey = Object.keys(post)[0];
-      this.setState({ lastPost: post[elementKey] });
-    });
+  getValue(val, nr) {
+    return this.state.posts[nr] && this.state.posts[nr][val];
   }
 
   render() {
-    const { lastPost, posts } = this.state;
+    const { posts } = this.state;
     return (
       <div className="blog-content">
-        <div className="top-slider">
-          <div className="slider-description">
-            <h3>{lastPost.date}</h3>
-            <NavLink to={`/story-blog/${lastPost.slug}`}><h2>{lastPost.title}</h2></NavLink>
-            <h5>{lastPost.category}</h5>
-            <p dangerouslySetInnerHTML={{__html:lastPost.description}} />
-          </div>
-          <div className="slider-photo">
-            <NavLink to={`/story-blog/${lastPost.slug}`}><img src={lastPost.photo} alt={lastPost.title} /></NavLink>
-          </div>
-        </div>
-
+        <h2>{this.getValue('mainBlock', 4)}</h2>
+        <p dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 3)}} />
         <div className="posts">
           {posts.map((post, index) => (
             <div key={index}>
