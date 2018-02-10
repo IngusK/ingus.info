@@ -26,9 +26,6 @@ export default class Posts extends React.PureComponent {
       this.setState({ posts });
     });
 
-    const offset = 2*7;
-    posts.slice(offset, offset + 7)
-    console.log(offset);
   }
 
   getValue(val, nr) {
