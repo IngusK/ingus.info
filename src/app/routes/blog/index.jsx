@@ -20,13 +20,15 @@ export default class Posts extends React.PureComponent {
   };
 
   getBlogPosts() {
-    // var posts = database().ref('posts/').orderByChild('slug').startAt('my-sky-diving-experience');
     var posts = database().ref('posts/');
     posts.on('value', (data) => {
       const posts = data.val().reverse();
-
       this.setState({ posts });
     });
+
+    const offset = 2*7;
+    posts.slice(offset, offset + 7)
+    console.log(offset);
   }
 
   getValue(val, nr) {

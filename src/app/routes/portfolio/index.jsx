@@ -27,6 +27,10 @@ export default class Portfolio extends React.PureComponent {
     });
   };
 
+  imageZoomFunction() {
+    console.log("TEST");
+  };
+
   getValue(val, nr) {
     return this.state.portfolioContent[nr] && this.state.portfolioContent[nr][val];
   }
@@ -47,6 +51,9 @@ export default class Portfolio extends React.PureComponent {
                 image={{
                   src: item.img,
                   alt: item.name,
+                }}
+                onZoom={() => {
+                  this.imageZoomFunction();
                 }}
                 shouldRespectMaxDimension={true}
               />

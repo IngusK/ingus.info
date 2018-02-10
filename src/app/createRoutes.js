@@ -11,7 +11,6 @@ import TravelPost from './routes/travel/destinations';
 import Bucket from './routes/bucket';
 import BucketPost from './routes/bucket/done';
 import Portfolio from './routes/portfolio';
-import PortfolioPost from './routes/portfolio/post';
 import Photography from './routes/photography';
 import PhotographyAerial from './routes/photography/aerial';
 import PhotographyCity from './routes/photography/city';
@@ -36,7 +35,6 @@ const createRoutes = () => (
       <Route path="/bucket-list/:slug" component={BucketPost}/>
 
       <Route exact path="/portfolio" component={Portfolio}/>
-      <Route path="/portfolio/:slug" component={PortfolioPost}/>
 
       <Route exact path="/story-blog" component={Blog}/>
       <Route path="/story-blog/:slug" component={BlogPost}/>
