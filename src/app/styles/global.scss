@@ -11,6 +11,11 @@ html, body {
   font-family: $lato;
 }
 
+.zoom-img {
+  // width: auto !important;
+  object-fit: scale-down;
+}
+
 a {
   text-decoration: none;
 }
