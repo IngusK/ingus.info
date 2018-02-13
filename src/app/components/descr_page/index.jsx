@@ -25,14 +25,18 @@ export default class DescrPage extends React.PureComponent {
     return (
       <div className={'descr-image'}>
         {img.includes(".jpg") &&
-          <ImageZoom
-            image={{
-              src: img,
-              alt: alt,
-              style: {'height': 'auto'},
-            }}
-            shouldRespectMaxDimension={true}
-          />
+        <ImageZoom
+          image={{
+            src: img,
+            alt: alt,
+          }}
+          zoomImage={{
+            src: img,
+            alt: alt,
+            className: 'zoom-img'
+          }}
+          shouldRespectMaxDimension={true}
+        />
         }
         {img.includes("youtube") &&
           <div className="iframe-wrapper">
