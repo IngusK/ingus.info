@@ -19,13 +19,22 @@ export default class Posts extends React.PureComponent {
     this.getBlogPosts();
   };
 
+  // getBlogPosts() {
+  //   var posts = database().ref('posts/');
+  //   posts.on('value', (data) => {
+  //     const posts = data.val().reverse();
+  //     const params = this.props.match;
+  //     const resolvedPosts = posts.slice(params.page * 7, params.page * 7 + 7);
+  //     this.setState({ posts: resolvedPosts })
+  //   });
+  // }
+
   getBlogPosts() {
     var posts = database().ref('posts/');
     posts.on('value', (data) => {
       const posts = data.val().reverse();
       this.setState({ posts });
     });
-
   }
 
   getValue(val, nr) {
@@ -34,8 +43,13 @@ export default class Posts extends React.PureComponent {
 
   render() {
     const { posts } = this.state;
+    // const { match, location, history } = this.props
+    // console.log("match", match);
+    // console.log("location", location);
+    // console.log("history", history);
     return (
       <div className="blog-content">
+        {/* <h2>You are now at {location.pathname}</h2> */}
         <h2>{this.getValue('mainBlock', 4)}</h2>
         <p dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 3)}} />
         <div className="posts">
