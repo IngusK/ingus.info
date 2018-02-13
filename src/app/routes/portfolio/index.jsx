@@ -47,7 +47,6 @@ export default class Portfolio extends React.PureComponent {
                 image={{
                   src: item.img,
                   alt: item.name,
-                  className: 'img'
                 }}
                 zoomImage={{
                   src: item.img,
