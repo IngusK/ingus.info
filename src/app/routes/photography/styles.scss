@@ -95,6 +95,9 @@
     .photography-2 {
       grid-area: people;
       overflow: hidden;
+      &>div {
+        height: 100%;
+      }
       h3 {
         font-size: 12rem;
         left: -2rem;
@@ -116,6 +119,9 @@
     .photography-3 {
       grid-area: city;
       overflow: hidden;
+      &>div {
+        height: 100%;
+      }
       h3 {
         font-size: 10rem;
         right: -2rem;
@@ -155,7 +161,7 @@
         }
       }
     }
-    li {
+    .category-image {
       position: relative;
       height: 200px;
       @media #{$tablet} {
