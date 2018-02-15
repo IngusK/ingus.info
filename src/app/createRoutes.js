@@ -24,8 +24,8 @@ const createRoutes = () => (
       <Route path="/cto" component={Cto}/>
       <Route path="/cv" component={Cv}/>
 
-      <Route exact path="/travel" component={Travel}/>
-      <Route path="/travel/:slug" component={TravelPost}/>
+      <Route exact path="/map" component={Travel}/>
+      <Route path="/map/:slug" component={TravelPost}/>
 
       <Route exact path="/bucket-list" component={Bucket}/>
       <Route path="/bucket-list/:slug" component={BucketPost}/>

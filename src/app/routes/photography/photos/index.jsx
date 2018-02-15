@@ -1,11 +1,9 @@
 import React from 'react';
 import DescriptionPage from '../../../components/descr_page/index.jsx';
-import { withRouter } from 'react-router-dom';
 import {database} from "firebase";
 
 import style from '../styles.scss';
 
-@withRouter
 export default class PhotographyAerial extends React.PureComponent {
 
   constructor(...args) {
@@ -15,6 +13,8 @@ export default class PhotographyAerial extends React.PureComponent {
 
   state = {
     photographyPageContent: [],
+    photo: '',
+    photoDescr: '',
   }
 
   componentDidMount() {
@@ -29,8 +29,17 @@ export default class PhotographyAerial extends React.PureComponent {
   }
 
   render() {
-    const { photographyPageContent } = this.state;
+    const { photographyPageContent, photo, photoDescr } = this.state;
     const activePath = this.props.location.pathname;
+
+    // Take the last part of the activePath
+    const sectionName = activePath.split('/').slice(-1).pop();
+    const sectionDescription = `${sectionName}-descr`;
+    this.setState({
+      photo: sectionName,
+      photoDescr: sectionDescription
+    });
+
     return (
       <div className="photo-content">
         <h2>{this.getValue('titles', 0)}</h2>
@@ -38,9 +47,9 @@ export default class PhotographyAerial extends React.PureComponent {
         {photographyPageContent.map((item, index) => (
           <DescriptionPage
             key={index}
-            img={photographyPageContent[index].aerial}
-            alt={photographyPageContent[index].aerialDescr}
-            descr={photographyPageContent[index].aerialDescr}
+            img={photographyPageContent[index][photo]}
+            alt={photographyPageContent[index][photoDescr]}
+            descr={photographyPageContent[index][photoDescr]}
           />
         ))}
       </div>
