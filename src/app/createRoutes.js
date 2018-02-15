@@ -6,13 +6,18 @@ import Home from './routes/home';
 import About from './routes/about';
 import Cto from './routes/cto';
 import Cv from './routes/cv';
+
 import Travel from './routes/travel';
 import TravelPost from './routes/travel/destinations';
+
 import Bucket from './routes/bucket';
 import BucketPost from './routes/bucket/done';
+
 import Portfolio from './routes/portfolio';
+
 import Photography from './routes/photography';
 import PhotographyPost from './routes/photography/photos';
+
 import Blog from './routes/blog';
 import BlogPost from './routes/blog/posts/post';
 
@@ -32,11 +37,11 @@ const createRoutes = () => (
 
       <Route exact path="/portfolio" component={Portfolio}/>
 
-      <Route exact path="/story-blog" component={Blog}/>
-      <Route path="/story-blog/:slug" component={BlogPost}/>
-
       <Route exact path="/photography" component={Photography}/>
       <Route path="/photography/:slug" component={PhotographyPost}/>
+
+      <Route exact path="/story-blog" component={Blog}/>
+      <Route path="/story-blog/:slug" component={BlogPost}/>
 
     </Wrapper>
   </Router>

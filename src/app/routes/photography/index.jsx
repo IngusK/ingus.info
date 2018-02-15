@@ -1,7 +1,7 @@
 import React from 'react';
-import Image from '../../components/image_empty/index.jsx';
-import {NavLink} from 'react-router-dom';
-import {database} from "firebase";
+import DescriptionPage from '../../components/descr_page/index.jsx';
+import { NavLink } from 'react-router-dom';
+import { database } from "firebase";
 
 import style from './styles.scss';
 
@@ -39,7 +39,8 @@ export default class Photography extends React.PureComponent {
               key={index}
               to={`/photography/${photo.slug}`}
               className={`photography-${index + 1}`}>
-              <Image
+              <DescriptionPage
+                photography
                 img={photographyPageContent[index].link}
                 alt={photographyPageContent[index].category}
               />

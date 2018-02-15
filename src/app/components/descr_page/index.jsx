@@ -11,6 +11,7 @@ export default class DescrPage extends React.PureComponent {
     alt: '',
     descr: '',
     descrDef: '',
+    photography: false,
   }
 
   props: {
@@ -18,35 +19,48 @@ export default class DescrPage extends React.PureComponent {
     alt: string,
     descr: string,
     descrDef: string,
+    photography: boolean,
   }
 
   render() {
-    const {img, alt, descr, descrDef} = this.props;
+    const {img, alt, descr, descrDef, photography} = this.props;
     return (
-      <div className={'descr-image'}>
-        {img.includes(".jpg") &&
-        <ImageZoom
-          image={{
-            src: img,
-            alt: alt,
-          }}
-          zoomImage={{
-            src: img,
-            alt: alt,
-            className: 'zoom-img'
-          }}
-          shouldRespectMaxDimension={true}
-        />
-        }
-        {img.includes("youtube") &&
-          <div className="iframe-wrapper">
-            <iframe src={img} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <div>
+        {photography ?
+          <div className="category-image">
+            <h3>{alt}</h3>
+            <img
+              alt={alt}
+              src={img}
+            />
           </div>
-        }
-        {descr ?
-          <p>{descr}</p>
-          :
-          <span>{descrDef}</span>
+        :
+        <div className="descr-image">
+          {img.includes(".jpg") &&
+          <ImageZoom
+            image={{
+              src: img,
+              alt: alt,
+            }}
+            zoomImage={{
+              src: img,
+              alt: alt,
+              className: 'zoom-img'
+            }}
+            shouldRespectMaxDimension={true}
+          />
+          }
+          {img.includes("youtube") &&
+            <div className="iframe-wrapper">
+              <iframe src={img} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          }
+          {descr ?
+            <p>{descr}</p>
+            :
+            <span>{descrDef}</span>
+          }
+        </div>
         }
       </div>
     );
