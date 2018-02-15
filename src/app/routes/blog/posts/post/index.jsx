@@ -23,16 +23,7 @@ export default class BlogPost extends React.PureComponent {
 
   componentDidMount() {
     this.getBlogPosts();
-    this.getMainInfo();
   };
-
-  getMainInfo() {
-    var posts = database().ref('posts/');
-    posts.on('value', (data) => {
-      const posts = data.val();
-      this.setState({ main: data.val() });
-    });
-  }
 
   getBlogPosts() {
     const { match: { params } } = this.props;

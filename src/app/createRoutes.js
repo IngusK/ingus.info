@@ -12,11 +12,7 @@ import Bucket from './routes/bucket';
 import BucketPost from './routes/bucket/done';
 import Portfolio from './routes/portfolio';
 import Photography from './routes/photography';
-import PhotographyAerial from './routes/photography/aerial';
-import PhotographyCity from './routes/photography/city';
-import PhotographyPeople from './routes/photography/people';
-import PhotographyNature from './routes/photography/nature';
-import PhotographyTravel from './routes/photography/travel';
+import PhotographyPost from './routes/photography/photos';
 import Blog from './routes/blog';
 import BlogPost from './routes/blog/posts/post';
 
@@ -40,11 +36,8 @@ const createRoutes = () => (
       <Route path="/story-blog/:slug" component={BlogPost}/>
 
       <Route exact path="/photography" component={Photography}/>
-      <Route path="/photography/aerial" component={PhotographyAerial}/>
-      <Route path="/photography/city" component={PhotographyCity}/>
-      <Route path="/photography/people" component={PhotographyPeople}/>
-      <Route path="/photography/nature" component={PhotographyNature}/>
-      <Route path="/photography/travel" component={PhotographyTravel}/>
+      <Route path="/photography/:slug" component={PhotographyPost}/>
+
     </Wrapper>
   </Router>
 );

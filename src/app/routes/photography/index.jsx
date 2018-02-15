@@ -28,41 +28,23 @@ export default class Photography extends React.PureComponent {
   }
 
   render() {
+    const { photographyPageContent } = this.state;
     return (
       <div className="photo-content">
-        <h2>{this.getValue('portfolio', 0)}</h2>
-        <p dangerouslySetInnerHTML={{__html:this.getValue('portfolio', 1)}} />
+        <h2>{this.getValue('mainHeaders', 0)}</h2>
+        <p dangerouslySetInnerHTML={{__html:this.getValue('mainHeaders', 1)}} />
         <div className="photo-grid">
-          <NavLink to='/photography/aerial' className="aerial">
-            <Image
-              img={this.getValue('link', 2)}
-              alt={this.getValue('portfolio', 2)}
-            />
-          </NavLink>
-          <NavLink to='/photography/people' className="people">
-            <Image
-              img={this.getValue('link', 3)}
-              alt={this.getValue('portfolio', 3)}
-            />
-          </NavLink>
-          <NavLink to='/photography/city' className="citylife">
-            <Image
-              img={this.getValue('link', 4)}
-              alt={this.getValue('portfolio', 4)}
-            />
-          </NavLink>
-          <NavLink to='/photography/travel' className="travel">
-            <Image
-              img={this.getValue('link', 5)}
-              alt={this.getValue('portfolio', 5)}
-            />
-          </NavLink>
-          <NavLink to='/photography/nature' className="nature">
-            <Image
-              img={this.getValue('link', 6)}
-              alt={this.getValue('portfolio', 6)}
-            />
-          </NavLink>
+          {photographyPageContent.map((photo, index) => (
+            <NavLink
+              key={index}
+              to={`/photography/${photo.slug}`}
+              className={`photography-${index + 1}`}>
+              <Image
+                img={photographyPageContent[index].link}
+                alt={photographyPageContent[index].category}
+              />
+            </NavLink>
+          ))}
         </div>
       </div>
     );
