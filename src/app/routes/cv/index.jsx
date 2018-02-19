@@ -33,6 +33,9 @@ export default class CV extends React.PureComponent {
   }
 
   render() {
+
+    const {cvPageContent} = this.state;
+
     return (
       <div className="cv-content">
         <div className="main-info">
@@ -49,12 +52,11 @@ export default class CV extends React.PureComponent {
             <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 1)}} />
             <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 2)}} />
             <ul>
+              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 2)}} />
               <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 3)}} />
               <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 4)}} />
               <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 5)}} />
               <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 6)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 7)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 8)}} />
             </ul>
             <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 9)}} />
           </div>
@@ -125,46 +127,18 @@ export default class CV extends React.PureComponent {
           <div className="certificates">
             <h3><Certificate />{this.getValue('certificates', 0)}</h3>
             <div className="certificate-wrapper">
-              <DescriptionPage
-                img={this.getValue('certificateImages', 1)}
-                alt={this.getValue('certificates', 1)}
-              />
-              <DescriptionPage
-                img={this.getValue('certificateImages', 2)}
-                alt={this.getValue('certificates', 2)}
-              />
-              <DescriptionPage
-                img={this.getValue('certificateImages', 3)}
-                alt={this.getValue('certificates', 3)}
-              />
-              <DescriptionPage
-                img={this.getValue('certificateImages', 4)}
-                alt={this.getValue('certificates', 4)}
-              />
-              <DescriptionPage
-                img={this.getValue('certificateImages', 5)}
-                alt={this.getValue('certificates', 5)}
-              />
-              <DescriptionPage
-                img={this.getValue('certificateImages', 6)}
-                alt={this.getValue('certificates', 6)}
-              />
-              <DescriptionPage
-                img={this.getValue('certificateImages', 7)}
-                alt={this.getValue('certificates', 7)}
-              />
-              <DescriptionPage
-                img={this.getValue('certificateImages', 8)}
-                alt={this.getValue('certificates', 8)}
-              />
-              <DescriptionPage
-                img={this.getValue('certificateImages', 9)}
-                alt={this.getValue('certificates', 9)}
-              />
-              <DescriptionPage
-                img={this.getValue('certificateImages', 10)}
-                alt={this.getValue('certificates', 10)}
-              />
+              {cvPageContent.map((item, index) => {
+                if (!cvPageContent[index].certificateImages) {
+                  return;
+                }
+                return (
+                  <DescriptionPage
+                    key={index}
+                    img={cvPageContent[index].certificateImages}
+                    alt={cvPageContent[index].certificates}
+                  />
+                )
+              })}
             </div>
           </div>
           <div className="stocks">
