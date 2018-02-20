@@ -34,7 +34,7 @@ export default class CV extends React.PureComponent {
 
   render() {
 
-    const {cvPageContent} = this.state;
+    const { cvPageContent } = this.state;
 
     return (
       <div className="cv-content">
@@ -52,11 +52,14 @@ export default class CV extends React.PureComponent {
             <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 1)}} />
             <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 2)}} />
             <ul>
-              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 2)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 3)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 4)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 5)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('coding', 6)}} />
+              {cvPageContent.map((item, index) => {
+                if (index > 5) {
+                  return;
+                }
+                return (
+                  <li key={index} dangerouslySetInnerHTML={{__html:this.getValue('coding', [index+3])}} />
+                )
+              })}
             </ul>
             <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 9)}} />
           </div>
@@ -64,11 +67,14 @@ export default class CV extends React.PureComponent {
             <h3><Camera />{this.getValue('travel', 0)}</h3>
             <p dangerouslySetInnerHTML={{__html:this.getValue('travel', 1)}} />
             <ul>
-              <li dangerouslySetInnerHTML={{__html:this.getValue('travel', 2)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('travel', 3)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('travel', 4)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('travel', 5)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('travel', 6)}} />
+              {cvPageContent.map((item, index) => {
+                if (index > 4) {
+                  return;
+                }
+                return (
+                  <li key={index} dangerouslySetInnerHTML={{__html:this.getValue('travel', [index+2])}} />
+                )
+              })}
             </ul>
             <p dangerouslySetInnerHTML={{__html:this.getValue('travel', 7)}} />
           </div>
