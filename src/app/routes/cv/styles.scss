@@ -73,18 +73,18 @@
     display: grid;
     margin-top: 4rem;
     grid-template:
+                  "cto"
                   "work-exp"
                   "coding"
                   "travel"
                   "stocks"
-                  "cto"
                   "certificates";
     grid-gap: 3rem 5rem;
     @media #{$tablet} {
       grid-template:
+                    "work-exp cto"
                     "work-exp coding"
                     "work-exp travel"
-                    "work-exp cto"
                     "work-exp stocks"
                     "certificates certificates";
     }

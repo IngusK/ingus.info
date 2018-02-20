@@ -56,7 +56,7 @@ export default class DescrPage extends React.PureComponent {
             </div>
           }
           {descr ?
-            <p>{descr}</p>
+            <p dangerouslySetInnerHTML={{__html:descr}} />
             :
             <span>{descrDef}</span>
           }

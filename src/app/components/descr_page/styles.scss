@@ -33,6 +33,12 @@
       font-size: 1.9rem;
       padding-top: 1rem;
       margin-bottom: 2rem;
+      a {
+        border-bottom: 2px solid $pink;
+        &:hover {
+          color: $pink;
+        }
+      }
       span {
         font-size: 2.8rem;
         margin-bottom: 1.6rem;
