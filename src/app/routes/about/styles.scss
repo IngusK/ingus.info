@@ -78,10 +78,17 @@
     }
     p {
       a {
-        border-bottom: .2rem solid $pink;
+        padding: 10px 0;
+        background-image: linear-gradient($pink,$pink);
+        background-repeat: no-repeat;
+        background-size: 100% 1.5px;
+        background-position: center bottom 28%;
+        background-origin: padding-box;
+        text-shadow: 3px 0 #fff, 2px 0 #fff, 1px 0 #fff, -1px 0 #fff, -2px 0 #fff, -3px 0 #fff;
+        color: $pink;
         @include transition;
         &:hover {
-          color: $pink;
+          background-position: center top 24%;
         }
       }
     }
