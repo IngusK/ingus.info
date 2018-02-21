@@ -43,7 +43,7 @@ export default class PhotographyAerial extends React.PureComponent {
     return (
       <div className="photo-content">
         <h2>{this.getValue('titles', 0)}</h2>
-        <p dangerouslySetInnerHTML={{__html:this.getValue('descr', 0)}} />
+        <p dangerouslySetInnerHTML={{__html:this.getValue('descr', sectionName === "aerial" ? 0 : 1)}} />
         {photographyPageContent.map((item, index) => (
           <DescriptionPage
             key={index}
