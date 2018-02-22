@@ -1,5 +1,4 @@
-@import "normalize";
-@import "theme";
+@import "./_theme.scss";
 
 html, body {
   font-size: 62.5%;
@@ -38,6 +37,20 @@ h2 {
 
 pre {
   background: #282c34;
+}
+
+p::selection,
+h2::selection,
+h3::selection {
+  background: $pink; /* WebKit/Blink Browsers */
+  color: $white;
+}
+
+p::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection {
+  background: $pink; /* Gecko Browsers */
+  color: $white;
 }
 
 pre, code {

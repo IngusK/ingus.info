@@ -15,6 +15,7 @@ export default class PhotographyAerial extends React.PureComponent {
     photographyPageContent: [],
     photo: '',
     photoDescr: '',
+    titleDescrNr: 0,
   }
 
   componentDidMount() {
@@ -29,7 +30,7 @@ export default class PhotographyAerial extends React.PureComponent {
   }
 
   render() {
-    const { photographyPageContent, photo, photoDescr } = this.state;
+    const { photographyPageContent, photo, photoDescr, titleDescrNr } = this.state;
     const activePath = this.props.location.pathname;
 
     // Take the last part of the activePath
@@ -40,10 +41,38 @@ export default class PhotographyAerial extends React.PureComponent {
       photoDescr: sectionDescription
     });
 
+    switch (sectionName) {
+      case "aerial":
+        this.setState({
+          titleDescrNr: 0
+        });
+      break;
+      case "people":
+        this.setState({
+          titleDescrNr: 1
+        });
+      break;
+      case "city-life":
+        this.setState({
+          titleDescrNr: 2
+        });
+      break;
+      case "travel":
+        this.setState({
+          titleDescrNr: 3
+        });
+      break;
+      case "nature":
+        this.setState({
+          titleDescrNr: 4
+        });
+      break;
+    }
+
     return (
       <div className="photo-content">
-        <h2>{this.getValue('titles', 0)}</h2>
-        <p dangerouslySetInnerHTML={{__html:this.getValue('descr', sectionName === "aerial" ? 0 : 1)}} />
+        <h2>{this.getValue('titles', titleDescrNr)}</h2>
+        <p dangerouslySetInnerHTML={{__html:this.getValue('descr', titleDescrNr)}} />
         {photographyPageContent.map((item, index) => (
           <DescriptionPage
             key={index}
