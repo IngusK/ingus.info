@@ -1,21 +1,12 @@
 import React from 'react';
 import DescriptionPage from '../../../components/descr_page/index.jsx';
 import {database} from "firebase";
-
 import style from '../styles.scss';
 
 export default class PhotographyAerial extends React.PureComponent {
 
-  constructor(...args) {
-    super(...args);
-    this.getValue = this.getValue.bind(this);
-  }
-
   state = {
     photographyPageContent: [],
-    photo: '',
-    photoDescr: '',
-    titleDescrNr: 0,
   }
 
   componentDidMount() {
@@ -25,58 +16,30 @@ export default class PhotographyAerial extends React.PureComponent {
     });
   };
 
-  getValue(val, nr) {
-    return this.state.photographyPageContent[nr] && this.state.photographyPageContent[nr][val];
-  }
-
   render() {
-    const { photographyPageContent, photo, photoDescr, titleDescrNr } = this.state;
+    const { photographyPageContent } = this.state;
     const activePath = this.props.location.pathname;
+
+    if (!photographyPageContent.length) {
+      return <div/>
+    }
 
     // Take the last part of the activePath
     const sectionName = activePath.split('/').slice(-1).pop();
-    const sectionDescription = `${sectionName}-descr`;
-    this.setState({
-      photo: sectionName,
-      photoDescr: sectionDescription
-    });
+    const photoDescr = `${sectionName}-descr`;
 
-    switch (sectionName) {
-      case "aerial":
-        this.setState({
-          titleDescrNr: 0
-        });
-      break;
-      case "people":
-        this.setState({
-          titleDescrNr: 1
-        });
-      break;
-      case "city-life":
-        this.setState({
-          titleDescrNr: 2
-        });
-      break;
-      case "travel":
-        this.setState({
-          titleDescrNr: 3
-        });
-      break;
-      case "nature":
-        this.setState({
-          titleDescrNr: 4
-        });
-      break;
-    }
+    const currentData = photographyPageContent.find(obj => obj.slug === sectionName);
+    const title = currentData.titles;
+    const descr = currentData.descr;
 
     return (
       <div className="photo-content">
-        <h2>{this.getValue('titles', titleDescrNr)}</h2>
-        <p dangerouslySetInnerHTML={{__html:this.getValue('descr', titleDescrNr)}} />
+        <h2>{title}</h2>
+        <p dangerouslySetInnerHTML={{__html:`${descr}`}} />
         {photographyPageContent.map((item, index) => (
           <DescriptionPage
             key={index}
-            img={photographyPageContent[index][photo]}
+            img={photographyPageContent[index][sectionName]}
             alt={photographyPageContent[index][photoDescr]}
             descr={photographyPageContent[index][photoDescr]}
           />
