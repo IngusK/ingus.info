@@ -33,9 +33,9 @@ export default class Header extends React.Component {
       <header>
         <div className="logo">
           <NavLink to='/'>
-            <h1 dangerouslySetInnerHTML={{__html:this.getValue('logo', 0)}} />
+            <h2 dangerouslySetInnerHTML={{__html:this.getValue('logo', 0)}} />
           </NavLink>
-          <h2>{this.getValue('logo', 1)}</h2>
+          <h4>{this.getValue('logo', 1)}</h4>
         </div>
         <nav>
           <ul className="nav-large">
