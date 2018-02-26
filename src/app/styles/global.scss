@@ -39,18 +39,19 @@ pre {
   background: #282c34;
 }
 
-p::selection,
-h2::selection,
-h3::selection {
+*::selection
+{
   background: $pink; /* WebKit/Blink Browsers */
   color: $white;
+  text-shadow: none;
+  border: none;
 }
 
-p::-moz-selection,
-h2::-moz-selection,
-h3::-moz-selection {
+*::selection {
   background: $pink; /* Gecko Browsers */
   color: $white;
+  text-shadow: none;
+  border: none;
 }
 
 pre, code {
