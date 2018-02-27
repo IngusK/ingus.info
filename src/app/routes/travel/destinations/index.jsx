@@ -43,12 +43,13 @@ export default class TravelPage extends React.PureComponent {
     const { travelPageContent } = this.state;
     return (
       <div className="photo-content">
-        <h2>{travelPageContent.name}</h2>
+        <h2>{`${travelPageContent.name}, ${travelPageContent.country}`}</h2>
         <DescriptionPage
           img={travelPageContent.img}
           alt={travelPageContent.name}
-          descr={travelPageContent.descr}
-          descrDef={<p dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 4)}} />}
+          noDescr
+          // descr={travelPageContent.descr}
+          // descrDef={<p dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 4)}} />}
         />
       </div>
     );

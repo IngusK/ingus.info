@@ -20,10 +20,11 @@ export default class DescrPage extends React.PureComponent {
     descr: string,
     descrDef: string,
     photography: boolean,
+    noDescr: boolean,
   }
 
   render() {
-    const {img, alt, descr, descrDef, photography} = this.props;
+    const {img, alt, descr, descrDef, photography, noDescr} = this.props;
     return (
       <div>
         {photography ?
@@ -35,7 +36,7 @@ export default class DescrPage extends React.PureComponent {
             />
           </div>
         :
-        <div className="descr-image">
+        <div className={`descr-image ${noDescr && 'no-descr'}`}>
           {img.includes(".jpg") &&
           <ImageZoom
             image={{

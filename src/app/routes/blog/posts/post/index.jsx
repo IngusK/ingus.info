@@ -58,13 +58,15 @@ export default class BlogPost extends React.PureComponent {
         }
         <div className="blog-post-content-wrapper">
           <SocialIcons
-            shareUrl = {`http://ingus-info${this.props.location.pathname}`}
+            title = {blogPostPageContent.title}
+            shareUrl = {`http://ingus.info${this.props.location.pathname}`}
           />
           <div className="blog-post-content">
             <div dangerouslySetInnerHTML={{__html:blogPostPageContent.content}} />
           </div>
           <SocialIconsMobile
-            shareUrl = {`http://ingus-info${this.props.location.pathname}`}
+            title = {blogPostPageContent.title}
+            shareUrl = {`http://ingus.info${this.props.location.pathname}`}
           />
         </div>
         {blogPostPageContent.relatedImg &&
