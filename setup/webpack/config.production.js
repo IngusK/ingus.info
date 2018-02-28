@@ -15,7 +15,6 @@ module.exports = {
   context: APP_DIR,
 
     entry: [
-      // 'webpack-dev-server/client?http://localhost:3000',
       APP_DIR + '/app/index.js'
     ],
     output: {
@@ -37,7 +36,6 @@ module.exports = {
           {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
-            // exclude: /node_modules(?!\/webpack-dev-server)/,
             loader: 'babel-loader?cacheDirectory=true',
             query: {
               babelrc: false,
