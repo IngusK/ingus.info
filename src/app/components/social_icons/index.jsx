@@ -1,27 +1,7 @@
 import React from 'react';
-import {database} from "firebase";
-import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share';
+import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, TelegramShareButton, FacebookShareCount, LinkedinShareCount, FacebookIcon, TwitterIcon, TelegramIcon, LinkedinIcon } from 'react-share';
 
 import style from './styles.scss';
-
-const {
-  FacebookShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  TelegramShareButton,
-  EmailShareButton,
-} = ShareButtons;
-
-const {
-  FacebookShareCount,
-  LinkedinShareCount,
-} = ShareCounts;
-
-const FacebookIcon = generateShareIcon('facebook');
-const TwitterIcon = generateShareIcon('twitter');
-const LinkedinIcon = generateShareIcon('linkedin');
-const TelegramIcon = generateShareIcon('telegram');
-const EmailIcon = generateShareIcon('email');
 
 export default class SocialMedia extends React.PureComponent {
 

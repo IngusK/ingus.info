@@ -36,7 +36,6 @@ export default class Wrapper extends React.Component {
   componentDidMount() {
     fetchJsonp(URL)
     .then(res => {
-      console.log(' >>>>>>>', res);
       return res.json()
     })
     .then(this.setInstagram)
