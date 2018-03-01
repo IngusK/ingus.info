@@ -49,8 +49,7 @@ export default class Posts extends React.PureComponent {
     // console.log("history", history);
     return (
       <div className="blog-content">
-        {/* <h2>You are now at {location.pathname}</h2> */}
-        <h2>{this.getValue('mainBlock', 4)}</h2>
+        <h2 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 4)}} />
         <p dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 3)}} />
         <div className="posts">
           {posts.map((post, index) => (
