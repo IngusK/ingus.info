@@ -79,11 +79,6 @@
 
         object-fit: cover;
         object-position: center;
-        filter: grayscale(20%);
-        // @include transition;
-        &:hover {
-          filter: grayscale(0%);
-        }
         @media #{$tablet} {
           height: 19rem;
           max-height: 18rem;
