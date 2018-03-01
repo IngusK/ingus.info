@@ -30,7 +30,12 @@
       display: block;
     }
     span {
-      font-size: 3.5rem;
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 2rem;
+    }
+    i {
+      display: block;
     }
   }
   h2 {
@@ -42,7 +47,7 @@
     width: 10rem;
     position: absolute;
     left: 30%;
-    top: 3rem;
+    top: 4rem;
     transform: rotate(220deg);
     display: none;
     @media #{$tablet} {

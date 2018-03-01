@@ -34,7 +34,7 @@ export default class Photography extends React.PureComponent {
         <h2>{this.getValue('mainHeaders', 0)}</h2>
         <p dangerouslySetInnerHTML={{__html:this.getValue('mainHeaders', 1)}} />
         <div className="photo-grid">
-          {photographyPageContent.map((photo, index) => (
+          {photographyPageContent.slice(0,5).map((photo, index) => (
             <NavLink
               key={index}
               to={`/photography/${photo.slug}`}
