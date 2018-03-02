@@ -72,6 +72,14 @@
         text-align: center;
       }
     }
+    h5 {
+      font-size: 2.4rem;
+      line-height: 3rem;
+      text-align: left;
+      margin-top: 2rem;
+      font-weight: 300;
+      color: lighten($grey, 10%);
+    }
     p, ul {
       font: 1.85rem $medium;
       line-height: 1.78;
