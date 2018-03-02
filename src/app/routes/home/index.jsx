@@ -61,6 +61,7 @@ export default class Posts extends React.PureComponent {
 
   render() {
     const { lastPost, posts } = this.state;
+
     return (
       <div className="main-content">
         <Arrow className="arrow"/>
