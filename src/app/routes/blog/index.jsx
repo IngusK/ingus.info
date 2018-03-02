@@ -32,7 +32,7 @@ export default class Posts extends React.PureComponent {
   getBlogPosts() {
     var posts = database().ref('posts/');
     posts.on('value', (data) => {
-      const posts = data.val().reverse();
+      const posts = data.val();
       this.setState({ posts });
     });
   }
@@ -49,10 +49,10 @@ export default class Posts extends React.PureComponent {
     // console.log("history", history);
     return (
       <div className="blog-content">
-        <h2 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 4)}} />
-        <p dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 3)}} />
+        <h2 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 3)}} />
+        <p dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 4)}} />
         <div className="posts">
-          {posts.map((post, index) => (
+          {posts.reverse().map((post, index) => (
             <div key={index}>
               <NavLink to={`/story-blog/${post.slug}`}><img src={post.photo} alt={post.title} /></NavLink>
               <h3>{post.date}</h3>
