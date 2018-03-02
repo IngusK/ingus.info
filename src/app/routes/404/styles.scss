@@ -1,0 +1,17 @@
+@import "../../../app/styles/_theme.scss";
+
+.not-found {
+  display: grid;
+  grid-area: content;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 128rem;
+  width: 100%;
+  align-items: center;
+  @media #{$mobile} {
+   margin: 3rem auto 0;
+  }
+  h2 {
+    font-size: 6rem;
+  }
+}
