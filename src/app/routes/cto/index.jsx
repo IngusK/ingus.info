@@ -38,7 +38,7 @@ export default class CTO extends React.PureComponent {
             <p dangerouslySetInnerHTML={{__html:this.getValue('projects', 0)}} />
           </div>
           <div>
-            <a href="https://triptemptation.com" target="_blank"><img src="../img/logos/TT-logo.png" alt="TripTemptation website builder" /></a>
+            <a href="https://www.triptemptation.com/" target="_blank"><img src="../img/logos/TT-logo.png" alt="TripTemptation website builder" /></a>
             <p dangerouslySetInnerHTML={{__html:this.getValue('projects', 1)}} />
           </div>
           <div>
