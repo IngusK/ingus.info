@@ -17,6 +17,9 @@
     line-height: 1.78;
     font-family: $medium;
     color: $text;
+    strong {
+      font-weight: bold;
+    }
   }
   .title {
     grid-area: title;

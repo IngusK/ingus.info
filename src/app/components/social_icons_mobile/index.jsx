@@ -27,11 +27,11 @@ export default class SocialMediaMobile extends React.PureComponent {
                 round={true}
                />
             </FacebookShareButton>
-            <FacebookShareCount
+            {/* <FacebookShareCount
               url={shareUrl}
               className="social-icon-item">
               {count => count}
-            </FacebookShareCount>
+            </FacebookShareCount> */}
         </div>
         <div>
           <TwitterShareButton
@@ -62,11 +62,11 @@ export default class SocialMediaMobile extends React.PureComponent {
               size={32}
               round />
           </LinkedinShareButton>
-          <LinkedinShareCount
+          {/* <LinkedinShareCount
             url={shareUrl}
             className="social-icon-item">
             {count => count}
-          </LinkedinShareCount>
+          </LinkedinShareCount> */}
         </div>
       </div>
     );
