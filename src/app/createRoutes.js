@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Wrapper from './routes/wrapper';
+import ScrollToTop from './components/ScrollToTop.jsx';
 
 import Home from './routes/home';
 import About from './routes/about';
@@ -25,31 +26,34 @@ import NoMatch from './routes/404';
 
 const createRoutes = () => (
   <Router>
-    <Wrapper>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-        <Route path="/cto" component={Cto}/>
-        <Route path="/cv" component={Cv}/>
+    <ScrollToTop>
+      <Wrapper>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path="/about" component={About}/>
+          <Route path="/cto" component={Cto}/>
+          <Route path="/cv" component={Cv}/>
 
-        <Route exact path="/map" component={Travel}/>
-        <Route path="/map/:slug" component={TravelPost}/>
+          <Route exact path="/map" component={Travel}/>
+          <Route path="/map/:slug" component={TravelPost}/>
 
-        <Route exact path="/bucket-list" component={Bucket}/>
-        <Route path="/bucket-list/:slug" component={BucketPost}/>
+          <Route exact path="/bucket-list" component={Bucket}/>
+          <Route path="/bucket-list/:slug" component={BucketPost}/>
 
-        <Route exact path="/portfolio" component={Portfolio}/>
+          <Route exact path="/portfolio" component={Portfolio}/>
 
-        <Route exact path="/photography" component={Photography}/>
-        <Route path="/photography/:slug" component={PhotographyPost}/>
+          <Route exact path="/photography" component={Photography}/>
+          <Route path="/photography/:slug" component={PhotographyPost}/>
 
-        <Route exact path="/story-blog" component={Blog}/>
-        <Route path="/story-blog/:slug" component={BlogPost}/>
+          <Route exact path="/story-blog" component={Blog}/>
+          <Route path="/story-blog/:slug" component={BlogPost}/>
 
-        <Route component={NoMatch}/>
-      </Switch>
-    </Wrapper>
+          <Route component={NoMatch}/>
+        </Switch>
+      </Wrapper>
+    </ScrollToTop>
   </Router>
+
 );
 
 export default createRoutes;

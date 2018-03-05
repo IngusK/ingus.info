@@ -46,6 +46,7 @@ export default class BlogPost extends React.PureComponent {
       <div className="blog-post">
         <div className="blog-post-content">
           <h2>{blogPostPageContent.title}</h2>
+          {blogPostPageContent.titleDescr && <h6>{blogPostPageContent.titleDescr}</h6> }
         </div>
         {
           blogPostPageContent.photoSlide &&

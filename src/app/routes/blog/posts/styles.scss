@@ -72,14 +72,23 @@
         text-align: center;
       }
     }
+    h6 {
+      font-size: 2.2rem;
+      line-height: 3.2rem;
+      font-style: italic;
+      text-align: left;
+      margin-top: 2rem;
+      font-weight: 300;
+      color: lighten($grey, 10%);
+    }
     p, ul {
       font: 1.85rem $medium;
       line-height: 1.78;
       letter-spacing: -.01em;
-      margin-top: 2.9rem;
+      margin-top: 2rem;
       @media #{$tablet} {
-        font: 2.2rem $medium;
-        line-height: 1.98;
+        font: 2.1rem $medium;
+        line-height: 1.8;
       }
       strong {
         color: $black;
