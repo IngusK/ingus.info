@@ -50,14 +50,13 @@ export default class CV extends React.PureComponent {
           <div className="coding">
             <h3><Code />{this.getValue('coding', 0)}</h3>
             <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 1)}} />
-            <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 2)}} />
             <ul>
               {cvPageContent.map((item, index) => {
                 if (index > 5) {
                   return;
                 }
                 return (
-                  <li key={index} dangerouslySetInnerHTML={{__html:this.getValue('coding', [index+3])}} />
+                  <li key={index} dangerouslySetInnerHTML={{__html:this.getValue('coding', [index+2])}} />
                 )
               })}
             </ul>
