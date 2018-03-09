@@ -62,6 +62,7 @@ export default class BlogPost extends React.PureComponent {
             title = {blogPostPageContent.title}
             shareUrl = {`http://ingus.info${this.props.location.pathname}`}
           />
+          {/* Post content */}
           <div className="blog-post-content">
             <div dangerouslySetInnerHTML={{__html:blogPostPageContent.content}} />
           </div>
