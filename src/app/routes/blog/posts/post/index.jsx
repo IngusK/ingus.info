@@ -1,5 +1,6 @@
 import React from 'react';
 import {database} from "firebase";
+import Content from '../../../../components/content/index.jsx';
 import RelatedPosts from '../../../../components/related_post/index.jsx';
 import SocialIcons from '../../../../components/social_icons/index.jsx';
 import SocialIconsMobile from '../../../../components/social_icons_mobile/index.jsx';
@@ -64,7 +65,7 @@ export default class BlogPost extends React.PureComponent {
           />
           {/* Post content */}
           <div className="blog-post-content">
-            <div dangerouslySetInnerHTML={{__html:blogPostPageContent.content}} />
+            <Content html={blogPostPageContent.content} />
           </div>
           <SocialIconsMobile
             title = {blogPostPageContent.title}
