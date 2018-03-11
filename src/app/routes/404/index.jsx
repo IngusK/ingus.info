@@ -31,7 +31,7 @@ export default class NotFound extends React.PureComponent {
 
     return (
       <div className="not-found">
-          <h2>{this.getValue('mainBlock', 5)}</h2>
+          <h2>{this.getValue('mainBlock', 3)}</h2>
       </div>
     );
   }
