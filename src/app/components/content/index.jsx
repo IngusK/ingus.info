@@ -8,9 +8,8 @@ export default class Content extends React.PureComponent {
   }
 
   reRender() {
-    this.images = this.el.getElementsByTagName('img')
+    this.images = this.el.querySelectorAll('div > img')
     this.containers = this.containers || []
-    console.log('test', this.images);
 
     for (let i = 0, l = this.images.length; i < l; i++) {
       const image = this.images[i]
