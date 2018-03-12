@@ -2,7 +2,7 @@
 
 .social-icons-mobile {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 4rem;
   @media #{$tablet} {
     display: none;
