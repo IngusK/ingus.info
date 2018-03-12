@@ -10,7 +10,7 @@
 }
 
 .blog-post {
-  margin-top: 5rem;
+  margin-top: 0;
   @media #{$tablet} {
     margin-top: 3rem;
   }
@@ -52,7 +52,19 @@
 
   .blog-post-content {
     max-width: 75rem;
-    margin: 6rem auto 0;
+    margin: 0 auto;
+    @media #{$tablet} {
+      margin: 6rem auto 0;
+    }
+    iframe {
+      height: 25rem;
+      @media #{$mobile} {
+        height: 42rem;
+      }
+      @media #{$tablet} {
+        height: 39.5rem;
+      }
+    }
     h2 {
       font-size: 3rem;
       font-weight: 600;
@@ -68,6 +80,10 @@
       font-size: 2.6rem;
       font-weight: 600;
       margin-top: 7rem;
+      text-align: center;
+      @media #{$tablet} {
+        text-align: left;
+      }
       &.center {
         text-align: center;
       }
@@ -116,8 +132,11 @@
     margin: 3rem 0;
     img {
       width: 100%;
-      height: 50rem;
+      height: 25rem;
       object-fit: cover;
+      @media #{$tablet} {
+        height: 50rem;
+      }
     }
   }
 
@@ -235,7 +254,7 @@
   .related-posts {
     border-top: .1rem solid $ligthGray;
     padding-top: 1rem;
-    margin: 3rem auto 0;
+    margin: 7rem auto 0;
     max-width: 128rem;
     h2 {
       font-size: 2.2rem;
@@ -250,7 +269,6 @@
         grid-template-columns: 1fr 1fr 1fr;
       }
       li {
-        background: $superLigthGray;
         padding-bottom: 3rem;
         margin-bottom: 3rem;
         @media #{$tablet} {
@@ -272,8 +290,9 @@
             border-bottom: .4rem solid $superLigthGray;
           }
           h5 {
-            padding: 1rem 2rem .7rem;
+            padding: .5rem 2rem .7rem;
             text-align: left;
+            font-weight: 300;
           }
           h3 {
             padding: 0 2rem;
