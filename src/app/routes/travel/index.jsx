@@ -54,6 +54,13 @@ export default class Travel extends React.PureComponent {
             />
           ))}
         </div>
+        <h3>{this.getValue('mainBlock', 5)}</h3>
+        <h4 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 6)}} />
+        <div className="video-block">
+          <div className="video-wrapper">
+           <iframe width="100%" height="395" src="https://www.youtube.com/embed/TkqZv1iezoE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     );
   }
