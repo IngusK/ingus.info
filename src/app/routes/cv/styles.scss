@@ -205,6 +205,9 @@
           background-origin: padding-box;
           text-shadow: 3px 0 #fff, 2px 0 #fff, 1px 0 #fff, -1px 0 #fff, -2px 0 #fff, -3px 0 #fff;
           color: $pink;
+          &:hover {
+            background: none;
+          }
         }
       }
     }
@@ -224,6 +227,9 @@
         background-origin: padding-box;
         text-shadow: 3px 0 #fff, 2px 0 #fff, 1px 0 #fff, -1px 0 #fff, -2px 0 #fff, -3px 0 #fff;
         color: $pink;
+        &:hover {
+          background: none;
+        }
       }
     }
   }
