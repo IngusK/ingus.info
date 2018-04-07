@@ -17,14 +17,15 @@ export default class BlogPost extends React.PureComponent {
 
   state = {
     blogPostPageContent: [],
-    main: [],
+    posts: [],
   }
 
   componentDidMount() {
+    this.getBlogPost();
     this.getBlogPosts();
   };
 
-  getBlogPosts() {
+  getBlogPost() {
     const { match: { params } } = this.props;
     var blogPage = database().ref('posts/').orderByChild('slug')
     .equalTo(params.slug).limitToFirst(1);
@@ -36,13 +37,20 @@ export default class BlogPost extends React.PureComponent {
     });
   };
 
+  getBlogPosts() {
+    var posts = database().ref('posts/');
+    posts.on('value', (data) => {
+      const posts = data.val();
+      this.setState({ posts });
+    });
+  }
+
   getValue(val, nr) {
-    return this.state.main[nr] && this.state.main[nr][val];
+    return this.state.posts[nr] && this.state.posts[nr][val];
   }
 
   render() {
-    const { blogPostPageContent } = this.state;
-
+    const { blogPostPageContent, posts } = this.state;
     return (
       <div className="blog-post">
         <div className="blog-post-content">
@@ -63,7 +71,6 @@ export default class BlogPost extends React.PureComponent {
             title = {blogPostPageContent.title}
             shareUrl = {`http://ingus.info${this.props.location.pathname}`}
           />
-          {/* Post content */}
           <div className="blog-post-content">
             <Content html={blogPostPageContent.content} />
           </div>
