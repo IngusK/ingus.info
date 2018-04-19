@@ -46,6 +46,7 @@ const createRoutes = () => (
           <Route path="/photography/:slug" component={PhotographyPost}/>
 
           <Route exact path="/story-blog" component={Blog}/>
+          <Route exact path="/story-blog/page=:page?" component={Blog}/>
           <Route path="/story-blog/:slug" component={BlogPost}/>
 
           <Route component={NoMatch}/>

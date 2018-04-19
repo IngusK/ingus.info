@@ -5932,6 +5932,12 @@ react-medium-image-zoom@^3.0.10:
   version "3.0.10"
   resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-3.0.10.tgz#7e011844b02605aef0500b36f10dcc2808731583"
 
+react-paginate@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/react-paginate/-/react-paginate-5.2.2.tgz#c407d325e3073e39e49739ab5095a829000a1c46"
+  dependencies:
+    prop-types "^15.6.1"
+
 react-router-dom@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
