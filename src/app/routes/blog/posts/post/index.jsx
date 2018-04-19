@@ -4,10 +4,10 @@ import Content from '../../../../components/content/index.jsx';
 import RelatedPosts from '../../../../components/related_post/index.jsx';
 import SocialIcons from '../../../../components/social_icons/index.jsx';
 import SocialIconsMobile from '../../../../components/social_icons_mobile/index.jsx';
-
+import { Link, withRouter} from 'react-router-dom';
 import style from '../styles.scss';
 
-
+@withRouter
 export default class BlogPost extends React.PureComponent {
 
   constructor(...args) {
