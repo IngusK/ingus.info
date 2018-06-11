@@ -31,7 +31,6 @@ export default class PhotographyAerial extends React.PureComponent {
     const currentData = photographyPageContent.find(obj => obj.slug === sectionName);
     const title = currentData.titles;
     const descr = currentData.descr;
-
     return (
       <div className="photo-content">
         <h2>{title}</h2>
