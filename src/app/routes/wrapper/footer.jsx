@@ -35,10 +35,10 @@ export default class Footer extends React.PureComponent {
         <div className="caret"></div>
         <h3>Follow me..</h3>
         <ul>
-          <li><a href="https://www.facebook.com/ingus.kruklitis" target="_blank"><Facebook /></a></li>
-          <li><a href="https://www.instagram.com/ingus/" target="_blank"><Instagram /></a></li>
-          <li><a href="https://www.linkedin.com/in/ingusk/" target="_blank"><Linkedin /></a></li>
-          <li><a href="https://github.com/IngusK" target="_blank"><Github /></a></li>
+          <li><a name="Link to Facebook" href="https://www.facebook.com/ingus.kruklitis" target="_blank"><Facebook /></a></li>
+          <li><a name="Link to Instagram" href="https://www.instagram.com/ingus/" target="_blank"><Instagram /></a></li>
+          <li><a name="Link to Linkedin" href="https://www.linkedin.com/in/ingusk/" target="_blank"><Linkedin /></a></li>
+          <li><a name="Link to Github" href="https://github.com/IngusK" target="_blank"><Github /></a></li>
         </ul>
         <p>www.ingus.info © All rights reserved.</p>
       </footer>
