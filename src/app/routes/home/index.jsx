@@ -32,7 +32,7 @@ export default class Posts extends React.PureComponent {
   }
 
   getBlogPosts() {
-    var posts = database().ref('posts/').limitToLast(8);
+    var posts = database().ref('posts/').limitToLast(11);
     posts.on('value', (data) => {
       // get last 9 posts, reverse the order and remove first element
       const posts = data.val().reverse().slice(1);
