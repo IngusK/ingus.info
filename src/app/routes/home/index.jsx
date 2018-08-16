@@ -32,11 +32,18 @@ export default class Posts extends React.PureComponent {
   }
 
   getBlogPosts() {
-    var posts = database().ref('posts/').limitToLast(11);
+    var posts = database().ref('posts/').limitToLast(8);
+
     posts.on('value', (data) => {
+      const newData = data.val();
+      const posts = Object.keys(newData).map(key => {
+        return newData[key];
+      });
+
+      posts.reverse().shift();
       // get last 9 posts, reverse the order and remove first element
-      const posts = data.val().reverse().slice(1);
-      // save posts into state
+      // const posts = data.val().reverse().slice(1);
+      // // save posts into state
       this.setState({ posts });
     });
   }
@@ -64,31 +71,34 @@ export default class Posts extends React.PureComponent {
 
     return (
       <div className="main-content">
-        <Arrow className="arrow"/>
-        <h1 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 0)}} />
-        <div className="top-slider">
-          <div className="slider-description">
-            <h3>{lastPost.date}</h3>
-            <NavLink to={`/story-blog/${lastPost.slug}`}><h2>{lastPost.title}</h2></NavLink>
-            <h5>{lastPost.category}</h5>
-            <p dangerouslySetInnerHTML={{__html:lastPost.description}} />
-          </div>
-          <div className="slider-photo">
-            <NavLink to={`/story-blog/${lastPost.slug}`}><img src={lastPost.photo} alt={lastPost.title} /></NavLink>
-          </div>
-        </div>
-
-        <h2 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 1)}} />
-        <div className="posts">
-          {posts.map((post, index) => (
-            <div className={`post-${index + 1}`} key={index}>
-              <NavLink to={`/story-blog/${post.slug}`}><img src={post.photo} alt={post.title} /></NavLink>
-              <h3>{post.date}</h3>
-              <NavLink to={`/story-blog/${post.slug}`}><h4>{post.title}</h4></NavLink>
-              <h5>{post.category}</h5>
-              <p dangerouslySetInnerHTML={{__html:post.description}} />
+        {!!posts.length &&
+          <div>
+            <Arrow className="arrow"/>
+            <h1 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 0)}} />
+            <div className="top-slider">
+              <div className="slider-description">
+                <h3>{lastPost.date}</h3>
+                <NavLink to={`/story-blog/${lastPost.slug}`}><h2>{lastPost.title}</h2></NavLink>
+                <h5>{lastPost.category}</h5>
+                <p dangerouslySetInnerHTML={{__html:lastPost.description}} />
+              </div>
+              <div className="slider-photo">
+                <NavLink to={`/story-blog/${lastPost.slug}`}><img src={lastPost.photo} alt={lastPost.title} /></NavLink>
+              </div>
             </div>
-          ))}
+          </div>
+          }
+          <h2 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 1)}} />
+          <div className="posts">
+            {posts.map((post, index) => (
+              <div className={`post-${index + 1}`} key={index}>
+                <NavLink to={`/story-blog/${post.slug}`}><img src={post.photo} alt={post.title} /></NavLink>
+                <h3>{post.date}</h3>
+                <NavLink to={`/story-blog/${post.slug}`}><h4>{post.title}</h4></NavLink>
+                <h5>{post.category}</h5>
+                <p dangerouslySetInnerHTML={{__html:post.description}} />
+              </div>
+            ))}
         </div>
       </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import {database} from "firebase";
+import Disqus from 'disqus-react';
 import Content from '../../../../components/content/index.jsx';
 import RelatedPosts from '../../../../components/related_post/index.jsx';
 import SocialIcons from '../../../../components/social_icons/index.jsx';
@@ -51,6 +52,14 @@ export default class BlogPost extends React.PureComponent {
 
   render() {
     const { blogPostPageContent, posts } = this.state;
+
+    const disqusShortname = 'example';
+    const disqusConfig = {
+        url: blogPostPageContent.slug,
+        identifier: blogPostPageContent.slug,
+        title: blogPostPageContent.title,
+    };
+
     return (
       <div className="blog-post">
         <div className="blog-post-content">
@@ -73,6 +82,13 @@ export default class BlogPost extends React.PureComponent {
           />
           <div className="blog-post-content">
             <Content html={blogPostPageContent.content} />
+          </div>
+          <div className="article">
+              <h1>{blogPostPageContent.title}</h1>
+              <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
+                  Comments
+              </Disqus.CommentCount>
+              <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
           </div>
           <SocialIconsMobile
             title = {blogPostPageContent.title}
