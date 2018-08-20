@@ -1,6 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import Arrow from '../../../../img/icons/arrow.svg';
+import ReactPlaceholder from 'react-placeholder';
+import {TextBlock, MediaBlock, TextRow, RectShape, RoundShape} from 'react-placeholder/lib/placeholders';
 import {database} from "firebase";
 
 import style from './styles.scss';
@@ -15,6 +17,7 @@ export default class Posts extends React.PureComponent {
     posts: [],
     lastPost: {},
     main: [],
+    ready: false,
   }
 
   componentDidMount() {
@@ -69,6 +72,8 @@ export default class Posts extends React.PureComponent {
   render() {
     const { lastPost, posts } = this.state;
 
+    const ready = !!posts.length;
+
     return (
       <div className="main-content">
         {!!posts.length &&
@@ -89,17 +94,19 @@ export default class Posts extends React.PureComponent {
           </div>
           }
           <h2 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 1)}} />
-          <div className="posts">
-            {posts.map((post, index) => (
-              <div className={`post-${index + 1}`} key={index}>
-                <NavLink to={`/story-blog/${post.slug}`}><img src={post.photo} alt={post.title} /></NavLink>
-                <h3>{post.date}</h3>
-                <NavLink to={`/story-blog/${post.slug}`}><h4>{post.title}</h4></NavLink>
-                <h5>{post.category}</h5>
-                <p dangerouslySetInnerHTML={{__html:post.description}} />
-              </div>
-            ))}
-        </div>
+            <div className="posts">
+              {posts.map((post, index) => (
+                <ReactPlaceholder type='media' rows={4} ready={ready} key={index}>
+                <div className={`post-${index + 1}`}>
+                  <NavLink to={`/story-blog/${post.slug}`}><img src={post.photo} alt={post.title} /></NavLink>
+                  <h3>{post.date}</h3>
+                  <NavLink to={`/story-blog/${post.slug}`}><h4>{post.title}</h4></NavLink>
+                  <h5>{post.category}</h5>
+                  <p dangerouslySetInnerHTML={{__html:post.description}} />
+                </div>
+                </ReactPlaceholder>
+              ))}
+          </div>
       </div>
     );
   }
