@@ -83,13 +83,6 @@ export default class BlogPost extends React.PureComponent {
           <div className="blog-post-content">
             <Content html={blogPostPageContent.content} />
           </div>
-          <div className="article">
-              <h1>{blogPostPageContent.title}</h1>
-              <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
-                  Comments
-              </Disqus.CommentCount>
-              <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-          </div>
           <SocialIconsMobile
             title = {blogPostPageContent.title}
             shareUrl = {`http://ingus.info${this.props.location.pathname}`}
