@@ -6,7 +6,7 @@ import Header from "./header.jsx";
 import Footer from "./footer.jsx";
 import styles from "./styles/styles.scss";
 
-ReactGA.initialize("UA-85279687-1");
+ReactGA.initialize("UA-22046198-4");
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 const ACCESS_TOKEN = "2175385.71d5d16.2c180d8c9f67400cab80c094ba19edc1",
