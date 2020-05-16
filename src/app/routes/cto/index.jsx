@@ -34,15 +34,15 @@ export default class CTO extends React.PureComponent {
         </div>
         <div className="description">
           <div>
-            <a href="https://weddenly.com" target="_blank"><img src="../img/logos/weddenly-logo.png" alt="Weddenly website builder" /></a>
+            <a href="https://www.triptemptation.com/" target="_blank"><img src="../img/logos/TT-logo.png" alt="TripTemptation website builder" /></a>
             <p dangerouslySetInnerHTML={{__html:this.getValue('projects', 0)}} />
           </div>
           <div>
-            <a href="https://www.triptemptation.com/" target="_blank"><img src="../img/logos/TT-logo.png" alt="TripTemptation website builder" /></a>
+            <a href="https://www.shutterstock.com/g/IngusKruklitis?rid=3325097&utm_medium=email&utm_source=ctrbreferral-link" target="_blank"><img src="../img/logos/shutterstock-logo.jpg" alt="Ingus Kruklitis Shutterstock photo stocks" /></a>
             <p dangerouslySetInnerHTML={{__html:this.getValue('projects', 1)}} />
           </div>
           <div>
-            <a href="https://www.shutterstock.com/g/IngusKruklitis?rid=3325097&utm_medium=email&utm_source=ctrbreferral-link" target="_blank"><img src="../img/logos/shutterstock-logo.jpg" alt="Ingus Kruklitis Shutterstock photo stocks" /></a>
+            <a href="https://sellfy.com/ingusfilms" target="_blank"><img src="../img/logos/sellfy-logo.png" alt="Lightroom Photoshop Final Cut presets" /></a>
             <p dangerouslySetInnerHTML={{__html:this.getValue('projects', 2)}} />
           </div>
         </div>

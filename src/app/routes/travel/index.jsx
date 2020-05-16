@@ -47,11 +47,12 @@ export default class Travel extends React.PureComponent {
         <h4 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 6)}} />
         <div className="video-block">
           <div className="video-wrapper">
-           <iframe width="100%" height="395" src="https://www.youtube.com/embed/TkqZv1iezoE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+           <iframe width="100%" height="395" src="https://www.youtube.com/embed/WHWCLEnjpBU" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
           </div>
         </div>
-        <h3>{this.getValue('mainBlock', 2)}</h3>
         <h4 dangerouslySetInnerHTML={{__html:this.getValue('mainBlock', 3)}} />
+      {/*  <h3>{this.getValue('mainBlock', 2)}</h3>
+
         <div className="photo-grid">
           {travelPageContent.slice(0,12).map((item, index) => (
             <TravelItem key={index}
@@ -60,7 +61,7 @@ export default class Travel extends React.PureComponent {
               slug={item.slug}
             />
           ))}
-        </div>
+        </div>*/}
       </div>
     );
   }

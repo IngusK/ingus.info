@@ -83,9 +83,10 @@
     @media #{$tablet} {
       grid-template:
                     "work-exp cto"
-                    "work-exp coding"
+                    "work-exp shop"
                     "work-exp travel"
                     "work-exp stocks"
+                    "work-exp coding"
                     "certificates certificates";
     }
     h3 {
@@ -185,6 +186,27 @@
             height: 100%;
             object-fit: cover;
           }
+        }
+      }
+    }
+    .shop {
+      grid-area: shop;
+      h3 {
+        svg {
+          margin-right: .4rem;
+        }
+      }
+      a {
+        padding: 10px 0;
+        background-image: linear-gradient($pink,$pink);
+        background-repeat: no-repeat;
+        background-size: 100% 1.5px;
+        background-position: center bottom 28%;
+        background-origin: padding-box;
+        text-shadow: 3px 0 #fff, 2px 0 #fff, 1px 0 #fff, -1px 0 #fff, -2px 0 #fff, -3px 0 #fff;
+        color: $pink;
+        &:hover {
+          background: none;
         }
       }
     }

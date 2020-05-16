@@ -2,11 +2,12 @@ import React from 'react';
 import {database} from 'firebase';
 import DescriptionPage from '../../components/descr_page/index.jsx';
 import Company from '../../components/company/index.jsx';
-import Code from '../../../../img/icons/code-icon.svg';
-import Camera from '../../../../img/icons/camera-icon.svg';
-import Shutter from '../../../../img/icons/shutter-icon.svg';
-import Cto from '../../../../img/icons/cto-icon.svg';
-import Certificate from '../../../../img/icons/certificate-icon.svg';
+import CodeIcon from '../../../../img/icons/code-icon.svg';
+import CameraIcon from '../../../../img/icons/camera-icon.svg';
+import ShutterIcon from '../../../../img/icons/shutter-icon.svg';
+import SellfyIcon from '../../../../img/icons/shop-icon.svg';
+import CtoIcon from '../../../../img/icons/cto-icon.svg';
+import CertificateIcon from '../../../../img/icons/certificate-icon.svg';
 
 import style from './styles.scss';
 
@@ -48,7 +49,7 @@ export default class CV extends React.PureComponent {
         </div>
         <div className="cv_info">
           <div className="coding">
-            <h3><Code />{this.getValue('coding', 0)}</h3>
+            <h3><CodeIcon />{this.getValue('coding', 0)}</h3>
             <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 1)}} />
             <ul>
               {cvPageContent.map((item, index) => {
@@ -63,11 +64,11 @@ export default class CV extends React.PureComponent {
             <p dangerouslySetInnerHTML={{__html:this.getValue('coding', 9)}} />
           </div>
           <div className="travel">
-            <h3><Camera />{this.getValue('travel', 0)}</h3>
+            <h3><CameraIcon />{this.getValue('travel', 0)}</h3>
             <p dangerouslySetInnerHTML={{__html:this.getValue('travel', 1)}} />
             <ul>
               {cvPageContent.map((item, index) => {
-                if (index > 4) {
+                if (index > 3) {
                   return;
                 }
                 return (
@@ -75,10 +76,17 @@ export default class CV extends React.PureComponent {
                 )
               })}
             </ul>
-            <p dangerouslySetInnerHTML={{__html:this.getValue('travel', 7)}} />
+            <p dangerouslySetInnerHTML={{__html:this.getValue('travel', 6)}} />
           </div>
           <div className="work-exp">
             <h3>{this.getValue('workExperience', 0)}</h3>
+            <Company
+              date={this.getValue('wandoo', 0)}
+              company={this.getValue('wandoo', 1)}
+              location={this.getValue('wandoo', 2)}
+              position={this.getValue('wandoo', 3)}
+              description={this.getValue('wandoo', 4)}
+            />
             <Company
               date={this.getValue('4finance', 0)}
               company={this.getValue('4finance', 1)}
@@ -130,7 +138,7 @@ export default class CV extends React.PureComponent {
             />
           </div>
           <div className="certificates">
-            <h3><Certificate />{this.getValue('certificates', 0)}</h3>
+            <h3><CertificateIcon />{this.getValue('certificates', 0)}</h3>
             <div className="certificate-wrapper">
               {cvPageContent.map((item, index) => {
                 if (!cvPageContent[index].certificateImages) {
@@ -147,15 +155,18 @@ export default class CV extends React.PureComponent {
             </div>
           </div>
           <div className="stocks">
-            <h3><Shutter />{this.getValue('stocks', 0)}</h3>
+            <h3><ShutterIcon />{this.getValue('stocks', 0)}</h3>
             <p dangerouslySetInnerHTML={{__html:this.getValue('stocks', 1)}} />
           </div>
+          <div className="shop">
+            <h3><SellfyIcon />{this.getValue('sellfy', 0)}</h3>
+            <p dangerouslySetInnerHTML={{__html:this.getValue('sellfy', 1)}} />
+          </div>
           <div className="cto">
-            <h3><Cto />{this.getValue('cto', 0)}</h3>
+            <h3><CtoIcon />{this.getValue('cto', 0)}</h3>
             <p dangerouslySetInnerHTML={{__html:this.getValue('cto', 1)}} />
             <ul>
               <li dangerouslySetInnerHTML={{__html:this.getValue('cto', 2)}} />
-              <li dangerouslySetInnerHTML={{__html:this.getValue('cto', 3)}} />
             </ul>
             <p dangerouslySetInnerHTML={{__html:this.getValue('cto', 4)}} />
           </div>
