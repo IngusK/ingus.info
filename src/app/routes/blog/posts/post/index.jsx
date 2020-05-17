@@ -1,6 +1,5 @@
 import React from 'react';
 import {database} from "firebase";
-import Disqus from 'disqus-react';
 import Content from '../../../../components/content/index.jsx';
 import RelatedPosts from '../../../../components/related_post/index.jsx';
 import SocialIcons from '../../../../components/social_icons/index.jsx';

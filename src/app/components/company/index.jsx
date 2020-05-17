@@ -1,6 +1,4 @@
 import React from 'react';
-import {database} from "firebase";
-import mediumZoom from 'medium-zoom';
 
 import style from './styles.scss';
 
