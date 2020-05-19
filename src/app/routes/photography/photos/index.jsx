@@ -1,6 +1,7 @@
 import React from 'react';
 import DescriptionPage from '../../../components/descr_page/index.jsx';
 import {database} from "firebase";
+import Head from '../../../components/Helmet/Helmet';
 import style from '../styles.scss';
 
 export default class PhotographyAerial extends React.PureComponent {
@@ -33,6 +34,10 @@ export default class PhotographyAerial extends React.PureComponent {
     const descr = currentData.descr;
     return (
       <div className="photo-content">
+        <Head
+          title={`ingus.info - ${title}`}
+          content={`ingus.info - ${descr}`}
+        />
         <h2>{title}</h2>
         <p dangerouslySetInnerHTML={{__html:`${descr}`}} />
         {photographyPageContent.map((item, index) => (

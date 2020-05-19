@@ -37,26 +37,9 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader?cacheDirectory=true',
-        query: {
-          babelrc: false,
-          presets: [
-            ['babel-preset-es2015', {modules: false}],
-            'babel-preset-react',
-          ],
-          plugins: [
-            'babel-plugin-transform-decorators-legacy',
-            'babel-plugin-transform-class-properties',
-            'babel-plugin-transform-object-rest-spread',
-            'babel-plugin-transform-object-assign',
-            "inline-react-svg",
-            ['babel-plugin-transform-runtime', {
-              helpers: false,
-              polyfill: false,
-              regenerator: true
-            }],
-          ]
-        },
+        use: {
+          loader: "babel-loader"
+        }
       },
       {
         test: /\.(css|scss)$/,

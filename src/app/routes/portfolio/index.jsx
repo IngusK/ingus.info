@@ -1,6 +1,7 @@
 import React from 'react';
 import {database} from "firebase";
 import ImageZoom from 'react-medium-image-zoom';
+import Head from '../../components/Helmet/Helmet';
 
 import style from './styles.scss';
 
@@ -35,6 +36,10 @@ export default class Portfolio extends React.PureComponent {
     const { portfolioContent } = this.state;
     return (
       <div className="portfolio-content">
+        <Head
+          title={this.getValue('meta', 0)}
+          content={this.getValue('meta', 1)}
+        />
         <div className="title">
           <h2>{this.getValue('header', 0)}</h2>
           <p dangerouslySetInnerHTML={{__html:this.getValue('description', 0)}}/>

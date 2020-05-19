@@ -4,7 +4,7 @@ import ImageZoom from 'react-medium-image-zoom';
 
 import style from './styles.scss';
 
-export default class DescrPage extends React.PureComponent {
+export default class PhotographyDescription extends React.PureComponent {
 
   static defaultProps = {
     img: '',
@@ -12,15 +12,6 @@ export default class DescrPage extends React.PureComponent {
     descr: '',
     descrDef: '',
     photography: false,
-  }
-
-  props: {
-    img: string,
-    alt: string,
-    descr: string,
-    descrDef: string,
-    photography: boolean,
-    noDescr: boolean,
   }
 
   render() {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter} from 'react-router-dom';
 import {database} from "firebase";
 import ReactPaginate from 'react-paginate';
+import Head from '../../components/Helmet/Helmet';
 import style from './styles.scss';
 
 @withRouter
@@ -68,6 +69,11 @@ export default class Posts extends React.PureComponent {
     const postsOnPage = this.getPostsForPage(currentPage)
     return (
       <div className="blog-content">
+        <Head
+          title={this.getValue('meta', posts.length-1)}
+          content={this.getValue('meta', posts.length-2)}
+        />
+        <div>{this.getValue('mainBlock', 0)}</div>
         <h2 dangerouslySetInnerHTML={{__html:this.getValue('storyBlock', posts.length-1)}} />
         <p dangerouslySetInnerHTML={{__html:this.getValue('storyBlock', posts.length-2)}} />
         <div className="posts">

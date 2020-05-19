@@ -5,6 +5,7 @@ import RelatedPosts from '../../../../components/related_post/index.jsx';
 import SocialIcons from '../../../../components/social_icons/index.jsx';
 import SocialIconsMobile from '../../../../components/social_icons_mobile/index.jsx';
 import { Link, withRouter} from 'react-router-dom';
+import Head from '../../../../components/Helmet/Helmet';
 import style from '../styles.scss';
 
 @withRouter
@@ -61,6 +62,10 @@ export default class BlogPost extends React.PureComponent {
 
     return (
       <div className="blog-post">
+        <Head
+          title={`ingus.info -${blogPostPageContent.title}`}
+          content={`ingus.info -${blogPostPageContent.titleDescr}`}
+        />
         <div className="blog-post-content">
           <h2>{blogPostPageContent.title}</h2>
           {blogPostPageContent.titleDescr && <h6>{blogPostPageContent.titleDescr}</h6> }

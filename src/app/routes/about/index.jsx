@@ -1,5 +1,6 @@
 import React from 'react';
 import {database} from "firebase";
+import Head from '../../components/Helmet/Helmet';
 
 import style from './styles.scss';
 
@@ -23,6 +24,10 @@ export default class About extends React.PureComponent {
   render() {
     return (
       <div className="about-content">
+        <Head
+          title={this.getValue('meta', 0)}
+          content={this.getValue('meta', 1)}
+        />
         <div className="title">
           <h2>{this.getValue('header', 0)}</h2>
         </div>
