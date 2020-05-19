@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import Arrow from '../../../../img/icons/arrow.svg';
 import ReactPlaceholder from 'react-placeholder';
+import Head from '../../components/Helmet/Helmet';
 import {TextBlock, MediaBlock, TextRow, RectShape, RoundShape} from 'react-placeholder/lib/placeholders';
 import {database} from "firebase";
 
@@ -76,6 +77,10 @@ export default class Posts extends React.PureComponent {
 
     return (
       <div className="main-content">
+        <Head
+          title={'ingus.info'}
+          content={this.getValue('mainBlock', 0)}
+        />
         {!!posts.length &&
           <div>
             <Arrow className="arrow"/>
