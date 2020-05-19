@@ -1,5 +1,6 @@
 import React from 'react';
 import {database} from "firebase";
+import Head from '../../components/Helmet/Helmet';
 
 import style from './styles.scss';
 
@@ -28,6 +29,10 @@ export default class CTO extends React.PureComponent {
   render() {
     return (
       <div className="cto-content">
+        <Head
+          title={this.getValue('meta', 0)}
+          content={this.getValue('meta', 1)}
+        />
         <div className="title">
           <h2>{this.getValue('header', 0)}</h2>
           <p dangerouslySetInnerHTML={{__html:this.getValue('description', 0)}} />

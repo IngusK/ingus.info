@@ -5,6 +5,7 @@ import {database} from "firebase";
 import {NavLink, withRouter} from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
 import TravelItem from '../../components/travel_destination/index.jsx';
+import Head from '../../components/Helmet/Helmet';
 
 import style from './styles.scss';
 
@@ -35,6 +36,10 @@ export default class Travel extends React.PureComponent {
     const { travelPageContent } = this.state;
     return (
       <div className="travel-content">
+        <Head
+          title={this.getValue('meta', 0)}
+          content={this.getValue('meta', 1)}
+        />
         <ReactTooltip />
         <div className="title">
           <h2>{this.getValue('mainBlock', 0)}</h2>

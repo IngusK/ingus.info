@@ -8,6 +8,7 @@ import ShutterIcon from '../../../../img/icons/shutter-icon.svg';
 import SellfyIcon from '../../../../img/icons/shop-icon.svg';
 import CtoIcon from '../../../../img/icons/cto-icon.svg';
 import CertificateIcon from '../../../../img/icons/certificate-icon.svg';
+import Head from '../../components/Helmet/Helmet';
 
 import style from './styles.scss';
 
@@ -39,6 +40,10 @@ export default class CV extends React.PureComponent {
 
     return (
       <div className="cv-content">
+        <Head
+          title={this.getValue('meta', 0)}
+          content={this.getValue('meta', 1)}
+        />
         <div className="main-info">
           <img src="../../../../img/Ingus_kruklitis.jpg" alt="Ingus Kruklitis CV background" />
           <div className="description">
