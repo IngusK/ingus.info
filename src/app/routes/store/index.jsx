@@ -40,16 +40,14 @@ export default class Store extends React.PureComponent {
         <p dangerouslySetInnerHTML={{__html:this.getValue('mainHeaders', 1)}} />
         <div className="photo-grid">
           {storePageContent.slice(0,7).map((photo, index) => (
-          <div>
+          <div key={index}>
             <NavLink
-              key={index}
               to={`/store/${photo.slug}`}
               className={`store-${index + 1}`}>
               <img src={storePageContent[index].link} />
             </NavLink>
             <h4>{storePageContent[index].titles}</h4>
             <NavLink
-              key={index}
               to={`/store/${photo.slug}`}
               className={`store-${index + 1}`}>
               <h5>Get it now</h5>

@@ -7,21 +7,21 @@ import style from '../styles.scss';
 export default class PhotographyAerial extends React.PureComponent {
 
   state = {
-    photographyPageContent: [],
+    storePageContent: [],
   }
 
   componentDidMount() {
-    var photographyPage = database().ref('photography/');
+    var photographyPage = database().ref('store/');
     photographyPage.on('value', (data) => {
-      this.setState({ photographyPageContent: data.val() });
+      this.setState({ storePageContent: data.val() });
     });
   };
 
   render() {
-    const { photographyPageContent } = this.state;
+    const { storePageContent } = this.state;
     const activePath = this.props.location.pathname;
 
-    if (!photographyPageContent.length) {
+    if (!storePageContent.length) {
       return <div/>
     }
 
@@ -29,7 +29,7 @@ export default class PhotographyAerial extends React.PureComponent {
     const sectionName = activePath.split('/').slice(-1).pop();
     const photoDescr = `${sectionName}-descr`;
 
-    const currentData = photographyPageContent.find(obj => obj.slug === sectionName);
+    const currentData = storePageContent.find(obj => obj.slug === sectionName);
     const title = currentData.titles;
     const descr = currentData.descr;
     return (
@@ -40,14 +40,16 @@ export default class PhotographyAerial extends React.PureComponent {
         />
         <h2>{title}</h2>
         <p dangerouslySetInnerHTML={{__html:`${descr}`}} />
-        {photographyPageContent.map((item, index) => (
+        {storePageContent.map((item, index) => (
           <DescriptionPage
+            store
             key={index}
-            img={photographyPageContent[index][sectionName]}
-            alt={photographyPageContent[index][photoDescr]}
-            descr={photographyPageContent[index][photoDescr]}
+            img={storePageContent[index][sectionName]}
+            alt={storePageContent[index][photoDescr]}
+            descr={storePageContent[index][photoDescr]}
           />
         ))}
+        <a className="presets-button" href="https://sellfy.com/ingusfilms/p/tgohri/" target="_blank">Get Presets</a>
       </div>
     );
   }

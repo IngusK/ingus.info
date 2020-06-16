@@ -1,5 +1,27 @@
 @import "../../../app/styles/_theme.scss";
 
+.presets-button {
+  display: block;
+  border-radius: 2.4rem;
+  background: $green;
+  color: $white;
+  padding: 1.4rem 0rem;
+  width: 100%;
+  font-weight: normal;
+  font-size: 1.8rem;
+  @include transition;
+  &:hover {
+    background: darken($green, 8%);
+  }
+  @media #{$mobile} {
+    padding: 1.4rem 5rem;
+    width: auto;
+    max-width: 14rem;
+    margin: auto;
+    text-align: center;
+  }
+}
+
 .store-content {
   grid-area: content;
   margin: 2rem auto 0;

@@ -11,23 +11,14 @@ export default class PhotographyDescription extends React.PureComponent {
     alt: '',
     descr: '',
     descrDef: '',
-    photography: false,
+    store: false,
   }
 
   render() {
-    const {img, alt, descr, descrDef, photography, noDescr} = this.props;
+    const {img, alt, descr, descrDef, noDescr, store} = this.props;
     return (
       <div>
-        {photography ?
-          <div className="category-image">
-            <h3>{alt}</h3>
-            <img
-              alt={alt}
-              src={img}
-            />
-          </div>
-        :
-        <div className={`descr-image ${noDescr && 'no-descr'}`}>
+        <div className={`descr-image ${noDescr ? 'no-descr' : ''} ${store ? 'store-style' : ''}`}>
           {img.includes(".jpg") &&
           <ImageZoom
             image={{
@@ -44,7 +35,7 @@ export default class PhotographyDescription extends React.PureComponent {
           }
           {img.includes("youtube") &&
             <div className="iframe-wrapper">
-              <iframe src={img} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe src={img} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
             </div>
           }
           {descr ?
@@ -53,7 +44,6 @@ export default class PhotographyDescription extends React.PureComponent {
             <span>{descrDef}</span>
           }
         </div>
-        }
       </div>
     );
   }

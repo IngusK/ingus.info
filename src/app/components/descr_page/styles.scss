@@ -26,6 +26,18 @@
         content: none;
       }
     }
+    &.store-style {
+
+      &:after {
+        content: none;
+      }
+      p {
+        font-style: normal;
+        text-align: left;
+        font: 1.9rem "Adamina", sans-serif;
+        line-height: 1.8;
+      }
+    }
     img {
       max-width: 65rem;
       max-height: none;
@@ -40,15 +52,21 @@
       padding-bottom: 56.25%;
       padding-top: 2.5rem;
       height: 0;
+      @media #{$tablet} {
+        padding-bottom: 46.25%;
+      }
       iframe {
         position: absolute;
         top: 0;
         left: 0;
+        right: 0;
         width: 100%;
-        height: 80%;
+        height: 100%;
         z-index: 999;
         @media #{$tablet} {
-          height: 90%;
+          height: 92%;
+          width: 71%;
+          margin: auto;
         }
       }
     }
