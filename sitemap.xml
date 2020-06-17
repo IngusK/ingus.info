@@ -20,7 +20,6 @@
 <priority>1.0</priority>
 </url>
 <url>
-<url>
 <loc>http://ingus.info/story-blog/how-to-become-a-burner-or-my-first-burning-man-experience</loc>
 <changefreq>weekly</changefreq>
 <priority>1.0</priority>
@@ -618,7 +617,6 @@
 <loc>http://ingus.info/map/daugavpils</loc>
 <changefreq>monthly</changefreq>
 </url>
-v
 <url>
 <loc>http://ingus.info/map/monterey</loc>
 <changefreq>monthly</changefreq>
