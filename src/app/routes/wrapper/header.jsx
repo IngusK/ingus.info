@@ -40,6 +40,10 @@ export default class Header extends React.Component {
         <nav>
           <ul className="nav-large">
             <Menu
+              title={this.getValue('menuTitle', 7)}
+              url={this.getValue('menuLink', 8)}
+            />
+            <Menu
               title={this.getValue('menuTitle', 1)}
               url={this.getValue('menuLink', 1)}
             />
@@ -71,7 +75,7 @@ export default class Header extends React.Component {
             />
             <Menu
               title={<Bucket/>}
-              url='/bucket-list'
+              url={this.getValue('menuLink', 7)}
             />
           </ul>
         </nav>

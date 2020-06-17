@@ -1,0 +1,153 @@
+@import "../../../app/styles/_theme.scss";
+
+.presets-button {
+  display: block;
+  border-radius: 2.4rem;
+  background: $green;
+  color: $white;
+  padding: 1.4rem 0rem;
+  width: 100%;
+  font-weight: normal;
+  font-size: 1.8rem;
+  text-align: center;
+  @include transition;
+  &:hover {
+    background: darken($green, 8%);
+  }
+  @media #{$mobile} {
+    padding: 1.4rem 5rem;
+    width: auto;
+    max-width: 14rem;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.store-content {
+  grid-area: content;
+  margin: 2rem auto 0;
+  max-width: 128rem;
+  width: 100%;
+  @media #{$tablet} {
+    margin: 2rem auto 0;
+  }
+  h2 {
+    font-size: 3.2rem;
+    font-family: $logo;
+    text-align: center;
+    @media #{$tablet} {
+      margin: 2rem 0;
+      font-size: 5rem;
+    }
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    font-weight: 300;
+    margin: 2.5rem auto 2rem;
+    text-align: center;
+    max-width: 98rem;
+    @media #{$tablet} {
+      margin: 1rem auto 4rem;
+      max-width: 88rem;
+    }
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-gap: 3rem;
+    text-align: center;
+    grid-template-areas:
+                        "all"
+                        "sunset"
+                        "daylight"
+                        "snow"
+                        "sharpen"
+                        "natural"
+                        "luts";
+    @media #{$mobile} {
+      grid-gap: 3rem;
+      grid-template-areas:
+                          "all sunset"
+                          "daylight snow"
+                          "sharpen natural"
+                          "luts .";
+    }
+    @media #{$tablet} {
+      grid-gap: 4rem;
+      grid-template-areas:
+                          "all sunset daylight"
+                          "snow sharpen natural"
+                          "luts . .";
+    }
+    img {
+      width: 100%;
+    }
+    h4 {
+      margin: 1.5rem 1rem;
+      font-weight: normal;
+    }
+    h5 {
+      display: inline-block;
+      border-radius: 2rem;
+      background: $green;
+      color: $white;
+      padding: 1rem 0rem;
+      width: 100%;
+      font-weight: normal;
+      @include transition;
+      &:hover {
+        background: darken($green, 8%);
+      }
+      @media #{$mobile} {
+        padding: 1rem 3rem;
+        width: auto;
+      }
+    }
+    .store-1 {
+      grid-area: all;
+    }
+    .store-2 {
+      grid-area: sunset;
+    }
+    .store-3 {
+      grid-area: daylight;
+    }
+    .store-4 {
+      grid-area: snow;
+    }
+    .store-5 {
+      grid-area: sharpen;
+    }
+    .store-6 {
+      grid-area: natural;
+    }
+    .store-7 {
+      grid-area: luts;
+    }
+    .category-image {
+      position: relative;
+      height: 200px;
+      @media #{$tablet} {
+        height: 100%;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.1);
+        @include transition;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}

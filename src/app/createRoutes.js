@@ -16,6 +16,9 @@ import BucketPost from './routes/bucket/done';
 
 import Portfolio from './routes/portfolio';
 
+import Store from './routes/store';
+import StorePreset from './routes/store/photos';
+
 import Photography from './routes/photography';
 import PhotographyPost from './routes/photography/photos';
 
@@ -41,6 +44,9 @@ const createRoutes = () => (
           <Route path="/bucket-list/:slug" component={BucketPost}/>
 
           <Route exact path="/portfolio" component={Portfolio}/>
+
+          <Route exact path="/store" component={Store}/>
+          <Route path="/store/:slug" component={StorePreset}/>
 
           <Route exact path="/photography" component={Photography}/>
           <Route path="/photography/:slug" component={PhotographyPost}/>
