@@ -11,13 +11,23 @@ export default class PhotographyDescription extends React.PureComponent {
     alt: '',
     descr: '',
     descrDef: '',
+    photography: false,
     store: false,
   }
 
   render() {
-    const {img, alt, descr, descrDef, noDescr, store} = this.props;
+    const {img, alt, descr, descrDef, photography, noDescr, store} = this.props;
     return (
       <div>
+        {photography ?
+          <div className="category-image">
+            <h3>{alt}</h3>
+            <img
+              alt={alt}
+              src={img}
+            />
+          </div>
+        :
         <div className={`descr-image ${noDescr ? 'no-descr' : ''} ${store ? 'store-style' : ''}`}>
           {img.includes(".jpg") &&
           <ImageZoom
@@ -44,6 +54,7 @@ export default class PhotographyDescription extends React.PureComponent {
             <span>{descrDef}</span>
           }
         </div>
+        }
       </div>
     );
   }

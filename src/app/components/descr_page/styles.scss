@@ -1,6 +1,15 @@
 @import "../../../app/styles/_theme.scss";
 
 .photo-content {
+  h2 {
+    font-size: 3.2rem;
+    font-family: $logo;
+    text-align: center;
+    @media #{$tablet} {
+      margin: 2rem 0;
+      font-size: 6rem;
+    }
+  }
   .descr-image {
     margin-bottom: 10rem;
     text-align: center;
@@ -27,7 +36,7 @@
       }
     }
     &.store-style {
-
+      margin-bottom: 3rem;
       &:after {
         content: none;
       }

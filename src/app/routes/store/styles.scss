@@ -9,6 +9,7 @@
   width: 100%;
   font-weight: normal;
   font-size: 1.8rem;
+  text-align: center;
   @include transition;
   &:hover {
     background: darken($green, 8%);
@@ -31,12 +32,12 @@
     margin: 2rem auto 0;
   }
   h2 {
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-family: $logo;
     text-align: center;
     @media #{$tablet} {
       margin: 2rem 0;
-      font-size: 6rem;
+      font-size: 5rem;
     }
   }
 

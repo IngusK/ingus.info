@@ -40,6 +40,7 @@ export default class PhotographyAerial extends React.PureComponent {
         />
         <h2>{title}</h2>
         <p dangerouslySetInnerHTML={{__html:`${descr}`}} />
+        <a className="presets-button" href={currentData.url} target="_blank">Get {currentData.type}</a>
         {storePageContent.map((item, index) => (
           <DescriptionPage
             store
@@ -49,7 +50,7 @@ export default class PhotographyAerial extends React.PureComponent {
             descr={storePageContent[index][photoDescr]}
           />
         ))}
-        <a className="presets-button" href="https://sellfy.com/ingusfilms/p/tgohri/" target="_blank">Get Presets</a>
+        <a className="presets-button" href={currentData.url} target="_blank">Get {currentData.type}</a>
       </div>
     );
   }
