@@ -46,10 +46,10 @@ export default class CTO extends React.PureComponent {
             <a href="https://www.shutterstock.com/g/IngusKruklitis?rid=3325097&utm_medium=email&utm_source=ctrbreferral-link" target="_blank"><img src="../img/logos/shutterstock-logo.jpg" alt="Ingus Kruklitis Shutterstock photo stocks" /></a>
             <p dangerouslySetInnerHTML={{__html:this.getValue('projects', 1)}} />
           </div>
-          <div>
+          {/* <div>
             <a href="https://sellfy.com/ingusfilms" target="_blank"><img src="../img/logos/sellfy-logo.png" alt="Lightroom Photoshop Final Cut presets" /></a>
             <p dangerouslySetInnerHTML={{__html:this.getValue('projects', 2)}} />
-          </div>
+          </div> */}
         </div>
       </div>
     );
